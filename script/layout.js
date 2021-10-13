@@ -1,5 +1,6 @@
-var baseUrl = window.location.protocol + '//' + window.location.host;
-var baseDoc = baseUrl;
+// var baseUrl = window.location.protocol + '//' + window.location.host;
+var baseUrl = 'https://layui.blooo.net'
+var baseDoc = baseUrl + '/docs';
 var docList = [
     {
         id: 1,
