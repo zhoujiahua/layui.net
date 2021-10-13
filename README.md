@@ -1,1 +1,1 @@
-# layui-mirror
+# Layui文档镜像站点

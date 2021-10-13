@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>镜像站@layDate - JS日期与时间组件/日历插件</title>
+  <meta name="keywords" content="laydete,日期插件,日历插件,时间插件">
+  <meta name="description" content="layDate 全新的 5.0 版本包含了大量的更新，其中主要以：年选择器、年月选择器、日期选择器、时间选择器、日期时间选择器 五种类型的选择方式为基本核心，并且均支持范围选择（即双控件）。内置强劲的自定义日期格式解析和合法校正机制，含中文版和国际版，主题简约却又不失灵活多样。由于内部采用的是零依赖的原生 JavaScript 编写，因此可作为独立组件使用。">
+
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?v=531-2" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?v=531-2" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/independents.css" tppabs="http://res.layui.com/static/css/independents.css?v=531-2" media="all">
+
+</head>
+<body>
+
+
+<div class="header">
+  <div class="layui-main">
+    <a class="logo" href="../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <ul class="layui-nav">
+      <li class="layui-nav-item">
+        <a href="../index.htm" tppabs="http://www.layui.com/" target="_blank">layui</a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="../alone.html" tppabs="http://www.layui.com/alone.html">layDate</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alone-banner">
+  <div class="layui-main">
+    <h1>layDate 日期与时间组件</h1>
+    <p>一款被广泛使用的高级 Web 日历组件，完全开源无偿且颜值与功能兼备，足以应对日期相关的各种业务场景</p>
+  </div>
+</div>
+
+<div class="layui-main alone-nav">
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">
+        <a href="index.htm" tppabs="http://www.layui.com/laydate/">主页</a>
+      </li>
+      <li>
+        <a href="changelog.html" tppabs="http://www.layui.com/laydate/changelog.html">更新日志</a>
+      </li>
+      <li>
+        <a href="../doc/modules/laydate.html" tppabs="http://www.layui.com/doc/modules/laydate.html" target="_blank">文档</a>
+      </li>
+      <li>
+        <a href="https://github.com/sentsin/laydate/" target="_blank" rel="nofollow">Github</a>
+      </li>
+      <li>
+        <a href="https://gitee.com/sentsin/laydate/" target="_blank" rel="nofollow">Gitee</a>
+      </li>
+      <li>
+        <a href="https://www.npmjs.com/package/layui-laydate/" target="_blank" rel="nofollow">NPM</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="alone-download">
+    <a href="../../res.layui.com/static/download/laydate/layDate-v5.3.1.zip?v=1" target="_blank" class="layui-btn layui-btn-lg alone-get">
+      下载 layDate<cite id="VERSION"></cite>
+    </a>
+    <span>下载量：<em class="alone-downs">…</em></span>
+  </div>
+  
+  <blockquote class="layui-elem-quote layui-quote-nm layui-text">
+    下载 layDate 后，将文件夹 <em>laydate</em> 整个放置在您的项目任意目录，使用时<em>只需引入 laydate.js 即可。</em>以下是一个入门示例：
+  </blockquote>
+
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">小试牛刀</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      
+      <div class="layui-tab-item layui-show">
+        <div class="layui-inline" style="margin: 20px 0 0;">
+          <input type="text" class="layui-input" placeholder="请选择日期" id="demoTest" style="min-width: 274px;">
+        </div>
+      </div>
+      
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;使用 layDate 独立版&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type="text" id="demoTest"&gt;
+&lt;script src=&quot;laydate/laydate.js&quot;&gt;&lt;/script&gt; &lt;!-- 改成你的路径 --&gt;
+&lt;script&gt;
+//执行一个laydate实例
+laydate.render({
+  elem: '#demoTest' //指定元素
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <blockquote class="layui-elem-quote layui-text">
+    <ul>
+      <li>注意：如果你的页面已经使用了 layui，那么你直接采用 layui 内置的 laydate 模块即可，无需再重复引用独立版的 laydate.js</li>
+      <li>layDate 采用原生 JavaScript 编写，不依赖任何第三方库，兼容所有浏览器（IE6/7除外）</li>
+      <li>npm 安装：npm install layui-laydate</li>
+    </ul>
+  </blockquote>
+  
+  <div style="">
+  </div>
+  
+  <fieldset class="layui-elem-field layui-field-title alone-title">
+    <legend>再试牛刀</legend>
+  </fieldset>
+
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">常规用法</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">中文版</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">国际版</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test1-1" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//常规用法
+laydate.render({
+  elem: '#test1'
+});
+
+//国际版
+laydate.render({
+  elem: '#test1-1'
+  ,lang: 'en'
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">其它选择器</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">年选择器</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test2" placeholder="yyyy">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">年月选择器</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test3" placeholder="yyyy-MM">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">时间选择器</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test4" placeholder="HH:mm:ss">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">日期时间选择器</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test5" placeholder="yyyy-MM-dd HH:mm:ss">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//年选择器
+laydate.render({
+  elem: '#test2'
+  ,type: 'year'
+});
+
+//年月选择器
+laydate.render({
+  elem: '#test3'
+  ,type: 'month'
+});
+
+//时间选择器
+laydate.render({
+  elem: '#test4'
+  ,type: 'time'
+});
+
+//时间选择器
+laydate.render({
+  elem: '#test5'
+  ,type: 'datetime'
+});
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">范围选择</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">日期范围</label>
+              <div class="layui-inline" id="test6">
+                <div class="layui-input-inline">
+                  <input type="text" autocomplete="off" id="test-startDate-1" class="layui-input" placeholder="开始日期">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline">
+                  <input type="text" autocomplete="off" id="test-endDate-1" class="layui-input" placeholder="结束日期">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">年范围</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test7" placeholder=" - ">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">年月范围</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test8" placeholder=" - ">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">时间范围</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test9" placeholder=" - ">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">日期时间范围</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test10" placeholder=" - ">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//日期范围
+laydate.render({
+  elem: '#test6'
+  //设置开始日期、日期日期的 input 选择器
+  //数组格式为 5.3.0 开始新增，之前版本直接配置 true 或任意分割字符即可
+  ,range: ['#test-startDate-1', '#test-endDate-1']
+});
+
+//年范围
+laydate.render({
+  elem: '#test7'
+  ,type: 'year'
+  ,range: true
+});
+
+//年月范围
+laydate.render({
+  elem: '#test8'
+  ,type: 'month'
+  ,range: true
+});
+
+//时间范围
+laydate.render({
+  elem: '#test9'
+  ,type: 'time'
+  ,range: true
+});
+
+//日期时间范围
+laydate.render({
+  elem: '#test10'
+  ,type: 'datetime'
+  ,range: true
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">自定义格式</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">请选择日期</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test11" placeholder="yyyy年MM月dd日">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">请选择日期</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test12" placeholder="dd/MM/yyyy">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">请选择月份</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test13" placeholder="yyyyMM">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">请选择时间</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test14" placeholder="H点m分">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">请选择范围</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test15" placeholder=" ~ ">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">请选择范围</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test16" placeholder="开始 到 结束">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//自定义格式
+laydate.render({
+  elem: '#test11'
+  ,format: 'yyyy年MM月dd日'
+});
+laydate.render({
+  elem: '#test12'
+  ,format: 'dd/MM/yyyy'
+});
+laydate.render({
+  elem: '#test13'
+  ,format: 'yyyyMM'
+});
+laydate.render({
+  elem: '#test14'
+  ,type: 'time'
+  ,format: 'H点M分'
+});
+laydate.render({
+  elem: '#test15'
+  ,type: 'month'
+  ,range: '→'
+  ,format: 'yyyy-MM'
+});
+laydate.render({
+  elem: '#test16'
+  ,type: 'datetime'
+  ,range: '到'
+  ,format: 'yyyy年M月d日H时m分s秒'
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">公历节日和自定义重要日子</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">开启公历节日</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test17" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">自定义重要日</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test18" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//开启公历节日
+laydate.render({
+  elem: '#test17'
+  ,calendar: true
+});
+
+//自定义重要日
+laydate.render({
+  elem: '#test18'
+  ,mark: {
+    '0-10-14': '生日'
+    ,'0-12-31': '跨年' //每年的日期
+    ,'0-0-10': '工资' //每月某天
+    ,'0-0-15': '月中'
+    ,'2017-8-15': '' //如果为空字符，则默认显示数字+徽章
+    ,'2099-10-14': '呵呵'
+  }
+  ,done: function(value, date){
+    if(date.year === 2017 && date.month === 8 && date.date === 15){ //点击2017年8月15日，弹出提示语
+      alert('这一天是：中国人民抗日战争胜利72周年');
+    }
+  }
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">控制可选的日期与时间</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">限定可选日期</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test-limit1" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">前后若干天可选</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test-limit2" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">限定可选时间</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test-limit3" placeholder="HH:mm:ss">
+              </div>
+              <div class="layui-form-mid layui-word-aux">
+                以9:30-17:30为例
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//限定可选日期
+var ins22 = laydate.render({
+  elem: '#test-limit1'
+  ,min: '2016-10-14'
+  ,max: '2080-10-14'
+  ,ready: function(){
+    ins22.hint('日期可选值设定在 &lt;br&gt; 2016-10-14 到 2080-10-14');
+  }
+});
+
+//前后若干天可选，这里以7天为例
+laydate.render({
+  elem: '#test-limit2'
+  ,min: -7
+  ,max: 7
+});
+
+//限定可选时间
+laydate.render({
+  elem: '#test-limit3'
+  ,type: 'time'
+  ,min: '09:30:00'
+  ,max: '17:30:00'
+  ,btns: ['clear', 'confirm']
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">同时绑定多个</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <input type="text" class="layui-input test-item" placeholder="yyyy-MM-dd">
+            </div>
+            <div class="layui-inline">
+              <input type="text" class="layui-input test-item" placeholder="yyyy-MM-dd">
+            </div>
+            <div class="layui-inline">
+              <input type="text" class="layui-input test-item" placeholder="yyyy-MM-dd">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//同时绑定多个
+lay('.test-item').each(function(){
+  laydate.render({
+    elem: this
+    ,trigger: 'click'
+  });
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">其它功能示例</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">初始赋值</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test19" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">选中后的回调</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test20" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">日期切换的回调</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test21" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            
+            <div class="layui-inline">
+              <label class="layui-form-label">不出现底部栏</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test22" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">只出现确定按钮</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test23" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">自定义事件</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test24" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label" id="test25-1">点我触发</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test25" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label" id="test26-1">双击我触发</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test26" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            
+            <div class="layui-inline">
+              <label class="layui-form-label">日期只读</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test27" readonly placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">非input元素</label>
+              <div class="layui-input-inline">
+                <div id="test28" style="height: 38px; line-height: 38px; cursor: pointer; border-bottom: 1px solid #e2e2e2;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//初始赋值
+laydate.render({
+  elem: '#test19'
+  ,value: '1989-10-14'
+});
+
+//选中后的回调
+laydate.render({
+  elem: '#test20'
+  ,done: function(value, date){
+    alert('你选择的日期是：' + value + '\n获得的对象是' + JSON.stringify(date));
+  }
+});
+
+//日期切换的回调
+laydate.render({
+  elem: '#test21'
+  ,change: function(value, date){
+    alert('你选择的日期是：' + value + '\n\n获得的对象是' + JSON.stringify(date));
+  }
+});
+
+//不出现底部栏
+laydate.render({
+  elem: '#test22'
+  ,showBottom: false
+});
+
+//只出现确定按钮
+laydate.render({
+  elem: '#test23'
+  ,btns: ['confirm']
+});
+
+//自定义事件
+laydate.render({
+  elem: '#test24'
+  ,trigger: 'mousedown'
+});
+
+//点我触发
+laydate.render({
+  elem: '#test25'
+  ,eventElem: '#test25-1'
+  ,trigger: 'click'
+});
+
+//双击我触发
+lay('#test26-1').on('dblclick', function(){
+  laydate.render({
+    elem: '#test26'
+    ,show: true
+    ,closeStop: '#test26-1'
+  });
+});
+
+//日期只读
+laydate.render({
+  elem: '#test27'
+  ,trigger: 'click'
+});
+
+//非input元素
+laydate.render({
+  elem: '#test28'
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <a name="theme"></a>
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">其它主题</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">墨绿主题</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test29" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">自定义颜色主题</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test30" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">格子主题</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test31" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//墨绿主题
+laydate.render({
+  elem: '#test29'
+  ,theme: 'molv'
+});
+
+//自定义颜色
+laydate.render({
+  elem: '#test30'
+  ,theme: '#393D49'
+});
+
+//格子主题
+laydate.render({
+  elem: '#test31'
+  ,theme: 'grid'
+});
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this">直接嵌套显示</li>
+      <li>查看代码</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div style="padding: 15px 0;">
+          <div class="layui-inline" id="test-n1"></div>
+          <div class="layui-inline" id="test-n2"></div>
+          <div class="layui-inline" id="test-n3"></div>
+          <div class="layui-inline" id="test-n4"></div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <pre class="layui-code">
+//直接嵌套显示
+laydate.render({
+  elem: '#test-n1'
+  ,position: 'static'
+});
+laydate.render({
+  elem: '#test-n2'
+  ,position: 'static'
+  ,lang: 'en'
+});
+laydate.render({
+  elem: '#test-n3'
+  ,type: 'month'
+  ,position: 'static'
+});
+laydate.render({
+  elem: '#test-n4'
+  ,type: 'time'
+  ,position: 'static'
+}); 
+        </pre>
+      </div>
+    </div>
+  </div>
+  
+  <div style="margin-top: 20px; text-align: center;">
+    <p style=" font-weight: 300;">倘若 layDate 于你有益，欢迎：</p>
+    <a href="http://fly.layui.com/sponsors/" target="_blank" class="layui-btn layui-btn-warm" style="margin-top: 10px;">小额赞赏</a>
+  </div>
+
+</div>
+
+<div class="layui-footer footer footer-index">
+  <div class="layui-main">
+    <p>&copy; <a href="../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT license</p>
+  </div>
+</div>  
+
+<script src="../../res.layui.com/layui/release/laydate/dist/laydate.js-v=531-2.js" tppabs="http://res.layui.com/layui/release/laydate/dist/laydate.js?v=531-2"></script>
+<script src="../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?v=531-2"></script>
+<script>
+layui.config({
+  version: 531-2
+});
+</script>
+<script src="demo.js" tppabs="http://www.layui.com/laydate/demo.js?v=531-2"></script>
+
+
+</body>
+</html>
+
+

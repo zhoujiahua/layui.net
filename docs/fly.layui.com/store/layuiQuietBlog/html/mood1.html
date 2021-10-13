@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>博客</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body>
+<!-- 侧边内容 -->
+<div class="sidebar-content">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <img src="../res/static/img/portrait.jpg" alt=""><br/>
+            <span>小明</span>
+        </div>
+        <div class="layui-card-body">
+            <ul>
+                <li class="txt">
+                    <span>1000</span><br/>
+                    <span>文章</span>
+                </li>
+                <li class="item">
+                    <span>50</span><br/>
+                    <span>项目</span>
+                </li>
+                <li class="visitors">
+                    <span>5008</span><br/>
+                    <span>访问人数</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="layui-nav">
+        <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+        <li class="layui-nav-item"><a href="article.html">文章<br/>ARTICLE</a></li>
+        <li class="layui-nav-item layui-this"><a href="mood1.html">微语<br/>MOOD</a></li>
+        <li class="layui-nav-item"><a href="works.html">作品<br/>WORKS</a></li>
+        <li class="layui-nav-item"><a href="message.html">留言<br/>MESSAGE</a></li>
+        <li class="layui-nav-item last"><a href="about.html">关于<br/>ABOUT</a></li>
+    </ul>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="main mood">
+    <div class="item">
+        <div class="item-content">
+            <p class="time"><span><i class="layui-icon layui-icon-date"></i>12:25</span><strong>2018/06/08</strong></p>
+            <p class="brief">八一建军节到了,祝所有的军人节快乐！！八一建军节到了,祝所有的军人节日快乐！！八一建军节到了,祝所有的军人节日快乐</p>
+            <img src="../res/static/img/img5.jpg" alt="">
+            <p class="praise"><span><i class="layui-icon layui-icon-praise"></i>1200</span><a href="mood2.html"><span><i class="layui-icon layui-icon-dialogue"></i>1200</span></a>
+            </p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item-content">
+            <p class="time"><span><i class="layui-icon layui-icon-date"></i>12:25</span><strong>2018/06/08</strong></p>
+            <p class="brief">推荐一波高评分的英剧，可以承包你所有的无聊时光。《扯蛋英格兰史》9.0分 （喜剧）教科书般一本正经地胡说八道，有太多能戳到笑点的地方，也能让人忍不住去想了解英格兰史</p>
+            <p class="praise"><span><i class="layui-icon layui-icon-praise"></i>1200</span><a href="mood2.html"><span><i class="layui-icon layui-icon-dialogue"></i>1200</span></a>
+            </p>
+        </div>
+    </div>
+    <div id="demo1"></div>
+</div>
+
+
+<!-- 搜索框 -->
+<div class="seach">
+    <form class="layui-form seach-box" action="">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn"><i class="layui-icon layui-icon-search"></i></button>
+                <input type="text" name="username" lay-verify="required" placeholder="搜索相关" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../res/static/js/'
+    }).use('layBlog');
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html xmlns:wb="http://open.weibo.com/wb" class="layer-hui">
+<head>
+  <meta charset="UTF-8">
+  <title>镜像站@layer 扩展皮肤</title>
+  <meta name="keywords" content="弹出层,jQuery弹出层插件,layer">
+  <meta name="description" content=" layer是一款口碑极佳的web弹层组件，她具备全方位的解决方案，致力于服务各个水平段的开发人员，您的页面会轻松地拥有丰富而友好的操作体验。">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css" media="all">
+  <link rel="stylesheet" href="demo.css" tppabs="http://www.layui.com/layer/demo.css?v=3.2" media="all">
+
+
+  <script src="../../other/jquery/1.12.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+  <script src="../../res.layui.com/layui/release/layer/dist/layer.js-v=351-1.js" tppabs="http://res.layui.com/layui/release/layer/dist/layer.js?v=330"></script>
+
+</head>
+<body class="layer-hui">
+
+<div class="header">
+  <div class="layui-main">
+    <a class="logo" href="../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <span class="menu">
+      <a href="index.htm" tppabs="http://www.layui.com/layer/" class="this">layer</a>
+    </span>
+  </div>
+</div>
+
+
+<div class="alone-banner layui-bg-black">
+  <div class="layui-main">
+    <h1>layer 扩展皮肤</h1>
+    <p class="layui-hide-xs">如果 layer 默认提供的配色并不符合您的项目，您还可以自定义您所需要的弹出层风格</p>
+  </div>
+</div>
+
+<div class="layer_nav">
+  <div class="box"> 
+    <a href="index.htm" tppabs="http://www.layui.com/layer/" title="api">layer 首页</a>
+    <a href="../doc/modules/layer.html" tppabs="http://www.layui.com/doc/modules/layer.html" title="api" target="_blank">文档手册</a>
+    <span class="layer-nav-right layui-hide">
+      <a href="javascript:;" id="skinPublish"></a>
+    </span>
+  </div>    
+</div>
+
+<div class="clear box layer-main">
+    
+    <pre class="layui-code" lay-title="自定义皮肤说明">
+  
+layer 提供了强健的皮肤扩展属性，这意味着如果你对 layer 默认的样式不太满意，你还有更多的选择。
+ 
+一：命名文件夹
+在 layer 的 skin 目录建立一个文件夹，假设您将该文件夹命名为：yourskin
+ 
+二：创建样式依赖文件
+在 yourskin 文件夹下建立一个单独的样式文件，务必命名为：style.css。并且你可能用到的图片也要存放在该文件夹下
+  
+三：书写样式
+/*  
+通过 body 前缀，是为了确保你皮肤的优先级
+你可以通过调试工具重置更多样式 
+*/
+body .layer-ext-yourskin .layui-layer-title{}
+body .layui-ext-yourskin .layui-layer-btn{}
+body .layui-ext-yourskin .layui-layer-btn a{}
+ 
+四：调试
+通过全局配置看看你的皮肤定义的如何：
+layer.config({
+  extend: 'myskin/style.css', //加载您的扩展样式
+  skin: 'layer-ext-yourskin'
+});
+layer.alert('layer 新皮肤');
+ 
+五：应用
+现在你已经成功制作了一个皮肤了，如果你觉得它很美，你可以放入项目中去使用。
+ 
+1. 全局配置
+见第四步
+ 
+2. 局部使用
+layer.config({
+  extend: 'myskin/style.css' //同样需要先加载新皮肤
+});
+//单个使用
+layer.open({
+  skin: 'layer-ext-myskin' //只对该层采用 myskin皮肤
+});
+ 
+//也就是说，无论你全局还是局部，都要通过 layer.config 的 extend 来加载样式。
+
+  </pre>
+</div>
+
+
+<div id="skinFabu" style="display:none;">
+   <div class="layer-text" style="padding:20px;">
+    <pre class="layui-code"  lay-title="扩展说明">
+【第一步】：命名文件夹
+在layer的skin目录建立一个文件夹，假设您将该文件夹命名为：yourskin
+ 
+【第二步】：创建样式等文件
+在yourskin文件夹下建立一个单独的样式文件，务必命名为：style.css。并且你可能用到的图片也要存放在该文件夹下
+ 
+【第三步】：书写样式
+/*  
+通过body前缀，是为了确保你皮肤的优先级
+你可以通过调试工具重置更多样式 
+*/
+body .layer-ext-yourskin .layui-layer-title{}
+body .layui-ext-yourskin .layui-layer-btn{}
+body .layui-ext-yourskin .layui-layer-btn a{}
+
+ 
+【第四步】：调试
+通过全局配置看看你的皮肤定义的如何：
+layer.config({
+  extend: 'myskin/style.css', //加载您的扩展样式
+  skin: 'layer-ext-yourskin'
+});
+layer.alert('layer皮肤-Yourskin');
+ 
+【最后一步】：应用
+现在你已经成功制作了一个皮肤了，如果你觉得它很美，你可以放入项目中去使用。
+    </pre>
+    <p></p>
+  </div>
+  
+</div>
+
+
+<a href="javascript:;" class="layer_ico layer_gotop"></a>
+
+
+<div class="layui-footer footer footer-index">
+  <div class="layui-main">
+    <p>&copy; <a href="../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT license</p>
+  </div>
+</div>  
+
+<script src="../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js"></script>
+<script src="demo.js" tppabs="http://www.layui.com/layer/demo.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

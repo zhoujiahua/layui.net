@@ -1,0 +1,549 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>镜像站@在线示例 - Layui</title>
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <script>
+  ;!function(){self!==parent&&(location.href="http://www.baidu.com/")}();
+  </script>
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?t=1632428048355"  media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?t=1632428048355-19" media="all">
+</head>
+<body>
+<div class="layui-layout layui-layout-admin site-demo-fixed">
+  
+
+<div class="layui-header header header-demo" autumn>
+  <div class="layui-fluid">
+    <a class="logo" href="../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <div class="layui-form layui-hide-xs component" lay-filter="LAY-site-header-component"></div>
+    <div class="layui-hide-xs site-notice"></div>
+    
+    <ul class="layui-nav" id="LAY_NAV_TOP">
+      <li class="layui-nav-item ">
+        <a href="../doc/index.htm" tppabs="http://www.layui.com/doc/">文档</a> 
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="index.htm" tppabs="http://www.layui.com/demo/">示例</a>
+      </li>
+      
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <!--<span class="layui-badge-dot" style="left:0; right: auto; margin: -4px 0 0 5px;"></span>--> 
+          周边
+        </a>
+        <dl class="layui-nav-child layui-nav-child-c">  
+          <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+            <a href="https://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">问题反馈</a>
+            <hr>
+          </dd>
+          
+          <dd lay-unselect><a href="../alone.html" tppabs="http://www.layui.com/alone.html" target="_blank" lay-unselect>独立组件</a></dd>
+          <dd lay-unselect><a href="../../fly.layui.com/extend/index.htm" target="_blank">扩展组件</a></dd>
+        </dl>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="http://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">反馈</a>
+      </li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="../../other/html5shiv/r29/html5.min.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="../../other/respond.js/1.4.2/respond.min.js" tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      
+<ul class="layui-nav layui-nav-tree site-demo-nav">
+  
+  <li class="layui-nav-item layui-nav-itemed">
+    <a class="javascript:;" href="javascript:;">演示</a>
+    <dl class="layui-nav-child">
+      <dd>
+        <a href="index.htm" tppabs="http://www.layui.com/demo/">调试预览</a>
+      </dd>
+    </dl>
+  </li>
+  
+  <li class="layui-nav-item layui-nav-itemed">
+    <a class="javascript:;" href="javascript:;">布局</a>
+    <dl class="layui-nav-child">
+      <dd class="">
+        <a href="grid.html" tppabs="http://www.layui.com/demo/grid.html">栅格</a>
+      </dd>
+      <dd class="">
+        <a href="admin.html" tppabs="http://www.layui.com/demo/admin.html">框架</a>
+      </dd>
+    </dl>
+  </li>
+  
+  <li class="layui-nav-item layui-nav-itemed">
+    <a class="javascript:;" href="javascript:;">基本元素</a>
+    <dl class="layui-nav-child">
+      <dd class="">
+        <a href="button.html" tppabs="http://www.layui.com/demo/button.html">按钮</a>
+      </dd>
+      <dd class="">
+        <a href="form.html" tppabs="http://www.layui.com/demo/form.html">表单</a>
+      </dd>
+      <dd class="">
+        <a href="nav.html" tppabs="http://www.layui.com/demo/nav.html">导航 / 面包屑</a>
+      </dd>
+      <dd class="">
+        <a href="menu.html" tppabs="http://www.layui.com/demo/menu.html">基础菜单</a>
+      </dd>
+      <dd class="">
+        <a href="tab.html" tppabs="http://www.layui.com/demo/tab.html">选项卡</a>
+      </dd>
+      <dd class="">
+        <a href="progress.html" tppabs="http://www.layui.com/demo/progress.html">进度条</a>
+      </dd>
+      <dd class="">
+        <a href="panel.html" tppabs="http://www.layui.com/demo/panel.html">面板</a>
+      </dd>
+      <dd class="">
+        <a href="badge.html" tppabs="http://www.layui.com/demo/badge.html">徽章</a>
+      </dd>
+      <dd class="">
+        <a href="timeline.html" tppabs="http://www.layui.com/demo/timeline.html">时间线</a>
+      </dd>
+      <dd class="">
+        <a href="table-element.html" tppabs="http://www.layui.com/demo/table-element.html">静态表格</a>
+      </dd>
+      <dd class="">
+        <a href="anim.html" tppabs="http://www.layui.com/demo/anim.html">动画</a>
+      </dd>
+      <dd class="">
+        <a href="auxiliar.html" tppabs="http://www.layui.com/demo/auxiliar.html">辅助元素</a>
+      </dd>
+    </dl>
+  </li>
+  
+  <li class="layui-nav-item layui-nav-itemed">
+    <a class="javascript:;" href="javascript:;">组件示例</a>
+    <dl class="layui-nav-child">
+      <dd class="">
+        <a href="layer.html" tppabs="http://www.layui.com/demo/layer.html">
+          弹出层
+        </a>
+      </dd>
+      <dd class="">
+        <a href="laydate.html" tppabs="http://www.layui.com/demo/laydate.html">
+          日期与时间选择
+        </a>
+      </dd>
+      <dd class="">
+        <a href="table.html" tppabs="http://www.layui.com/demo/table.html">
+          数据表格
+        </a>
+      </dd>
+       <dd class="">
+        <a href="laypage.html" tppabs="http://www.layui.com/demo/laypage.html">
+          分页
+        </a>
+      </dd>
+      <dd class="">
+        <a href="dropdown.html" tppabs="http://www.layui.com/demo/dropdown.html">
+          下拉菜单
+        </a>
+      </dd>
+      <dd class="">
+        <a href="upload.html" tppabs="http://www.layui.com/demo/upload.html">
+          文件上传
+        </a>
+      </dd>  
+      <dd class="">
+        <a href="transfer.html" tppabs="http://www.layui.com/demo/transfer.html">
+          穿梭框
+        </a>
+      </dd>
+      
+       <dd class="">
+        <a href="tree.html" tppabs="http://www.layui.com/demo/tree.html">
+          树形组件
+        </a>
+      </dd>
+      <dd class="">
+        <a href="colorpicker.html" tppabs="http://www.layui.com/demo/colorpicker.html">
+          颜色选择器
+        </a>
+      </dd>
+      <dd class="">
+        <a href="slider.html" tppabs="http://www.layui.com/demo/slider.html">
+          滑块
+        </a>
+      </dd>
+      <dd class="">
+        <a href="rate.html" tppabs="http://www.layui.com/demo/rate.html">
+          评分
+        </a>
+      </dd>
+      <dd class="">
+        <a href="carousel.html" tppabs="http://www.layui.com/demo/carousel.html">
+          轮播
+        </a>
+      </dd>
+      <dd class="">
+        <a href="laytpl.html" tppabs="http://www.layui.com/demo/laytpl.html">
+          模板引擎
+        </a>
+      </dd>
+      <dd class="">
+        <a href="flow.html" tppabs="http://www.layui.com/demo/flow.html">
+          流加载
+        </a>
+      </dd>
+      <dd class="">
+        <a href="util.html" tppabs="http://www.layui.com/demo/util.html">
+          工具模块
+        </a>
+      </dd>
+      <dd class="">
+        <a href="code.html" tppabs="http://www.layui.com/demo/code.html">
+          文本行修饰
+        </a>
+      </dd>
+    </dl>
+  </li>
+  
+  <li class="layui-nav-item" style="height: 30px; text-align: center"></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="layui-body site-demo">
+    <form id="LAY_demoForm" target="LAY_demo" method="post">
+    <div class="site-demo-editor">
+      <div class="site-demo-area">
+        <textarea id="LAY_editor" spellcheck="false" placeholder="在此处输入代码">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>镜像站@layui 调试预览</title>
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?t=1632428048355" media="all">
+  <style>
+    body{margin: 10px;}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+  </style>
+</head>
+<body>
+ 
+<table class="layui-hide" id="demo" lay-filter="test"></table>
+ 
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="more">更多 <i class="layui-icon layui-icon-down"></i></a>
+</script>
+ 
+<div class="layui-tab layui-tab-brief" lay-filter="demo">
+  <ul class="layui-tab-title">
+    <li class="layui-this">演示说明</li>
+    <li>日期</li>
+    <li>分页</li>
+    <li>上传</li>
+    <li>滑块</li>
+  </ul>
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">
+      <div class="layui-carousel" id="test1">
+        <div carousel-item>
+          <div><p class="layui-bg-green demo-carousel">在这里，你将以最直观的形式体验 layui！</p></div>
+          <div><p class="layui-bg-red demo-carousel">在编辑器中可以执行 layui 相关的一切代码</p></div>
+          <div><p class="layui-bg-blue demo-carousel">你也可以点击左侧导航针对性地试验我们提供的示例</p></div>
+          <div><p class="layui-bg-orange demo-carousel">如果最左侧的导航的高度超出了你的屏幕</p></div>
+          <div><p class="layui-bg-cyan demo-carousel">你可以将鼠标移入导航区域，然后滑动鼠标滚轮即可</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-tab-item">
+      <div id="laydateDemo"></div>
+    </div>
+    <div class="layui-tab-item">
+      <div id="pageDemo"></div>
+    </div>
+    <div class="layui-tab-item">
+      <div class="layui-upload-drag" id="uploadDemo">
+        <i class="layui-icon">&#xe67c;</i>
+        <p>点击上传，或将文件拖拽到此处</p>
+        <div class="layui-hide" id="uploadDemoView">
+          <hr>
+          <img src="" alt="上传成功后渲染" style="max-width: 100%">
+        </div>
+      </div>
+    </div>
+    <div class="layui-tab-item">
+      <div id="sliderDemo" style="margin: 50px 20px;"></div>
+    </div>
+  </div>
+</div>
+
+<blockquote class="layui-elem-quote layui-hide layui-text" id="footer">当前版本：layui v{{ layui.v }}</blockquote>
+
+  
+<script src="../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?t=1632428048355"></script>
+<script>
+layui.config({
+  version: '1632428048355' //为了更新 js 缓存，可忽略
+});
+ 
+//加载模块  
+layui.use(function(){ //亦可加载特定模块：layui.use(['layer', 'laydate', function(){
+  //得到各种内置组件
+  var layer = layui.layer //弹层
+  ,laypage = layui.laypage //分页
+  ,laydate = layui.laydate //日期
+  ,table = layui.table //表格
+  ,carousel = layui.carousel //轮播
+  ,upload = layui.upload //上传
+  ,element = layui.element //元素操作
+  ,slider = layui.slider //滑块
+  ,dropdown = layui.dropdown //下拉菜单
+  
+  //向世界问个好
+  layer.msg('Hello World');
+  
+  //监听Tab切换
+  element.on('tab(demo)', function(data){
+    layer.tips('切换了 '+ data.index +'：'+ this.innerHTML, this, {
+      tips: 1
+    });
+  });
+  
+  //执行一个 table 实例
+  table.render({
+    elem: '#demo'
+    ,height: 420
+    ,url: '/demo/table/user/' //数据接口
+    ,url: '../demo/table/user/-page=1&limit=20.js' //数据接口
+    ,title: '用户表'
+    ,page: true //开启分页
+    ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+    ,totalRow: true //开启合计行
+    ,cols: [[ //表头
+      {type: 'checkbox', fixed: 'left'}
+      ,{field: 'id', title: 'ID', width:80, sort: true, fixed: 'left', totalRowText: '合计：'}
+      ,{field: 'username', title: '用户名', width:80}
+      ,{field: 'experience', title: '积分', width: 90, sort: true, totalRow: true}
+      ,{field: 'sex', title: '性别', width:80, sort: true}
+      ,{field: 'score', title: '评分', width: 80, sort: true, totalRow: '{{ parseInt(d.TOTAL_NUMS) }} 分'}
+      ,{field: 'city', title: '城市', width:150} 
+      ,{field: 'sign', title: '签名', width: 200}
+      ,{field: 'classify', title: '职业', width: 100}
+      ,{field: 'wealth', title: '财富', width: 135, sort: true, totalRow: true}
+      ,{fixed: 'right', width: 150, align:'center', toolbar: '#barDemo'}
+    ]]
+  });
+  
+  //监听头工具栏事件
+  table.on('toolbar(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id)
+    ,data = checkStatus.data; //获取选中的数据
+    switch(obj.event){
+      case 'add':
+        layer.msg('添加');
+      break;
+      case 'update':
+        if(data.length === 0){
+          layer.msg('请选择一行');
+        } else if(data.length > 1){
+          layer.msg('只能同时编辑一个');
+        } else {
+          layer.alert('编辑 [id]：'+ checkStatus.data[0].id);
+        }
+      break;
+      case 'delete':
+        if(data.length === 0){
+          layer.msg('请选择一行');
+        } else {
+          layer.msg('删除');
+        }
+      break;
+    };
+  });
+  
+  //监听行工具事件
+  table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+    var data = obj.data //获得当前行数据
+    ,layEvent = obj.event; //获得 lay-event 对应的值
+    if(layEvent === 'detail'){
+      layer.msg('查看操作');
+    } else if(layEvent === 'more'){
+      //下拉菜单
+      dropdown.render({
+        elem: this //触发事件的 DOM 对象
+        ,show: true //外部事件触发即显示
+        ,data: [{
+          title: '编辑'
+          ,id: 'edit'
+        },{
+          title: '删除'
+          ,id: 'del'
+        }]
+        ,click: function(menudata){
+          if(menudata.id === 'del'){
+            layer.confirm('真的删除行么', function(index){
+              obj.del(); //删除对应行（tr）的DOM结构
+              layer.close(index);
+              //向服务端发送删除指令
+            });
+          } else if(menudata.id === 'edit'){
+            layer.msg('编辑操作，当前行 ID:'+ data.id);
+          }
+        }
+        ,align: 'right' //右对齐弹出（v2.6.8 新增）
+        ,style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' //设置额外样式
+      })
+    }
+  });
+  
+  //执行一个轮播实例
+  carousel.render({
+    elem: '#test1'
+    ,width: '100%' //设置容器宽度
+    ,height: 200
+    ,arrow: 'none' //不显示箭头
+    ,anim: 'fade' //切换动画方式
+  });
+  
+  //将日期直接嵌套在指定容器中
+  var dateIns = laydate.render({
+    elem: '#laydateDemo'
+    ,position: 'static'
+    ,calendar: true //是否开启公历重要节日
+    ,mark: { //标记重要日子
+      '0-10-14': '生日'
+      ,'2020-01-18': '小年'
+      ,'2020-01-24': '除夕'
+      ,'2020-01-25': '春节'
+      ,'2020-02-01': '上班'
+    } 
+    ,done: function(value, date, endDate){
+      if(date.year == 2017 && date.month == 11 && date.date == 30){
+        dateIns.hint('一不小心就月底了呢');
+      }
+    }
+    ,change: function(value, date, endDate){
+      layer.msg(value)
+    }
+  });
+  
+  //分页
+  laypage.render({
+    elem: 'pageDemo' //分页容器的id
+    ,count: 1000 //数据总数
+    ,limit: 10 //每页显示的数据条数
+    ,skin: '#1E9FFF' //自定义选中色值
+    //,layout: ['prev', 'page', 'next', 'count', 'limit', 'refresh', 'skip'] //自定义排版
+    ,jump: function(obj, first){
+      if(!first){
+        layer.msg('第'+ obj.curr +'页', {offset: 'b'});
+      }
+    }
+  });
+  
+  //上传
+  upload.render({
+    elem: '#uploadDemo'
+    ,url: '' //此处配置你自己的上传接口即可
+    ,done: function(res){
+      layer.msg('上传成功');
+      layui.$('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.files.file);
+      console.log(res)
+    }
+    ,before: function(){
+      layer.msg('上传中', {icon: 16, time: 0});
+    }
+  });
+  
+  //滑块
+  var sliderInst = slider.render({
+    elem: '#sliderDemo'
+    ,input: true //输入框
+  });
+  
+  //底部信息
+  var footerTpl = lay('#footer')[0].innerHTML;
+  lay('#footer').html(layui.laytpl(footerTpl).render({}))
+  .removeClass('layui-hide');
+});
+</script>
+</body>
+</html>        
+        </textarea>
+        <input type="hidden" name="html" id="LAY_demoCodes">
+      </div>
+      <div class="site-demo-btn">
+        <button type="button" class="layui-btn" id="LAY_demo_run">运行代码</button>
+      </div>
+    </div>
+    </form>
+    <div class="site-demo-result">
+      <iframe frameborder="0" id="LAY_demo" name="LAY_demo"></iframe>
+    </div>
+  </div>
+  
+<div class="layui-footer footer footer-demo">
+    <p>
+      Copyright &copy; 2021 <a href="../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT Licensed</p>
+    <p>
+      <a href="../about/disclaimer.html" tppabs="http://www.layui.com/about/disclaimer.html" target="_blank">免责声明</a> 
+      <a href="../about/relatedlinks.html" tppabs="http://www.layui.com/about/relatedlinks.html" target="_blank">友链</a>
+      <a href="javascript:;"  site-event="weixinmp">公众号</a>
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36010902000274"  rel="nofollow">
+        <img src="../../res.layui.com/upload/2021_8/168_1628847893037_87773.png" tppabs="http://cdn.layui.com/upload/2021_8/168_1628847893037_87773.png">
+        公网安备 00000000000000号
+      </a>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">ICP备00000000号</a>
+    </p>
+    <div class="site-union">
+      <p class="site-union-desc">
+        <span>
+          
+        </span>
+      </p>
+    </div>
+</div>
+<script>
+window.global = {
+  pageType: 'demo'
+  ,preview: function(){
+    var preview = document.getElementById('LAY_preview');
+    return preview ? preview.innerHTML : '';
+  }()
+};
+</script>
+<div class="site-tree-mobile layui-hide">
+  <i class="layui-icon layui-icon-spread-left"></i>
+</div>
+<div class="site-mobile-shade"></div>
+ 
+<script src="../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?t=1632428048355" charset="utf-8"></script>
+<script>
+layui.config({
+  base: '../../res.layui.com/static/lay/modules/layui/'
+  ,version: '1632428048355'
+}).use('global');
+</script>
+ 
+
+
+</div>
+</body>
+</html>

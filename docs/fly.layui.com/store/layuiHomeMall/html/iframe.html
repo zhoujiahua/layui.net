@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>地址框</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body style="padding: 0;">
+
+  <div class="layui-form" lay-filter="useradd-iframe" id="useradd-iframe" style="padding: 0 40px 0 20px;">
+    <div class="layui-form-item">
+      <label class="layui-form-label"><span>*</span>所在地区：</label>
+      <div class="layui-input-inline">
+        <select lay-verify="required">
+          <option value="">请选择</option>
+          <option value="0">江西省</option>
+          <option value="1">陕西省</option>
+          <option value="2">浙江省</option>
+        </select>
+      </div>
+      <div class="layui-input-inline">
+        <select lay-verify="required">
+          <option value="">请选择</option>
+          <option value="0">南昌市</option>
+          <option value="1">九江市</option>
+          <option value="2">赣州市</option>
+        </select>
+      </div>
+      <div class="layui-input-inline">
+        <select lay-verify="required">
+          <option value="">请选择</option>
+          <option value="0">青山湖区</option>
+          <option value="1">高新区</option>
+          <option value="2">东湖区</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label"><span>*</span>详细地址：</label>
+      <div class="layui-input-block">
+        <textarea lay-verify="required" placeholder="详细地址，街道、门牌号等" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label"><span>*</span>收货人：</label>
+      <div class="layui-input-inline">
+        <input type="text" required lay-verify="required" class="layui-input">
+      </div>
+      <label class="layui-form-label telephone"><span>*</span>手机号码：</label>
+      <div class="layui-input-inline">
+        <input type="text" required lay-verify="required|phone" class="layui-input">
+      </div>
+    </div>
+    <input class="checkdef" type="checkbox" lay-skin="primary" title="设为默认" checked>
+    <div class="layui-form-item layui-hide">
+      <input type="button" lay-submit lay-filter="useradd-submit" id="useradd-submit" value="确认">
+    </div>
+  </div>
+
+<script src="../res/layui/layui.js"></script>
+<script>
+  layui.config({
+    base: '../res/static/js/' 
+  }).use('house'); 
+</script>
+
+</body>
+</html>

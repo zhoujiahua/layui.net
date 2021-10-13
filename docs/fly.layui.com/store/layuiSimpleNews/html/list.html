@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新闻—列表页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../res/static/css/index.css">
+  <!--<script type="text/javascript" src="../res/layui/layui.all.js"></script>-->
+</head>
+<body>
+
+<div class="news-header">
+  <div class="layui-container">
+    <a id="logo" href="index.html"><img src="../res/static/img/logo.png"></a>
+    <ul class="layui-nav header-nav close">
+      <li class="layui-nav-item">
+        <a href="/">首页</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">热点</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">财经</a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="list">科技</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">游戏</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">娱乐</a>
+      </li>
+      <li class="layui-nav-item more">
+        <a href="javaScript:;">更多</a>
+        <dl class="layui-nav-child">
+          <dd><a class="hida" href="list">生活</a> <a class="hida" href="list">国际</a></dd>
+          <dd><a class="hida" href="list">军事</a> <a class="hida" href="list">育儿</a></dd>
+          <dd><a class="hida" href="list">体育</a> <a class="hida" href="list">美食</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <button id="switch">
+      <span></span><span class="second"></span><span class="third"></span>
+    </button>
+    <div class="layui-form header-search">
+      <input type="text" placeholder="诺基亚" class="layui-input">
+    </div>
+    <div class="layui-form header-login">
+      <a href="login">登入</a>
+      <a href=""><i class="layui-icon layui-icon-news-qq"></i></a>
+      <a href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    </div>
+    <ul class="layui-nav header-login">
+      <li class="layui-nav-item">
+        <a href="javascript:;"><img src="../res/static/img/header1.png" class="layui-nav-img"></a>
+        <dl class="layui-nav-child">
+          <dd><a href="user">个人中心</a></dd>
+          <dd><a href="javascript:;">退出登录</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="layui-container news-list news-index">
+  <div class="layui-row layui-col-space20 contentBot">
+    <div class="layui-col-md8 index-list">
+      <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+          <li class="layui-this">全部</li>
+          <li>互联网</li>
+          <li>软件</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">
+            <ul class="newsList" id="LAY_demo1">
+            </ul>
+          </div>
+          <div class="layui-tab-item">
+            <ul class="newsList" id="LAY_demo2">
+
+            </ul>
+
+          </div>
+          <div class="layui-tab-item">
+            <ul class="newsList" id="LAY_demo3">
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md4 index-side">
+      <div class="newsSide">
+        <h2>24小时热文</h2>
+        <ul>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img10.jpg"></span><p class="txt">今日魔都烟雾缭绕，美似仙境！</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img11.jpg"></span><p class="txt">美计划调高对华商品征税税率 国外交谈部：施压与讹诈不会起作用</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img12.jpg"></span><p class="txt">烟草纳税万亿！一包20元的烟利润 是多少钱？烟民：为了纳税而抽烟</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img13.jpg"></span><p class="txt">移动端游戏占领大部分市场</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img14.jpg"></span><p class="txt">八一建军节天安门升旗仪式</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img10.jpg"></span><p class="txt">今日魔都烟雾缭绕，美似仙境！</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img11.jpg"></span><p class="txt">美计划调高对华商品征税税率 国外交谈部：施压与讹诈不会起作用</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img12.jpg"></span><p class="txt">烟草纳税万亿！一包20元的烟利润 是多少钱？烟民：为了纳税而抽烟</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img13.jpg"></span><p class="txt">移动端游戏占领大部分市场</p></a></li>
+          <li><a href="javascript:;"><span><img src="../res/static/img/home_img14.jpg"></span><p class="txt">八一建军节天安门升旗仪式</p></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="silde"><a id="refresh"><i class="layui-icon layui-icon-refresh"></i></a><a id="scroll"><i class="layui-icon layui-icon-up"></i></a></div>
+  </div>  
+</div>
+
+<div class="news-footer">
+  <div class="layui-container">
+    <span class="layui-breadcrumb" lay-separator=" ">
+      <a>关于我们</a>
+      <a>合作伙伴</a>
+      <a>广告服务</a>
+      <a>常见问题</a>
+    </span>
+    <p class="copyright">Copyright &copy; 新闻网 赣ICP备12345678号</p>
+    <a id="wechat" href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    <a id="weibo" href=""><i class="layui-icon layui-icon-news-weibo"></i></a>
+    <img id="code" src="../res/static/img/code.png">
+  </div>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  layui.config({
+    base: '../res/static/js/' 
+  }).use('news');
+
+  layui.use('flow', function(){
+    var $ = layui.jquery; //不用额外加载jQuery，flow模块本身是有依赖jQuery的，直接用即可。
+    var flow = layui.flow;
+
+    flow.load({
+      elem: '#LAY_demo1' //指定列表容器
+      ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+        var lis = [];
+        //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+        $.get('/api/list?page='+page, function(res){
+          //假设你的列表返回在data集合中
+          layui.each(res.content, function(index, item){
+            lis.push('<li>'
+                    +'<a class="img" href="javascript:;">'
+                    +'<img src=" '+item.imageUrl+' ">'
+                    +'</a>'
+                    +'<div class="txt">'
+                    +'<a href="detail">'
+                    +item.title
+                    +'</a>'
+                    +'<div class="label">'
+                    +'<span class="cyan">'
+                    +item.category
+                    +'</span>'
+                    +item.promulgator
+                    +'<b>'
+                    +item.releaseDate
+                    +'</b>'
+                    +'<i class="layui-icon layui-icon-news-review1">'
+                    +'</i>'
+                    +item.commentCount
+                    +'</div>'
+                    +'<p class="cont">'
+                    +item.description
+                    +'</p>'+'</div>'
+                    +'</li>');
+          });
+
+          //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+          //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+          next(lis.join(''), page < res.totalPages);
+        });
+      }
+    });
+
+    flow.load({
+      elem: '#LAY_demo2' //流加载容器
+      ,scrollElem: '#LAY_demo2' //滚动条所在元素，一般不用填，此处只是演示需要。
+      ,done: function(page, next){ //执行下一页的回调
+
+        //模拟数据插入
+        setTimeout(function(){
+          var lis = [];
+          for(var i = 0; i < 8; i++){
+            lis.push('<li>'+ ( (page-1)*8 + i + 1 ) +'</li>')
+          }
+
+          //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+          //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+          next(lis.join(''), page < 10); //假设总页数为 10
+        }, 500);
+      }
+    });
+  });
+
+
+</script>
+
+</body>
+</html> 

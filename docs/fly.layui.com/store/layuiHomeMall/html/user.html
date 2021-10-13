@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>家居商城-个人中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body class="user">
+
+<div class="house-header">
+  <div class="layui-container">
+    <div class="house-nav">
+      <span class="layui-breadcrumb" lay-separator="|">
+        <a href="login.html">登录</a>
+        <a href="">我的订单</a>
+        <a href="">在线客服</a>
+      </span>
+      <span class="layui-breadcrumb house-breadcrumb-icon" lay-separator=" ">
+        <a id="search"><i class="layui-icon layui-icon-house-find"></i></a>
+        <a href="login.html"><i class="layui-icon layui-icon-username"></i></a>
+        <a href="usershop.html"><i class="layui-icon layui-icon-house-shop"></i></a>
+      </span>
+    </div> 
+    <div class="house-banner layui-form">
+      <a class="banner" href="index.html">
+        <img src="../res/static/img/banner.png" alt="家居商城">
+      </a>
+      <div class="layui-input-inline">
+        <input type="text" placeholder="搜索好物" class="layui-input"><i class="layui-icon layui-icon-house-find"></i>
+      </div>
+      <a class="shop" href="usershop.html"><i class="layui-icon layui-icon-house-shop"></i><span class="layui-badge">1</span></a>
+    </div>
+    <ul class="layui-nav close">
+      <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+      <li class="layui-nav-item"><a href="list.html">居家用品</a></li>
+      <li class="layui-nav-item"><a href="list.html">小家电</a></li>
+      <li class="layui-nav-item"><a href="list.html">洗护</a></li>
+      <li class="layui-nav-item"><a href="list.html">厨具</a></li>
+      <li class="layui-nav-item"><a href="list.html">日用品</a></li>
+    </ul>
+    <button id="switch">
+      <span></span><span class="second"></span><span class="third"></span>
+    </button>
+  </div>
+</div>
+
+<div class="layui-container userpublic house-userPer">
+  <div class="layui-row layui-col-space20">
+    <p class="layui-hide-xs title">首页 &gt; <span>个人中心</span></p>
+    <div class="layui-col-sm2">
+      <ul class="user-list">
+        <li class="active"><a href="user.html">个人中心</a></li>
+        <li><a href="">消息中心</a></li>
+        <li><a href="useradd.html">地址管理</a></li>
+        <li><a href="usercol.html">我的收藏</a></li>
+        <li><a href="">优惠券</a></li>
+        <li><a href="">服务中心</a></li>
+      </ul>
+    </div>
+    <div class="layui-col-sm10">
+      <div class="user-person">
+        <div class="person">
+          <img src="../res/static/img/person.png">
+          <div class="name">
+            <p>小明1988</p>
+            <span><i>VIP2</i></span>
+          </div>
+        </div>
+        <ul>
+          <li>优惠券<span>10张</span></li>
+          <li>礼品卡<span>1张</span></li>
+          <li>积分<span>1000</span></li>
+          <li>待发货<span>12个</span></li>
+          <li>待收货<span>2个</span></li>
+          <li>待评价<span>2个</span></li>
+        </ul>
+      </div> 
+    </div>
+    <div class="layui-col-sm10">
+      <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+          <li class="layui-this">全部订单</li>
+          <li>等待发货</li>
+          <li>已发货</li>
+          <li>交易完成</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">
+            <table id="house-user-order" lay-filter="house-user-order"></table>
+          </div>
+          <div class="layui-tab-item">
+            
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<div class="house-footer">
+  <div class="layui-container">
+    <div class="intro">
+      <span class="first"><i class="layui-icon layui-icon-house-shield"></i>7天无理由退换货</span>
+      <span class="second"><i class="layui-icon layui-icon-house-car"></i>满99元全场包邮</span>
+      <span class="third"><i class="layui-icon layui-icon-house-diamond"></i>100%品质保证</span>
+      <span class="last"><i class="layui-icon layui-icon-house-tel"></i>客服400-2888-966</span>
+    </div>
+    <div class="about">
+      <span class="layui-breadcrumb" lay-separator="|">
+        <a href="about.html">关于我们</a>
+        <a href="about.html">帮助中心</a>
+        <a href="about.html">售后服务</a>
+        <a href="about.html">配送服务</a>
+        <a href="about.html">关于货源</a>
+      </span>
+      <p>家居商城版权所有 &copy; 2012-2020</p>
+    </div>   
+  </div>
+</div>
+
+<script type="text/html" id="orderTpl">
+  <div style="text-align: left; display: inline-block; vertical-align: middle;">
+    <p>订单号：{{d.orderid}}</p>
+    <p>交易单号：{{d.orderid}}</p>
+    <p>交易时间：{{d.timestamp}}</p>
+  </div>
+</script>
+<script type="text/html" id="imgTpl">
+  <img src="{{d.avatar}}">
+</script>
+<script type="text/html" id="priceTpl">
+  <div style="display: inline-block; vertical-align: middle;">
+    <p>￥{{d.price}}</p>
+    <p>免运费</p>
+  </div>
+</script>
+<script type="text/html" id="stateTpl">
+  {{#  if(d.state == 3){ }}
+    <span style="color: #999;">已完成</span>
+  {{#  } else if(d.state == 2){ }}
+    <span style="color: #ee715f;">待收货</span>
+  {{#  } else if(d.state == 1){ }}
+    <span style="color: #73c292;">已发货</span>
+  {{#  } else { }}
+    <span style="color: #e09b4e;">待发货</span>
+  {{#  } }}
+</script>
+<script type="text/html" id="handleTpl">
+  <div style="display: inline-block; vertical-align: middle;">
+    <a class="handel" lay-event="check" style="color: #e39d55; cursor: pointer; display: block;">查看物流</a>
+    <a class="handel" lay-event="evaluate" style="color: #e39d55; cursor: pointer; display: block;">收货并评价</a>
+  </div>
+</script>
+
+<script src="../res/layui/layui.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  layui.config({
+    base: '../res/static/js/' 
+  }).use('house'); 
+</script>
+
+</body>
+</html>

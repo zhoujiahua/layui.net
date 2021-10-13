@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>博客</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body>
+<!-- 侧边内容 -->
+<div class="sidebar-content">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <img src="../res/static/img/portrait.jpg" alt=""><br/>
+            <span>小明</span>
+        </div>
+        <div class="layui-card-body">
+            <ul>
+                <li class="txt">
+                    <span>1000</span><br/>
+                    <span>文章</span>
+                </li>
+                <li class="item">
+                    <span>50</span><br/>
+                    <span>项目</span>
+                </li>
+                <li class="visitors">
+                    <span>5008</span><br/>
+                    <span>访问人数</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="layui-nav">
+        <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+        <li class="layui-nav-item  layui-this"><a href="article.html">文章<br/>ARTICLE</a></li>
+        <li class="layui-nav-item"><a href="mood.html">微语<br/>MOOD</a></li>
+        <li class="layui-nav-item"><a href="works.html">作品<br/>WORKS</a></li>
+        <li class="layui-nav-item"><a href="message.html">留言<br/>MESSAGE</a></li>
+        <li class="layui-nav-item last"><a href="about.html">关于<br/>ABOUT</a></li>
+    </ul>
+</div>
+
+<!-- 主要内容 -->
+<div class="main mood message  mood-details article1">
+    <div class="top_title">博文 &#62 学好JS,走哪儿都不怕</div>
+    <div class="item1">
+        <div class="item-content">
+            <h3>学好JS,走哪儿都不怕</h3>
+            <p class="label"><span class="Subtitle">html</span><span class="tb"><i class="layui-icon layui-icon-radio"></i>1000</span><span>2018/02/09</span></p>
+            <p class="txt">
+                对于想学习JavaScript的读者来说,很可能已经掌握了HTML和Web页面设计的基本知识,希望为网页添加一些更好的互动性;或者,目前是在使用其他语言进行编辑,想了解一些JacaScript能够提供哪些更多的功能.JavaScript很适合作为学习编程技术的出发点,在调试过程所掌握的基本概念大多可以用于其他的编程语言,比如C、Java或PHP。
+                如果对HTML没有任何了解，或是没有任何计算机编程经验。我们建议读者了解一下HTML基本知识。HTML是非常易于理解的。读者不必成为HTML专家就足以了解本书的JavaScript范例了。</p>
+            <div class="img-box">
+                <img src="../res/static/img/img6.jpg" alt="">
+            </div>
+            <p class="txt">
+                对于想学习JavaScript的读者来说,很可能已经掌握了HTML和Web页面设计的基本知识,希望为网页添加一些更好的互动性;或者,目前是在使用其他语言进行编辑,想了解一些JacaScript能够提供哪些更多的功能.JavaScript很适合作为学习编程技术的出发点,在调试过程所掌握的基本概念大多可以用于其他的编程语言,比如C、Java或PHP。
+                如果对HTML没有任何了解，或是没有任何计算机编程经验。我们建议读者了解一下HTML基本知识。HTML是非常易于理解的。读者不必成为HTML专家就足以了解本书的JavaScript范例了。</p>
+            <p class="txt">
+                对于想学习JavaScript的读者来说,很可能已经掌握了HTML和Web页面设计的基本知识,希望为网页添加一些更好的互动性;或者,目前是在使用其他语言进行编辑,想了解一些JacaScript能够提供哪些更多的功能.JavaScript很适合作为学习编程技术的出发点,在调试过程所掌握的基本概念大多可以用于其他的编程语言,比如C、Java或PHP。
+                如果对HTML没有任何了解，或是没有任何计算机编程经验。我们建议读者了解一下HTML基本知识。HTML是非常易于理解的。读者不必成为HTML专家就足以了解本书的JavaScript范例了。</p>
+            <p class="txt">
+                对于想学习JavaScript的读者来说,很可能已经掌握了HTML和Web页面设计的基本知识,希望为网页添加一些更好的互动性;或者,目前是在使用其他语言进行编辑,想了解一些JacaScript能够提供哪些更多的功能.JavaScript很适合作为学习编程技术的出发点,在调试过程所掌握的基本概念大多可以用于其他的编程语言,比如C、Java或PHP。
+                如果对HTML没有任何了解，或是没有任何计算机编程经验。我们建议读者了解一下HTML基本知识。HTML是非常易于理解的。读者不必成为HTML专家就足以了解本书的JavaScript范例了。</p>
+            <div class="btn-box">
+                <button type="button" class="layui-btn">上一篇</button>
+                <button type="button" class="layui-btn">下一篇</button>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <form class="layui-form" action="">
+                    <div class="layui-form-item layui-form-text">
+                        <div class="layui-input-block">
+                            <textarea placeholder="既然来了,就说几句吧" class="layui-textarea" id="LAY-msg-content" style="resize: none;"></textarea>
+                            <div class="btn-box">
+                                <button class="layui-btn" type="button" id="item-btn">确实</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-card-body">
+                <div class="title">
+                    <p><span>全部评论</span><em id="count">1</em></p>
+                </div>
+                <ul class="list-item" id="LAY-msg-box">
+                    <li>
+                        <img src="../res/static/img/avatar.jpg" alt="">
+                        <div class="list-txt">
+                            <p class="max-title"><span class="name">小汪汪</span><span class="time">2018/06/06</span></p>
+                            <p class="list-content">适合具备一定的Javascript基础知识的读者阅读,也适合从事程序设计工作并想要深入探索Javascript语言的读者阅读。 您不需要具备任何的Javascript基础知识及项目经验，通过学习这本书。
+                                将会在面试有关Javascript程序设计的职位是游刃有余</p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="demo1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 搜索框 -->
+<div class="seach">
+    <form class="layui-form seach-box" action="">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn"><i class="layui-icon layui-icon-search"></i></button>
+                <input type="text" name="username" lay-verify="required" placeholder="搜索相关" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="../res/layui/layui.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../res/static/js/'
+    }).use('layBlog');
+</script>
+<script id="LAY-msg-tpl" type="text/html">
+    <li>
+        <img src="{{ d.avatar }}" alt="">
+        <div class="list-txt">
+            <p class="max-title"><span class="name">{{ d.name }}</span><span class="time">{{ d.time }}</span></p>
+            <p class="list-content">{{ d.content }}</p>
+        </div>
+    </li>
+</script>
+</body>
+</html>

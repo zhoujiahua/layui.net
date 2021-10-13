@@ -1,0 +1,688 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>镜像站@分页组件文档 - Layui</title>
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <script>
+  ;!function(){self!==parent&&(location.href="http://www.baidu.com/")}();
+  </script>
+  <link rel="stylesheet" href="../../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?t=1632428048355"  media="all">
+  <link rel="stylesheet" href="../../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?t=1632428048355-19" media="all">
+</head>
+<body>
+
+
+<div class="layui-header header header-doc" autumn>
+  <div class="layui-container">
+    <a class="logo" href="../../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <div class="layui-form layui-hide-xs component" lay-filter="LAY-site-header-component"></div>
+    <div class="layui-hide-xs site-notice"></div>
+    
+    <ul class="layui-nav" id="LAY_NAV_TOP">
+      <li class="layui-nav-item layui-this">
+        <a href="../index.htm" tppabs="http://www.layui.com/doc/">文档</a> 
+      </li>
+      <li class="layui-nav-item ">
+        <a href="../../demo/index.htm" tppabs="http://www.layui.com/demo/">示例</a>
+      </li>
+      
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <!--<span class="layui-badge-dot" style="left:0; right: auto; margin: -4px 0 0 5px;"></span>--> 
+          周边
+        </a>
+        <dl class="layui-nav-child layui-nav-child-c">  
+          <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+            <a href="https://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">问题反馈</a>
+            <hr>
+          </dd>
+          
+          <dd lay-unselect><a href="../../alone.html" tppabs="http://www.layui.com/alone.html" target="_blank" lay-unselect>独立组件</a></dd>
+          <dd lay-unselect><a href="../../../fly.layui.com/extend/index.htm" target="_blank">扩展组件</a></dd>
+        </dl>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="http://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">反馈</a>
+      </li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="../../../other/html5shiv/r29/html5.min.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="../../../other/respond.js/1.4.2/respond.min.js" tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+<ul class="site-dir">
+  <li><a href="#use"><cite>快速使用</cite></a></li>
+  <li><a href="#options"><cite>基础参数选项</cite> <span class="layui-badge-dot"></span></a></li>
+  <li><a href="#jump"><cite>分页的回调</cite></a></li>
+</ul>
+<div class="layui-container layui-row">
+  
+<div class="layui-col-md3">
+  <div class="layui-panel site-menu">
+    <ul class="layui-menu layui-menu-lg">
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          基础说明
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../index.htm" tppabs="http://www.layui.com/doc/">
+                <span>开始使用 </span> 
+                <span class="layui-font-12 layui-font-gray">Getting Started</span>
+              </a>
+              
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/infrastructure.html" tppabs="http://www.layui.com/doc/base/infrastructure.html">
+                <span>底层方法 </span>
+                <span class="layui-font-12 layui-font-gray">基础支撑</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/element.html" tppabs="http://www.layui.com/doc/base/element.html">
+                <span>页面元素 </span>
+                <span class="layui-font-12 layui-font-gray">规范 公共类 属性</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/modules.html" tppabs="http://www.layui.com/doc/base/modules.html">
+                <span>模块规范 </span>
+                <span class="layui-font-12 layui-font-gray">使用 扩展</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/faq.html" tppabs="http://www.layui.com/doc/base/faq.html">
+                <span>常见问题 </span>
+                <span class="layui-font-12 layui-font-gray">FAQ</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/changelog.html" tppabs="http://www.layui.com/doc/base/changelog.html">
+                <span>更新日志 </span>
+                <span class="layui-font-12 layui-font-gray">changelog</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          页面元素
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/layout.html" tppabs="http://www.layui.com/doc/element/layout.html">
+                <span>布局 </span>
+                <span class="layui-font-12 layui-font-gray">栅格 后台管理布局</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/color.html" tppabs="http://www.layui.com/doc/element/color.html">
+                <span>颜色 </span>
+                <span class="layui-font-12 layui-font-gray">主色调 颜色搭配</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/icon.html" tppabs="http://www.layui.com/doc/element/icon.html">
+                <span>图标 </span>
+                <span class="layui-font-12 layui-font-gray">iconfont 字体图标</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/anim.html" tppabs="http://www.layui.com/doc/element/anim.html">
+                <span>动画 </span>
+                <span class="layui-font-12 layui-font-gray">内置 CSS3 动画</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/button.html" tppabs="http://www.layui.com/doc/element/button.html">
+                <span>按钮 </span>
+                <span class="layui-font-12 layui-font-gray">button</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/form.html" tppabs="http://www.layui.com/doc/element/form.html">
+                <span>表单 </span>
+                <span class="layui-font-12 layui-font-gray">form 元素集合</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/nav.html" tppabs="http://www.layui.com/doc/element/nav.html">
+                <span>导航 </span>
+                <span class="layui-font-12 layui-font-gray">nav 面包屑</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/menu.html" tppabs="http://www.layui.com/doc/element/menu.html">
+                <span>菜单 </span>
+                <span class="layui-font-12 layui-font-gray">menu 基础菜单</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/tab.html" tppabs="http://www.layui.com/doc/element/tab.html">
+                <span>选项卡 </span>
+                <span class="layui-font-12 layui-font-gray">Tabs 切换</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/progress.html" tppabs="http://www.layui.com/doc/element/progress.html">
+                <span>进度条 </span>
+                <span class="layui-font-12 layui-font-gray">progress</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/panel.html" tppabs="http://www.layui.com/doc/element/panel.html">
+                <span>面板 </span>
+                <span class="layui-font-12 layui-font-gray">panel 卡片 折叠</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/table.html" tppabs="http://www.layui.com/doc/element/table.html">
+                <span>表格 </span>
+                <span class="layui-font-12 layui-font-gray">静态 table</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/badge.html" tppabs="http://www.layui.com/doc/element/badge.html">
+                <span>徽章 </span>
+                <span class="layui-font-12 layui-font-gray">小圆点  小边框</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/timeline.html" tppabs="http://www.layui.com/doc/element/timeline.html">
+                <span>时间线 </span>
+                <span class="layui-font-12 layui-font-gray">timeline</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/auxiliar.html" tppabs="http://www.layui.com/doc/element/auxiliar.html">
+                <span>辅助 </span>
+                <span class="layui-font-12 layui-font-gray">引用 字段集 横线等</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          内置模块
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="layer.html" tppabs="http://www.layui.com/doc/modules/layer.html">
+                <span>弹出层 </span>
+                <span class="layui-font-12 layui-font-gray">layer</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="laydate.html" tppabs="http://www.layui.com/doc/modules/laydate.html">
+                <span>日期与时间选择 </span>
+                <span class="layui-font-12 layui-font-gray">laydate</span>
+              </a>
+            </div>
+          </li>
+          <li class="layui-menu-item-checked2">
+            <div class="layui-menu-body-title">
+              <a href="laypage.html" tppabs="http://www.layui.com/doc/modules/laypage.html">
+                <span>分页 </span>
+                <span class="layui-font-12 layui-font-gray">laypage</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="laytpl.html" tppabs="http://www.layui.com/doc/modules/laytpl.html">
+                <span>模板引擎 </span>
+                <span class="layui-font-12 layui-font-gray">laytpl</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="table.html" tppabs="http://www.layui.com/doc/modules/table.html">
+                <span>数据表格 </span>
+                <span class="layui-font-12 layui-font-gray">table</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="form.html" tppabs="http://www.layui.com/doc/modules/form.html">
+                <span>表单 </span>
+                <span class="layui-font-12 layui-font-gray">form</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="upload.html" tppabs="http://www.layui.com/doc/modules/upload.html">
+                <span>文件上传 </span>
+                <span class="layui-font-12 layui-font-gray">upload</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="dropdown.html" tppabs="http://www.layui.com/doc/modules/dropdown.html">
+                <span>下拉菜单 </span>
+                <span class="layui-font-12 layui-font-gray">dropdown</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="transfer.html" tppabs="http://www.layui.com/doc/modules/transfer.html">
+                <span>穿梭框 </span>
+                <span class="layui-font-12 layui-font-gray">transfer</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="tree.html" tppabs="http://www.layui.com/doc/modules/tree.html">
+                <span>树形组件 </span>
+                <span class="layui-font-12 layui-font-gray">tree</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="colorpicker.html" tppabs="http://www.layui.com/doc/modules/colorpicker.html">
+                <span>颜色选择器 </span>
+                <span class="layui-font-12 layui-font-gray">colorpicker</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="element.html" tppabs="http://www.layui.com/doc/modules/element.html">
+                <span>常用元素操作 </span>
+                <span class="layui-font-12 layui-font-gray">element</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="slider.html" tppabs="http://www.layui.com/doc/modules/slider.html">
+                <span>滑块 </span>
+                <span class="layui-font-12 layui-font-gray">slider</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="rate.html" tppabs="http://www.layui.com/doc/modules/rate.html">
+                <span>评分 </span>
+                <span class="layui-font-12 layui-font-gray">rate</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="carousel.html" tppabs="http://www.layui.com/doc/modules/carousel.html">
+                <span>轮播 </span>
+                <span class="layui-font-12 layui-font-gray">carousel</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="flow.html" tppabs="http://www.layui.com/doc/modules/flow.html">
+                <span>流加载 </span>
+                <span class="layui-font-12 layui-font-gray">flow</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="util.html" tppabs="http://www.layui.com/doc/modules/util.html">
+                <span>工具组件 </span>
+                <span class="layui-font-12 layui-font-gray">util</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="code.html" tppabs="http://www.layui.com/doc/modules/code.html">
+                <span>代码高亮显示 </span>
+                <span class="layui-font-12 layui-font-gray">code</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="layui-hide-v"> - </div>
+</div>
+
+  
+  <div class="layui-col-md9 site-content">
+    <h1 class="site-h1"><i class="layui-icon">&#xe633;</i> 分页模块文档 - layui.laypage</h1>
+    
+    <blockquote class="layui-elem-quote">
+      layPage 致力于提供极致的分页逻辑，既可轻松胜任异步分页，也可作为页面刷新式分页。自 layui 2.0 开始，无论是从核心代码还是API设计，layPage 都完成了一次蜕变。清爽的 UI、灵活的排版，极简的调用方式，这一切的优质元素，都将毫无违和感地镶嵌在你的页面之中。
+    </blockquote>
+    <blockquote class="layui-elem-quote site-text">
+      模块加载名称：<em>laypage</em>
+    </blockquote>
+    
+    
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="use">快速使用</a></legend>
+    </fieldset>
+    <div class="site-text">
+      <p>laypage 的使用非常简单，指向一个用于存放分页的容器，通过服务端得到一些初始值，即可完成分页渲染：</p>
+      <pre class="layui-code" lay-title="在 layui 模块中使用">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;layPage快速使用&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/build/layui.css&quot; media=&quot;all&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;div id="test1">&lt;/div>
+ 
+&lt;script src=&quot;/static/build/layui.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+layui.use(&#x27;laypage&#x27;, function(){
+  var laypage = layui.laypage;
+  
+  //执行一个laypage实例
+  laypage.render({
+    elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+    ,count: 50 //数据总数，从服务端得到
+  });
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="options">基础参数选项</a></legend>
+    </fieldset>
+    <div class="site-text">
+      <p>通过核心方法：<em>laypage.render(options)</em> 来设置基础参数。由于使用非常简单，本篇直接罗列核心接口的参数选项</p>
+      <table class="layui-table">
+        <colgroup>
+          <col width="120">
+          <col>
+          <col width="120">
+          <col width="200">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>参数选项</th>
+            <th>说明</th>
+            <th>类型</th>
+            <th>默认值</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>elem</td>
+            <td>
+              指向存放分页的容器，值可以是容器ID、DOM对象。如：
+              <br>1. elem: 'id' <em>注意：这里不能加 # 号</em>
+              <br>2. elem: document.getElementById('id')
+            </td>
+            <td>String/Object</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>count</td>
+            <td>数据总数。一般通过服务端得到</td>
+            <td>Number</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>limit</td>
+            <td>每页显示的条数。laypage将会借助 count 和 limit 计算出分页数。</td>
+            <td>Number</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>limits</td>
+            <td>每页条数的选择项。如果 layout 参数开启了 limit，则会出现每页条数的select选择框</td>
+            <td>Array</td>
+            <td>[10, 20, 30, 40, 50]</td>
+          </tr>
+          <tr>
+            <td>curr</td>
+            <td>
+              起始页。一般用于刷新类型的跳页以及HASH跳页。如：
+              <pre class="layui-code">
+//开启location.hash的记录
+laypage.render({
+  elem: 'test1'
+  ,count: 500
+  ,curr: location.hash.replace('#!fenye=', '') //获取起始页
+  ,hash: 'fenye' //自定义hash值
+});          
+              </pre>
+            </td>
+            <td>Number</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>groups</td>
+            <td>连续出现的页码个数</td>
+            <td>Number</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>prev</td>
+            <td>自定义“上一页”的内容，支持传入普通文本和HTML</td>
+            <td>String</td>
+            <td>上一页</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>自定义“下一页”的内容，同上</td>
+            <td>String</td>
+            <td>下一页</td>
+          </tr>
+          <tr>
+            <td>first</td>
+            <td>自定义“首页”的内容，同上</td>
+            <td>String</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>last</td>
+            <td>自定义“尾页”的内容，同上</td>
+            <td>String</td>
+            <td>总页数值</td>
+          </tr>
+          <tr>
+            <td>layout</td>
+            <td>自定义排版。可选值有：<em>count</em>（总条目输区域）、<em>prev</em>（上一页区域）、<em>page</em>（分页区域）、<em>next</em>（下一页区域）、<em>limit</em>（条目选项区域）、<em>refresh</em>（页面刷新区域。注意：layui 2.3.0 新增） 、<em>skip</em>（快捷跳页区域）</td>
+            <td>Array</td>
+            <td>['prev', 'page', 'next']</td>
+          </tr>
+           <tr>
+            <td>theme</td>
+            <td>
+              自定义主题。支持传入：<em>颜色值</em>，或<em>任意普通字符</em>。如：
+              <br>1. theme: '#c00'
+              <br>2. theme: 'xxx' //将会生成 class="layui-laypage-xxx" 的CSS类，以便自定义主题
+            </td>
+            <td>String</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>hash</td>
+            <td>开启location.hash，并自定义 hash 值。如果开启，在触发分页时，会自动对url追加：<em>#!hash值={curr}</em> 利用这个，可以在页面载入时就定位到指定页</td>
+            <td>String/Boolean</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="jump">jump - 切换分页的回调</a></legend>
+    </fieldset>
+    <div class="site-text">
+      <p>当分页被切换时触发，函数返回两个参数：<em>obj</em>（当前分页的所有选项值）、first（是否首次，一般用于初始加载的判断）</p>
+      <pre class="layui-code">
+laypage.render({
+  elem: 'test1'
+  ,count: 70 //数据总数，从服务端得到
+  ,jump: function(obj, first){
+    //obj包含了当前分页的所有参数，比如：
+    console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+    console.log(obj.limit); //得到每页显示的条数
+    
+    //首次不执行
+    if(!first){
+      //do something
+    }
+  }
+});
+      </pre>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="">结束</a></legend>
+    </fieldset>
+    <div class="site-text">
+      <p>laypage 只负责分页本身的逻辑，具体的数据请求与渲染需要另外去完成。laypage 不仅能应用在一般的异步分页上，还可直接对一段已知数据进行分页展现。其中大家使用最多的 table 组件就是采用的 laypage 作为分页依赖。</p>
+    </div>
+    
+    
+    
+    <div class="layui-elem-quote">
+  <p>layui - 在每一个细节中，用心与你沟通</p>
+</div>
+    
+  </div>
+</div>
+  
+
+<div class="layui-footer footer footer-doc">
+    <p>
+      Copyright &copy; 2021 <a href="../../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT Licensed</p>
+    <p>
+      <a href="../../about/disclaimer.html" tppabs="http://www.layui.com/about/disclaimer.html" target="_blank">免责声明</a> 
+      <a href="../../about/relatedlinks.html" tppabs="http://www.layui.com/about/relatedlinks.html" target="_blank">友链</a>
+      <a href="javascript:;"  site-event="weixinmp">公众号</a>
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36010902000274"  rel="nofollow">
+        <img src="../../../res.layui.com/upload/2021_8/168_1628847893037_87773.png" tppabs="http://cdn.layui.com/upload/2021_8/168_1628847893037_87773.png">
+        公网安备 00000000000000号
+      </a>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">ICP备00000000号</a>
+    </p>
+    <div class="site-union">
+      <p class="site-union-desc">
+        <span>
+          感谢以下平台提供云加速支持
+        </span>
+      </p>
+
+    </div>
+</div>
+<script>
+window.global = {
+  pageType: 'doc'
+  ,preview: function(){
+    var preview = document.getElementById('LAY_preview');
+    return preview ? preview.innerHTML : '';
+  }()
+};
+</script>
+
+<div class="site-tree-mobile layui-hide">
+  <i class="layui-icon layui-icon-spread-left"></i>
+</div>
+<div class="site-mobile-shade"></div>
+ 
+<script src="../../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?t=1632428048355" charset="utf-8"></script>
+<script>
+layui.config({
+  base: '../../../res.layui.com/static/lay/modules/layui/'
+  ,version: '1632428048355'
+}).use('global');
+</script>
+ 
+
+
+</body>
+</html>

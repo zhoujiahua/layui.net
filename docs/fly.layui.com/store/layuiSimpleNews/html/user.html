@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新闻-个人中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body class="bgcolor">
+
+<div class="news-header">
+  <div class="layui-container">
+    <a id="logo" href="index.html"><img src="../res/static/img/logo.png"></a>
+    <ul class="layui-nav header-nav close">
+      <li class="layui-nav-item layui-this">
+        <a href="index.html">首页</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list.html">热点</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list.html">财经</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list.html">科技</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list.html">游戏</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list.html">娱乐</a>
+      </li>
+      <li class="layui-nav-item more">
+        <a href="javaScript:;">更多</a>
+        <dl class="layui-nav-child">
+          <dd><a class="hida" href="list.html">生活</a> <a class="hida" href="list.html">国际</a></dd>
+          <dd><a class="hida" href="list.html">军事</a> <a class="hida" href="list.html">育儿</a></dd>
+          <dd><a class="hida" href="list.html">体育</a> <a class="hida" href="list.html">美食</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <button id="switch">
+      <span></span><span class="second"></span><span class="third"></span>
+    </button>
+    <div class="layui-form header-search">
+      <input type="text" placeholder="诺基亚" class="layui-input">
+    </div>
+    <div class="layui-form header-login">
+      <a href="login.html">登入</a>
+      <a href=""><i class="layui-icon layui-icon-news-qq"></i></a>
+      <a href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    </div>
+    <ul class="layui-nav header-login">
+      <li class="layui-nav-item">
+        <a href="javascript:;"><img src="../res/static/img/header1.png" class="layui-nav-img"></a>
+        <dl class="layui-nav-child">
+          <dd><a href="user.html">个人中心</a></dd>
+          <dd><a href="javascript:;">退出登录</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="layui-container news-user">
+  <div class="userSelf">
+    <div class="img"><img src="../res/static/img/header.jpg"></div>
+    <p class="name">小明同学</p>
+    <button id="pushNews" class="layui-btn layui-btn-news"><i class="layui-icon layui-icon-add-1"></i>发布新闻</button>
+    <ul><li><span class="number">102</span><span class="label">文章</span></li>
+    <li><span class="number">99</span><span class="label">关注</span></li>
+    <li><span class="number">1200</span><span class="label">粉丝</span></li></ul>
+  </div>
+  <div class="layui-tab layui-tab-brief userCont">
+    <ul class="layui-tab-title">
+      <li class="layui-this">我的文章</li>
+      <li>我的收藏</li>
+      <li>我的评论</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div class="article-btn">
+          <button id="upDel" class="layui-btn"><i class="layui-icon layui-icon-news-del"></i>删除</button>
+          <button id="batchDel" class="layui-btn">批量删除</button><button id="cancelDel" class="layui-btn">取消删除</button>
+        </div>
+        <ul class="layui-form article">
+          <li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img4.jpg"></span><div class="txt">
+              <a href="">滴滴一下，无人应答</a>
+              <p>2018-07-11</p>
+              <p class="cont">很多时候，flag立出来就是用来打脸的</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img4.jpg"></span><div class="txt">
+              <a href="">滴滴一下，无人应答</a>
+              <p>2018-07-11</p>
+              <p class="cont">很多时候，flag立出来就是用来打脸的</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img7.jpg"></span><div class="txt">
+              <a href="">神枪手捕兽归来</a>
+              <p>2018-07-05</p>
+              <p class="cont">互夸只是套路，互怼才是真爱</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img7.jpg"></span><div class="txt">
+              <a href="">神枪手捕兽归来</a>
+              <p>2018-07-05</p>
+              <p class="cont">互夸只是套路，互怼才是真爱</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img6.jpg"></span><div class="txt">
+              <a href="">鸿茅药酒与广告狂人们</a>
+              <p>2018-04-20</p>
+              <p class="cont">个人英雄式的营销大师恐怕很难再现了</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img6.jpg"></span><div class="txt">
+              <a href="">鸿茅药酒与广告狂人们</a>
+              <p>2018-04-20</p>
+              <p class="cont">个人英雄式的营销大师恐怕很难再现了</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img4.jpg"></span><div class="txt">
+              <a href="">滴滴一下，无人应答</a>
+              <p>2018-07-11</p>
+              <p class="cont">很多时候，flag立出来就是用来打脸的</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img4.jpg"></span><div class="txt">
+              <a href="">滴滴一下，无人应答</a>
+              <p>2018-07-11</p>
+              <p class="cont">很多时候，flag立出来就是用来打脸的</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img7.jpg"></span><div class="txt">
+              <a href="">神枪手捕兽归来</a>
+              <p>2018-07-05</p>
+              <p class="cont">互夸只是套路，互怼才是真爱</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img7.jpg"></span><div class="txt">
+              <a href="">神枪手捕兽归来</a>
+              <p>2018-07-05</p>
+              <p class="cont">互夸只是套路，互怼才是真爱</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img6.jpg"></span><div class="txt">
+              <a href="">鸿茅药酒与广告狂人们</a>
+              <p>2018-04-20</p>
+              <p class="cont">个人英雄式的营销大师恐怕很难再现了</p>
+            </div>
+          </li><li>
+            <input type="checkbox" lay-skin="primary" class="layui-input">
+            <span class="img"><img src="../res/static/img/home_img6.jpg"></span><div class="txt">
+              <a href="">鸿茅药酒与广告狂人们</a>
+              <p>2018-04-20</p>
+              <p class="cont">个人英雄式的营销大师恐怕很难再现了</p>
+            </div>
+          </li>
+        </ul>
+        <div id="userArtPage"></div>
+      </div>
+      <div class="layui-tab-item"></div>
+      <div class="layui-tab-item">
+        <ul class="comment">
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>
+          <li>
+            <p class="title"><a href="">当阿里承包了星巴克的外卖</a><span class="pushTime">1小时前</span><span class="like">100</span><i class="layui-icon layui-icon-news-good like"></i></p>
+            <p>这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！这篇新闻写的太棒啦！给用户带来很可用的信息！</p>
+          </li>     
+        </ul>
+        <div id="userComPage"></div>
+      </div>
+    </div>
+  </div>    
+</div>
+
+<div class="news-footer">
+  <div class="layui-container">
+    <span class="layui-breadcrumb" lay-separator=" ">
+      <a>关于我们</a>
+      <a>合作伙伴</a>
+      <a>广告服务</a>
+      <a>常见问题</a>
+    </span>
+    <p class="copyright">Copyright &copy; 新闻网 赣ICP备12345678号</p>
+    <a id="wechat" href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    <a id="weibo" href=""><i class="layui-icon layui-icon-news-weibo"></i></a>
+    <img id="code" src="../res/static/img/code.png">
+  </div>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  layui.config({
+    base: '../res/static/js/' 
+  }).use('news'); 
+</script>
+
+</body>
+</html>

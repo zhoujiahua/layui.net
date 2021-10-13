@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>镜像站@layer iframe 示例</title>
+  <link rel="stylesheet" href="../../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css" media="all">
+  <style>
+    body{padding:10px; font-size:14px; background:#fff; width:95%; margin:0 auto; font-size:14px; line-height:20px; overflow:hidden;}
+    p{margin-bottom:10px;}
+    input{border:1px solid #999; padding:5px 10px; margin:0 10px 10px 0;}
+  </style>
+</head>
+<body>
+
+<div>
+  <strong><label>请在关闭该层之前留个标记：</label></strong>
+  <div class="layui-inline">
+    <input class="layui-input" id="name">
+  </div>
+</div>
+
+<p class="layui-text">
+  这是一个新的页面，您可以通过父窗口得到这里的DOM(点击右上角关闭按钮试试)，从而操作这里的一切。
+  <br>当然，也可以在这里操作父窗口。
+</p>
+
+</div>
+<pre class="layui-code" style="height: 180px; overflow: auto;">
+<span class="run">//注意：parent 是 JS 自带的全局对象，可用于操作父页面
+var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+//让层自适应iframe
+$('#add').on('click', function(){
+    $('body').append('插入很多酱油。插入很多酱油。插入很多酱油。插入很多酱油。插入很多酱油。插入很多酱油。插入很多酱油。');
+    parent.layer.iframeAuto(index);
+});
+//在父层弹出一个层
+$('#new').on('click', function(){
+    parent.layer.msg('Hi, man', {shade: 0.3})
+});
+//给父页面传值
+$('#transmit').on('click', function(){
+    parent.$('#parentIframe').text('我被改变了');
+    parent.layer.tips('Look here', '#parentIframe', {time: 5000});
+    parent.layer.close(index);
+});
+//关闭iframe
+$('#closeIframe').click(function(){
+    var val = $('#name').val();
+    if(val === ''){
+        parent.layer.msg('请填写标记');
+        return;
+    }
+    parent.layer.msg('您将标记 [ ' +val + ' ] 成功传送给了父窗口');
+    parent.layer.close(index);
+});
+</span>
+</pre>
+<div>
+<button class="layui-btn layui-btn-primary" id="add">让层自适应iframe</button>
+<button class="layui-btn layui-btn-primary" id="new">在父层弹出一个层</button>
+<button class="layui-btn layui-btn-primary" id="transmit">给父页面传值</button>
+<button class="layui-btn layui-btn-primary" id="closeIframe">关闭iframe</button>
+</div>
+
+<script src="../../../other/jquery/1.12.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+<script>
+new Function($('.run').text())()
+
+//var index = parent.layer.getFrameIndex(window.name);
+//parent.layer.iframeAuto(index);
+</script>
+
+
+</body>
+</html>

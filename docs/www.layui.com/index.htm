@@ -1,0 +1,186 @@
+ 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>镜像站@Layui - 经典开源模块化前端 UI 框架</title>
+  <meta name="keywords" content="layui,ui,ui框架,前端框架,JS组件">
+  <meta name="description" content="layui 是一套开源的 Web UI 解决方案，其内部采用的是自身经典的模块化规范，并遵循原生 HTML/CSS/JS 的开发方式，极易上手，拿来即用。其外在极简，却又不失饱满的内在，体积轻盈，组件丰盈，从核心代码到使用方法的每一处细节都经过精心雕琢，非常适合网页界面的快速开发。">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <script>
+  ;!function(){self!==parent&&(location.href="http://www.baidu.com/")}();
+  </script>
+  <link rel="stylesheet" href="../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?t=1632428048355"  media="all">
+  <link rel="stylesheet" href="../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?t=1632428048355-19" media="all">
+</head>
+<body class="site-home" id="LAY_home" style="background-color: #eee;" data-date="9-26">
+
+
+<div class="layui-header header header-index" autumn>
+  <div class="layui-container">
+    <a class="logo" href="index.htm" tppabs="http://www.layui.com/">
+      <img src="../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <div class="layui-form layui-hide-xs component" lay-filter="LAY-site-header-component"></div>
+    <div class="layui-hide-xs site-notice"></div>
+    
+    <ul class="layui-nav" id="LAY_NAV_TOP">
+      <li class="layui-nav-item ">
+        <a href="doc/index.htm" tppabs="http://www.layui.com/doc/">文档</a> 
+      </li>
+      <li class="layui-nav-item ">
+        <a href="demo/index.htm" tppabs="http://www.layui.com/demo/">示例</a>
+      </li>
+      
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <!--<span class="layui-badge-dot" style="left:0; right: auto; margin: -4px 0 0 5px;"></span>--> 
+          周边
+        </a>
+        <dl class="layui-nav-child layui-nav-child-c">  
+          <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+            <a href="https://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">问题反馈</a>
+            <hr>
+          </dd>
+          
+          <dd lay-unselect><a href="alone.html" tppabs="http://www.layui.com/alone.html" target="_blank" lay-unselect>独立组件</a></dd>
+          <dd lay-unselect><a href="../fly.layui.com/extend/index.htm" target="_blank">扩展组件</a></dd>
+          <dd lay-unselect><a href="../fly.layui.com/store/index.htm" target="_blank">模板应用商城</a></dd>
+        </dl>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="http://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">反馈</a>
+      </li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="../other/html5shiv/r29/html5.min.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="../other/respond.js/1.4.2/respond.min.js" tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+<div class="site-banner">
+  <div class="site-banner-bg" style="background-image: url(../res.layui.com/static/images/layui/banner/autumn.jpg-v=66.jpg)/*tpa=http://res.layui.com/static/images/layui/banner/autumn.jpg?v=66*/; background-size: cover;" autumn>
+  </div>
+  <div class="site-banner-main">
+    <div class="site-zfj">
+      <i class="layui-icon" style="color: #fff; color: rgba(255,255,255,.6);">&#xe609;</i>
+    </div>
+    <div class="layui-anim site-desc">
+      <p class="web-font-desc">开源模块化前端 UI 框架</p>
+      <cite>由职业前端倾情打造，面向全层次的前后端开发者，易上手开源免费的 Web UI 组件库</cite>
+    </div>
+    <div class="site-download">
+      <a href="../res.layui.com/static/download/layui/layui-v2.6.8.zip?v=1" class="layui-inline site-down" target="_blank">
+        <cite class="layui-icon">&#xe601;</cite>
+        立即下载
+      </a>
+    </div>
+    <div class="site-version">
+      <span>当前版本：v<cite class="site-showv">…</cite></span>
+      <span><a href="doc/base/changelog.html" tppabs="http://www.layui.com/doc/base/changelog.html" rel="nofollow" target="_blank">更新日志</a></span>
+      <span>下载量：<em class="site-showdowns">…</em></span>
+    </div>
+    <div class="site-banner-other">
+      <a href="https://github.com/sentsin/layui/" target="_blank" rel="nofollow" class="site-star">
+        <i class="layui-icon">&#xe658;</i>
+        Star <cite id="getStars"></cite> 
+      </a>
+      <a href="https://gitee.com/sentsin/layui" target="_blank" rel="nofollow" class="site-fork">
+        Gitee
+      </a>
+      <a href="about/disclaimer.html" tppabs="http://www.layui.com/about/disclaimer.html" target="_blank" class="site-fork">
+        免责声明
+      </a>
+    </div>
+  </div>
+</div>
+<div class="layui-container">
+  
+  
+  <ul class="layui-row layui-col-space30 site-idea">
+    <li class="layui-col-md4">
+      <div>
+        <fieldset class="layui-elem-field layui-field-title">
+          <legend>返璞归真</legend>
+          <p>身处在前端社区的繁荣之下，我们都在有意或无意地追逐。而 layui 偏偏回望当初，奔赴在返璞归真的漫漫征途，自信并勇敢着，追寻于原生态的书写指令，试图以最简单的方式诠释高效。</p>
+        </fieldset>
+      </div>
+    </li>
+    <li class="layui-col-md4">
+      <div>
+        <fieldset class="layui-elem-field layui-field-title">
+          <legend>双面体验</legend>
+          <p>拥有双面的不仅是人生，还有 layui。一面极简，一面丰盈。极简是视觉所见的外在，是开发所念的简易。丰盈是倾情雕琢的内在，是信手拈来的承诺。一切本应如此，简而全，双重体验。</p>
+        </fieldset>
+      </div>
+    </li>
+    <li class="layui-col-md4">
+      <div>
+        <fieldset class="layui-elem-field layui-field-title">
+          <legend>星辰大海</legend>
+          <p>如果眼下还是一团零星之火，那运筹帷幄之后，迎面东风，就是一场烈焰燎原吧，那必定会是一番尽情的燃烧。待，秋风萧瑟时，散作满天星辰，你看那四季轮回<!--海天相接-->，正是 layui 不灭的执念。</p>
+        </fieldset>
+      </div>
+    </li>
+  </ul>
+  
+</div>
+
+<div class="layui-footer footer footer-index">
+    <p>
+      Copyright &copy; 2021 <a href="index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT Licensed</p>
+    <p>
+      <a href="about/disclaimer.html" tppabs="http://www.layui.com/about/disclaimer.html" target="_blank">免责声明</a> 
+      <a href="about/relatedlinks.html" tppabs="http://www.layui.com/about/relatedlinks.html" target="_blank">友链</a>
+      <a href="javascript:;"  site-event="weixinmp">公众号</a>
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36010902000274"  rel="nofollow">
+        <img src="../res.layui.com/upload/2021_8/168_1628847893037_87773.png" tppabs="http://cdn.layui.com/upload/2021_8/168_1628847893037_87773.png">
+        公网安备 00000000000000号
+      </a>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">ICP备00000000号</a>
+    </p>
+    <div class="site-union">
+      <p class="site-union-desc">
+        <span>
+          感谢以下平台提供云加速支持
+        </span>
+      </p>
+
+    </div>
+</div>
+<script>
+window.global = {
+  pageType: 'index'
+  ,preview: function(){
+    var preview = document.getElementById('LAY_preview');
+    return preview ? preview.innerHTML : '';
+  }()
+};
+</script>
+
+<div class="site-tree-mobile layui-hide">
+  <i class="layui-icon layui-icon-spread-left"></i>
+</div>
+<div class="site-mobile-shade"></div>
+ 
+<script src="../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?t=1632428048355" charset="utf-8"></script>
+<script>
+layui.config({
+  base: '../res.layui.com/static/lay/modules/layui/'
+  ,version: '1632428048355'
+}).use('global');
+</script>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="fly-html-layui fly-html-store">
+<head>
+    <meta charset="utf-8">
+    <title>镜像站@layui 模板应用市场</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="layui store,应用市场,模板市场,前端模板,UI模板">
+    <meta name="description"
+          content="layuiStore 是 layui 官方推出的应用市场，主要提供各类前端 UI 模板及其它基于 layui 的高级应用，平台不仅提供 layui 自营应用，还面向开发者自主发布自己的 layui 应用。">
+    <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css"
+          tppabs="https://res.layui.com/layui/dist/css/layui.css?t=111">
+    <link rel="stylesheet" href="../../res.layui.com/static/css/fly/global.css-t=1116.css"
+          tppabs="https://res.layui.com/static/css/fly/global.css?t=1116" charset="utf-8">
+    <link rel="stylesheet" href="../../res.layui.com/static/css/global.css"
+          tppabs="https://res.layui.com/static/css/global.css?t=111" charset="utf-8">
+    <script>;!function () {
+        if (self !== parent) {
+            try {
+                if (parent.location.host.indexOf('.layui.com') !== -1) {
+                    return;
+                }
+            } catch (e) {
+                location.href = "https://www.baidu.com/";
+            }
+        }
+    }();</script>
+    <link rel="stylesheet" href="../../res.layui.com/static/css/global.css"
+          tppabs="https://res.layui.com/static/css/global.css?t=111" charset="utf-8">
+    <link rel="stylesheet" href="../../res.layui.com/static/css/fly/store.css-t=111.css"
+          tppabs="https://res.layui.com/static/css/fly/store.css?t=111" charset="utf-8">
+</head>
+<body>
+<div class="layui-header header header-store" style="background-color: #24262F;">
+    <div class="layui-container"><a class="logo" href="../../www.layui.com/index.htm"> <img
+            src="../../res.layui.com/static/images/layui/logo.png"
+            tppabs="https://res.layui.com/static/images/layui/logo.png" alt="layui"> </a>
+        <div class="layui-form component" lay-filter="LAY-site-header-component"></div>
+        <ul class="layui-nav">
+            <li class="layui-nav-item layui-hide-xs"><a href="../../www.layui.com/index.htm">框架</a></li>
+            <li class="layui-nav-item layui-hide-xs "><a href="../../fly.layui.com/extend/index.htm">扩展</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">周边</a>
+                <dl class="layui-nav-child layui-nav-child-c">
+                    <dd lay-unselect><a href="../../www.layui.com/alone.html" target="_blank">独立组件</a></dd>
+                    <dd class="layui-hide-sm layui-show-xs" lay-unselect><a
+                            href="../../../../fly.layui.com/extend/index.htm">扩展组件</a>
+                        <hr>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="javascript:;">专区</a>
+                <dl class="layui-nav-child layui-nav-child-c">
+                    <dd lay-unselect><a href="../../fly.layui.com/groups/list/layuiadmin/">layuiAdmin</a>
+                        <hr>
+                    </dd>
+                    <dd lay-unselect><a href="../../fly.layui.com/groups/list/layim/" target="_blank">LayIM</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a class="iconfont icon-touxiang" href="../../fly.layui.com/user/login/"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--[if lt IE 9]>
+<script src="../../other/html5shiv/r29/html5.min.js"
+        tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="../../other/respond.js/1.4.2/respond.min.js"
+        tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+<div class="shop-nav shop-index">
+    <div id="LAY-topbar">
+        <form action="https://fly.layui.com/store/search/">
+            <div class="input-search">
+                <div><input type="text" placeholder="搜索你需要的模板应用" name="kws" autocomplete="off" value="">
+                    <button class="layui-btn layui-btn-shop"><i class="layui-icon layui-icon-search"></i></button>
+                    <dl class="layui-hide-sm layui-show-md-inline-block">
+                        <dt>热搜：</dt>
+                        <dd><a href="search/后台/index.htm" tppabs="https://fly.layui.com/store/search/后台/">后台</a></dd>
+                        <dd><a href="search/IM/index.htm" tppabs="https://fly.layui.com/store/search/IM/">IM</a></dd>
+                        <dd><a href="search/商城/index.htm" tppabs="https://fly.layui.com/store/search/商城/">商城</a></dd>
+                        <dd><a href="search/博客/index.htm" tppabs="https://fly.layui.com/store/search/博客/">博客</a></dd>
+                        <dd><a href="search/新闻/index.htm" tppabs="https://fly.layui.com/store/search/新闻/">新闻</a></dd>
+                        <dd><a href="search/企业/index.htm" tppabs="https://fly.layui.com/store/search/企业/">企业</a></dd>
+                        <dd><a href="search/社区/index.htm" tppabs="https://fly.layui.com/store/search/社区/">社区</a></dd>
+                        <dd><a href="cat/0/index.htm" tppabs="https://fly.layui.com/store/search/"
+                               style="color: #FF5722;">全部</a></dd>
+                    </dl>
+                </div>
+                <div class="layui-container layui-hide-xs"><a href="../../../../www.layui.com/index.htm" class="topbar-logo"> <img
+                        src="../../res.layui.com/static/images/layui/logo-1.png"
+                        tppabs="https://res.layui.com/static/images/layui/logo-1.png" alt="layui"> </a></div>
+            </div>
+        </form>
+    </div>
+    <div class="shop-banner">
+        <div class="layui-container layui-hide-xs">
+            <div class="product-list">
+                <dl>
+                    <dt><a href="cat/0/index.htm" tppabs="https://fly.layui.com/store/cat/0/">模板分类</a></dt>
+                    <dd><a href="cat/1/index.htm" tppabs="https://fly.layui.com/store/cat/1/">管理模板</a></dd>
+                    <dd><a href="cat/2/index.htm" tppabs="https://fly.layui.com/store/cat/2/">商城系统</a></dd>
+                    <dd><a href="cat/3/index.htm" tppabs="https://fly.layui.com/store/cat/3/">社区模板</a></dd>
+                    <dd><a href="cat/4/index.htm" tppabs="https://fly.layui.com/store/cat/4/">博客模板</a></dd>
+                    <dd><a href="cat/5/index.htm" tppabs="https://fly.layui.com/store/cat/5/">企业模板</a></dd>
+                    <dd><a href="cat/6/index.htm" tppabs="https://fly.layui.com/store/cat/6/">新闻模板</a></dd>
+                    <dd><a href="cat/7/index.htm" tppabs="https://fly.layui.com/store/cat/7/">其它模板</a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="layui-carousel" lay-filter="LAY-store-banner" id="LAY-store-banner" style="background: #F2E6D6">
+            <div carousel-item>
+                <div style="background: #F2E6D6">
+                    <div class="layui-container"><a href="layuiHomeMall/index.htm"
+                                                    tppabs="https://fly.layui.com/store/layuiHomeMall/" target="_blank">
+                        <img src="../../res.layui.com/upload/2018_11/168_1541579354090_82219.jpg"
+                             tppabs="https://cdn.layui.com/upload/2018_11/168_1541579354090_82219.jpg" alt="简约家居商城模板">
+                    </a></div>
+                </div>
+                <div style="background: #E7E6EE">
+                    <div class="layui-container"><a href="layuiSimpleNews/index.htm"
+                                                    tppabs="https://fly.layui.com/store/layuiSimpleNews/"
+                                                    target="_blank"> <img
+                            src="../../res.layui.com/upload/2018_11/168_1541751659392_62620.jpg"
+                            tppabs="https://cdn.layui.com/upload/2018_11/168_1541751659392_62620.jpg" alt="极简新闻资讯模板">
+                    </a></div>
+                </div>
+                <div style="background: #171717">
+                    <div class="layui-container"><a href="layuiQuietBlog/index.htm"
+                                                    tppabs="https://fly.layui.com/store/layuiQuietBlog/"
+                                                    target="_blank"> <img
+                            src="../../res.layui.com/upload/2018_11/168_1541578489374_99939.jpg"
+                            tppabs="https://cdn.layui.com/upload/2018_11/168_1541578489374_99939.jpg" alt="静谧风格个人博客模板">
+                    </a></div>
+                </div>
+                <div style="background: #F5F5F5">
+                    <div class="layui-container"><a href="layuiCateCompany/index.htm"
+                                                    tppabs="https://fly.layui.com/store/layuiCateCompany/"
+                                                    target="_blank"> <img
+                            src="../../res.layui.com/upload/2018_11/168_1542012881618_47524.jpg"
+                            tppabs="https://cdn.layui.com/upload/2018_11/168_1542012881618_47524.jpg" alt="餐饮企业网站模板">
+                    </a></div>
+                </div>
+                <div style="background: #E2DEF5">
+                    <div class="layui-container"><a href="layuiMaternalBabyMall/index.htm"
+                                                    tppabs="https://fly.layui.com/store/layuiMaternalBabyMall/"
+                                                    target="_blank"> <img
+                            src="../../res.layui.com/upload/2018_11/168_1542013154213_82579.jpg"
+                            tppabs="https://cdn.layui.com/upload/2018_11/168_1542013154213_82579.jpg" alt="母婴商城模板"> </a>
+                    </div>
+                </div>
+                <div style="background: #040227">
+                    <div class="layui-container"><a href="layuiSimpleBlog/index.htm"
+                                                    tppabs="https://fly.layui.com/store/layuiSimpleBlog/"
+                                                    target="_blank"> <img
+                            src="../../res.layui.com/upload/2018_11/168_1542012996419_29784.jpg"
+                            tppabs="https://cdn.layui.com/upload/2018_11/168_1542012996419_29784.jpg" alt="极简博客模板"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shop-temp">
+    <div class="temp-hot">
+        <div class="layui-container"><p class="temp-title-cn"><span></span>热门模板<span></span></p>
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiAdmin/index.htm"
+                                                            tppabs="https://fly.layui.com/store/layuiAdmin/"> <img
+                        src="../../res.layui.com/upload/2018_11/168_1541542262728_21622.jpg"
+                        tppabs="https://cdn.layui.com/upload/2018_11/168_1541542262728_21622.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">通用型管理系统纯静态 UI 模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="fly/index.htm"> <img
+                        src="../../fly.layui.com/store/fly/112413_ab2L_1168184.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">基于 layui 的极简社区模版</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiNetCompany/index.htm"> <img
+                        src="../../fly.layui.com/store/layuiNetCompany/res/static/img/banner1.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">大气风格的网络公司企业模版</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiHomeMall/index.htm"> <img
+                        src="../../res.layui.com/upload/2018_11/168_1541579354090_82219.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">简约家居商城模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiSimpleNews/index.htm"> <img
+                        src="../../res.layui.com/upload/2018_11/168_1541751659392_62620.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">极简新闻资讯模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiQuietBlog/index.htm"> <img
+                        src="../../res.layui.com/upload/2018_11/168_1541578489374_99939.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">静谧风格个人博客模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiMaternalBabyMall/index.htm"> <img
+                        src="../../res.layui.com/upload/2018_11/168_1542013154213_82579.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">母婴商城模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiSimpleBlog/index.htm"> <img
+                        src="../../res.layui.com/upload/2018_11/168_1542012996419_29784.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">极简博客模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiUniversalCompany/index.htm"> <img
+                        src="../../fly.layui.com/store/layuiUniversalCompany/res/static/images/sy_banner1.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">通用企业公司网站模板</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="layuiWeNews/index.htm"> <img
+                        src="../../fly.layui.com/store/layuiWeNews/res/static/images/news_img1.jpg"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">微新闻</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+                <div class="layui-col-xs6 layui-col-md3"><a class="template store-list-box" href="xianyan/index.htm"> <img
+                        src="../../fly.layui.com/store/xianyan/res/static/images/item.png"
+                        class="store-list-cover">
+                    <h2 class="layui-elip">闲言轻博客模块</h2>
+                    <p class="price"><span title="金额"> 高级 </span></p></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="temp-normal">
+        <div class="layui-container"><p class="temp-title-cn"><span></span> <a href="cat/0/index.htm"
+                                                                               tppabs="https://fly.layui.com/store/cat/0/">最新模板</a>
+            <span></span></p>
+            <div class="layui-row layui-col-space20 shoplist">
+                <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3"><a class="template store-list-box"
+                                                                                         href="layuiAdmin/index.htm"
+                                                                                         tppabs="https://fly.layui.com/store/layuiAdmin/">
+                    <img src="../../res.layui.com/upload/2018_11/168_1541542262728_21622.jpg"
+                         tppabs="https://cdn.layui.com/upload/2018_11/168_1541542262728_21622.jpg"
+                         class="store-list-cover">
+                    <h2 class="layui-elip">通用型管理系统纯静态 UI 模板</h2>
+                    <div><label class="layui-badge-rim store-list-pay"> 高级 </label>
+                        <div class="store-list-colorbar" title="任意色调"><img
+                                src="../../res.layui.com/upload/2018_11/168_1541355296795_60368.jpg"
+                                tppabs="https://cdn.layui.com/upload/2018_11/168_1541355296795_60368.jpg"
+                                class="store-color-bar"></div>
+                    </div>
+                </a></div>
+            </div>
+            <div class="shop-more"><a href="cat/0/index.htm" tppabs="https://fly.layui.com/store/cat/0/"><i
+                    class="layui-icon layui-icon-shop-more"></i></a></div>
+        </div>
+    </div>
+</div>
+<div class="fly-footer"><p>Copyright &copy; 2021 <a href="https://fly.layui.com/">layui.com</a> MIT Licensed</p>
+    <p><a href="https://fly.layui.com/about/disclaimer.html" target="_blank">免责声明</a> <a
+            href="https://github.com/sentsin/layui/" target="_blank" rel="nofollow">GitHub</a> <a
+            href="https://gitee.com/sentsin/layui" target="_blank" rel="nofollow">Gitee</a> <a
+            href="http://fly.layui.com/jie/2461/" target="_blank">公众号</a> <a target="_blank"
+                                                                             href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36010902000274"
+                                                                             rel="nofollow"> <img
+            src="../../res.layui.com/upload/2021_8/168_1628847893037_87773.png"
+            tppabs="https://cdn.layui.com/upload/2021_8/168_1628847893037_87773.png"> 公网安备 00000000000000号 </a> <a
+            href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow">ICP备00000000号</a></p>
+    <div class="fly-union"><p style="display: block; margin-bottom: 10px;"><span>感谢以下平台提供云加速支持</span></div>
+    <script src="../../res.layui.com/layui/dist/layui.js"
+            tppabs="https://res.layui.com/layui/dist/layui.js?t=111"></script>
+    <script>layui.cache.page = 'store';
+    layui.cache.user = {
+        username: '游客',
+        uid: -1,
+        avatar: '../../res.layui.com/static/images/fly/avatar/default.png'/*tpa=https://res.layui.com/static/images/fly/avatar/default.png*/,
+        experience: 0,
+        sum: 0,
+        vip: 0,
+        sex: ''
+    };
+    layui.config({version: "111"}).extend({'fly': '../../res.layui.com/static/lay/modules/fly/index'}).use('fly');</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新闻-登录页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../res/layui/css/layui.css">
+  <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+
+<div class="layui-fulid news-login">
+  <a href="index.html" class="title"><img src="../res/static/img/logoBig.png"></a>
+  <div class="layui-form" action="login" id="loginForm">
+    <div class="layui-input-block">
+      <input type="text" class="layui-input" name="username" id="username" lay-verify="required" placeholder="请输入用户名">
+    </div>
+    <div class="layui-input-block">
+      <input type="text" class="layui-input" name="password" id="password" lay-verify="required" placeholder="请输入密码">
+    </div>
+    <div class="layui-input-block">
+      <input type="text" class="layui-input"  name="code" id="code" lay-verify="required" placeholder="验证码">
+      <img src="../res/static/img/verify.jpg">
+    </div>
+    <!--<div class="layui-input-block">-->
+      <!--<input type="text" class="layui-input"  lay-verify="required" placeholder="请输入短信验证码">-->
+      <!--<button id="getCode" class="layui-btn">获取验证码</button>-->
+    <!--</div>-->
+    <p class="terms">还没有账户?<a href="">创建新账户</a></p>
+    <button class="layui-btn" lay-submit lay-filter="login">登录</button>
+
+    <div class="thirdParty"><a href=""><i class="layui-icon layui-icon-login-qq"></i></a><a href=""><i class="layui-icon layui-icon-login-wechat"></i></a></div>
+  </div>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  layui.config({
+    base: '../res/static/js/' 
+  }).use('news');
+
+  $("#loginForm").validate({
+    rules: {
+      username: {
+        required: true,
+      },
+      password: {
+        required: true,
+      },
+    },
+    submitHandler:function (loginForm) {
+      var index = layer.load(1);
+      $(loginForm).ajaxSubmit({
+        dataType:"json",
+        success:function (res) {
+          if(res && res.code == 0){
+            layer.close(index);
+            layer.msg("登录成功");
+            setTimeout(function(){
+              window.location.href = '/'
+            },500)
+          }else{
+            layer.msg(res.data);
+            layer.close(index);
+          }
+        },
+        error:function (res) {
+          layer.msg("请求错误");
+          layer.close(index);
+        }
+      })
+    }
+  });
+
+</script>
+
+</body>
+</html>

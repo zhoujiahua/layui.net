@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>镜像站@更多示例 - layer弹层组件</title>
+</head>
+
+<link rel="stylesheet" href="../../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css" media="all">
+<link rel="stylesheet" href="../../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css" media="all">
+<link rel="stylesheet" href="../demo.css" tppabs="http://www.layui.com/layer/demo.css?v=2021321" media="all">
+
+<style>
+.box{width:728px;}
+.box .layui-btn{margin-top: 10px; margin-left: 0; margin-right: 7px;}
+.box p a,
+.box pre a{color: #01AAED;}
+</style>
+<body>
+
+<div class="header">
+  <div class="layui-main">
+    <a class="logo" href="../../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <ul class="layui-nav">
+      <li class="layui-nav-item layui-this">
+        <a href="../index.htm" tppabs="http://www.layui.com/layer/">layer</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="clear box layer-main">
+  <a href="javascript:;" class="layui-btn">多窗口模式，层叠置顶</a>
+  <a href="javascript:;" method="confirmTm" class="layui-btn">配置一个透明的询问框</a>
+  <a href="javascript:;" method="notice" class="layui-btn">示范一个公告层</a>
+  
+  <a href="javascript:;" method="offset" data-type="t" class="layui-btn layui-btn-normal">上弹出</a>
+  <a href="javascript:;" method="offset" data-type="r" class="layui-btn layui-btn-normal">右弹出</a>
+  <a href="javascript:;" method="offset" data-type="b" class="layui-btn layui-btn-normal">下弹出</a>
+  <a href="javascript:;" method="offset" data-type="l" class="layui-btn layui-btn-normal">左弹出</a>
+  <a href="javascript:;" method="offset" data-type="lt" class="layui-btn layui-btn-normal">左上弹出</a>
+  <a href="javascript:;" method="offset" data-type="lb" class="layui-btn layui-btn-normal">左下弹出</a>
+  <a href="javascript:;" method="offset" data-type="rt" class="layui-btn layui-btn-normal">右上弹出</a>
+  <a href="javascript:;" method="offset" data-type="rb" class="layui-btn layui-btn-normal">右下弹出</a>
+  <a href="javascript:;" method="offset" data-type="auto" class="layui-btn layui-btn-normal">居中弹出</a>
+  
+  <p style="margin: 10px 0;">Tips：为了更清晰演示，每触发上述一个例子之前，都会关闭所有已经演示的层</p>
+
+  <pre id="demo1" class="layui-code" style="display: block;"><p>//多窗口模式，层叠置顶
+layer.open({
+  type: 2 //此处以iframe举例
+  ,title: '当你选择该窗体时，即会在最顶端'
+  ,area: ['390px', '330px']
+  ,shade: 0
+  ,offset: [ //为了演示，随机坐标
+    Math.random()*($(window).height()-300)
+    ,Math.random()*($(window).width()-390)
+  ]
+  ,maxmin: true
+  ,content: 'settop.html'
+  ,btn: ['继续弹出', '全部关闭'] //只是为了演示
+  ,yes: function(){
+    $(that).click(); //此处只是为了演示，实际使用可以剔除
+  }
+  ,btn2: function(){
+    layer.closeAll();
+  }
+  
+  ,zIndex: layer.zIndex //重点1
+  ,success: function(layero){
+    layer.setTop(layero); //重点2
+  }
+});</p>
+<p>//配置一个透明的询问框
+layer.msg('大部分参数都是可以公用的<code><</code>br>合理搭配，展示不一样的风格', {
+  time: 20000, //20s后自动关闭
+  btn: ['明白了', '知道了', '哦']
+});
+</p>
+
+//示范一个公告层
+layer.open({
+  type: 1
+  ,title: false //不显示标题栏
+  ,closeBtn: false
+  ,area: '300px;'
+  ,shade: 0.8
+  ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+  ,resize: false
+  ,btn: ['火速围观', '残忍拒绝']
+  ,btnAlign: 'c'
+  ,moveType: 1 //拖拽模式，0或者1
+  ,content: '&lt;div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">内容&lt;br>内容&lt;/div>'
+  ,success: function(layero){
+    var btn = layero.find('.layui-layer-btn');
+    btn.find('.layui-layer-btn0').attr({
+      href: 'http://www.layui.com/'
+      ,target: '_blank'
+    });
+  }
+});
+ 
+//边缘弹出
+layer.open({
+  type: 1
+  ,offset: 't' //具体配置参考：<a href="../../doc/modules/layer.html#offset" tppabs="http://www.layui.com/doc/modules/layer.html#offset" target="_blank">offset参数项</a>
+  ,content: '&lt;div style="padding: 20px 80px;">内容&lt;/div>'
+  ,btn: '关闭全部'
+  ,btnAlign: 'c' //按钮居中
+  ,shade: 0 //不显示遮罩
+  ,yes: function(){
+    layer.closeAll();
+  }
+});
+
+  </pre>
+
+   
+
+</div>
+
+<div class="layui-footer footer footer-index">
+  <div class="layui-main">
+    <p>&copy; <a href="../../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT license</p>
+  </div>
+</div> 
+
+
+<script src="../../../other/jquery/1.12.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+<script src="../../../res.layui.com/layui/release/layer/dist/layer.js-v=351-1.js" tppabs="http://res.layui.com/layui/release/layer/dist/layer.js?v=330"></script>
+
+<script>
+var demo = {
+  confirmTm: function(){
+    layer.closeAll();
+    layer.msg('大部分参数都是可以公用的<br>合理搭配，展示不一样的风格', {
+      time: 20000, //20s后自动关闭
+      btn: ['明白了', '知道了', '哦']
+    });
+  }
+  ,notice: function(){
+    layer.open({
+      type: 1
+      ,title: false //不显示标题栏
+      ,closeBtn: false
+      ,area: '300px;'
+      ,shade: 0.8
+      ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+      ,resize: false
+      ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #e2e2e2; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>'
+      ,btn: ['火速围观', '残忍拒绝']
+      ,btnAlign: 'c'
+      ,moveType: 1 //拖拽模式，0或者1
+      ,success: function(layero){
+        var btn = layero.find('.layui-layer-btn');
+        btn.find('.layui-layer-btn0').attr({
+          href: '../../index.htm'/*tpa=http://www.layui.com/*/
+          ,target: '_blank'
+        });
+      }
+    });
+  }
+  ,offset: function(othis){
+    var type = othis.data('type')
+    ,text = othis.text();
+    
+    layer.open({
+      type: 1
+      ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+      ,id: 'LAY_demo'+type //防止重复弹出
+      ,content: '<div style="padding: 20px 100px;">'+ text +'</div>'
+      ,btn: '关闭全部'
+      ,btnAlign: 'c'
+      ,shade: 0
+      ,yes: function(){
+        layer.closeAll();
+      }
+    });
+  }
+};
+
+$('.layui-btn').on('click', function(){
+  var othis = $(this), method = othis.attr('method');
+  var demo1 = $('#demo1'), p = demo1.find('p').eq(othis.index());
+  demo[method] ? demo[method].call(this, othis) : new Function('that', p.html())(this);
+});
+</script>
+
+
+
+
+
+</body>
+</html>

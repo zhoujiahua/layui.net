@@ -1,0 +1,874 @@
+﻿/**
+ 
+ @Name: layuiQuietBlog - 静谧风格个人博客模板
+ @Author: xuzhiwen
+ @Copyright: layui.com
+ 
+ */
+
+
+body {
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.seach input::-webkit-input-placeholder { /*WebKit browsers*/
+
+    color: #d1aa56;
+
+}
+
+.seach input::-moz-input-placeholder { /*Mozilla Firefox*/
+
+    color: #d1aa56;
+
+}
+
+.seach input::-ms-input-placeholder { /*Internet Explorer*/
+
+    color: #d1aa56;
+
+}
+
+.main .layui-tab .layui-tab-title .layui-tab-bar {
+    display: none;
+}
+
+/*搜索框*/
+.seach {
+    position: absolute;
+    top: 80px;
+    right: 109px;
+}
+
+.seach-box {
+    width: 380px;
+    height: 42px;
+    line-height: 42px;
+    box-sizing: border-box;
+}
+
+.seach-box .layui-input-block {
+    margin-left: 0;
+    height: 42px;
+    position: relative;
+}
+
+.seach-box .layui-input-block .layui-input {
+    height: 42px;
+    background: #141412;
+    background: rgba(0, 0, 0, 0.5);
+    filter: Alpha(opacity=50);
+    color: #d1aa56;
+    border: 1px solid #242320;
+    padding: 0 53px 0 23px;
+}
+
+.seach-box .layui-input-block .layui-input:hover, .seach-box .layui-input-block .layui-input:focus {
+    border-color: #242320 !important;
+}
+
+.seach-box .layui-input-block .layui-btn {
+    height: 40px;
+    line-height: 40px;
+    width: 53px;
+    text-align: center;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    padding: 0;
+    background-color: transparent;
+}
+
+.seach-box .layui-input-block .layui-btn i {
+    font-size: 20px;
+    color: #d1aa56;
+}
+
+.seach-box .layui-input-block .layui-btn:hover {
+    opacity: 01;
+}
+
+
+/*侧边内容*/
+.sidebar-content {
+    position: absolute;
+    left: 50px;
+}
+
+.sidebar-content .layui-card {
+    width: 210px;
+    background-color: transparent;
+    margin-bottom: 130px;
+}
+
+.sidebar-content .layui-card .layui-card-header {
+    padding: 50px 0 0 0;
+    height: auto;
+    line-height: 52px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px dashed #5e5d5d;
+}
+
+.sidebar-content .layui-card .layui-card-header img {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sidebar-content .layui-card .layui-card-header span {
+    font-size: 16px;
+    color: #5e5f5e;
+}
+
+.sidebar-content .layui-card .layui-card-body {
+    padding: 20px 0 0 0;
+}
+
+.sidebar-content .layui-card .layui-card-body ul {
+    position: relative;
+}
+
+.sidebar-content .layui-card .layui-card-body li {
+    line-height: 21px;
+    text-align: center;
+    font-size: 14px;
+    color: #bcbcbc;
+}
+
+.sidebar-content .layui-card .layui-card-body li.txt {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.sidebar-content .layui-card .layui-card-body li.visitors {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+
+.sidebar-content .layui-nav {
+    background-color: transparent;
+    width: 100%;
+}
+
+.sidebar-content .layui-nav a {
+    padding: 0;
+    display: inline-block;
+}
+
+.sidebar-content .layui-nav .layui-nav-item a:hover {
+    background-color: transparent;
+}
+
+.sidebar-content .layui-nav .layui-nav-item {
+    text-align: center;
+    line-height: 26px;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.sidebar-content .layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+    color: #dda354;
+}
+
+.sidebar-content .layui-nav .layui-nav-item.last {
+    margin-bottom: 0;
+}
+
+.sidebar-content .layui-nav .layui-this:after {
+    height: 0px;
+}
+
+.sidebar-content .layui-nav .layui-nav-bar {
+    display: none;
+}
+
+
+/*主要内容*/
+.main {
+    width: 62.5%;
+    height: 100%;
+    padding-top: 178px;
+    margin-left: 21%;
+}
+
+.main .item {
+    padding: 16px 50px;
+    background: #fff;
+    background: #141412;
+    background: rgba(255, 255, 255, 0.2);
+    filter: Alpha(opacity=200);
+    margin-bottom: 40px;
+}
+
+.main .item img {
+    float: left;
+    padding-right: 39px;
+}
+
+.main .item-content {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.main .item-content p.time {
+    line-height: 40px;
+    padding-bottom: 8px;
+}
+
+.main .item-content p.time i {
+    margin-right: 17px;
+    position: relative;
+    top: 3px;
+    font-size: 20px;
+}
+
+.main .item-content p.brief {
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.main .item-content p.praise span {
+    cursor: pointer;
+    margin-right: 76px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+    color: #d1aa56;
+}
+
+.main .item-content p.praise i {
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+    color: #fff;
+}
+
+#demo1 {
+    text-align: center;
+}
+
+#demo1 a, #demo1 span {
+    background: rgba(255, 255, 255, 0.2);
+    background: #000;
+    filter: Alpha(opacity=200);
+    margin-right: 10px;
+    color: #fff;
+    border: 1px solid #535655;
+}
+
+#demo1 .layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #a58f59;
+}
+
+
+/*文章*/
+.article {
+    width: 57%;
+    padding-top: 160px;
+}
+
+.article .item {
+    padding: 40px 66px 32px 74px;
+    position: relative;
+}
+
+.article .item .date-box {
+    width: 76px;
+    height: 76px;
+    border: 2px solid #9f7e39;
+    position: absolute;
+    top: 40px;
+    left: -39px;
+}
+
+.article .item .date-box .date {
+    height: 80px;
+    width: 80px;
+    background: #000;
+    color: #bcbcbc;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    text-align: center;
+}
+
+.article .item .date-box .date h4 {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.main .layui-tab-title li {
+    color: #cca455;
+}
+
+.main .layui-tab-title {
+    border-color: #6a6a67;
+}
+
+.main .layui-tab-brief > .layui-tab-title .layui-this {
+    color: #cca455;
+}
+
+.main .layui-tab-brief > .layui-tab-title .layui-this:after {
+    border-color: #d1aa55;
+}
+
+.article .item-content h3 {
+    font-size: 20px;
+}
+
+.Subtitle {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #a58c56;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.article .item-content p {
+    line-height: 28px;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    display: -moz-box;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /*显示行数*/
+}
+
+.article .item-content button {
+    width: 102px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #706553;
+    background-color: transparent;
+    color: #b79b52;
+}
+
+.article-right-content {
+    width: 13.5%;
+    position: absolute;
+    right: 109px;
+    top: 242px;
+    box-sizing: border-box;
+    padding: 25px;
+    background: #141412;
+    background: rgba(255, 255, 255, 0.2);
+    filter: Alpha(opacity=200);
+}
+
+.article-right-content h3 {
+    font-size: 16px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.article-right-content li {
+    margin: 7px 5px 0 0;
+    float: left;
+}
+
+
+/*作品*/
+.works {
+    padding-top: 160px;
+    width: 67%;
+}
+
+.works .item {
+    padding: 44px 30px 0 30px;
+}
+
+.works .img-text {
+    margin-bottom: 10px;
+}
+
+.works .img-text img {
+    width: 100%;
+}
+
+.works .img-text p {
+    line-height: 46px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.works .item img {
+    float: none;
+    padding: 0;
+}
+
+.works .item .layui-laypage {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+}
+
+
+/*关于*/
+.about {
+    width: 62.5%;
+    text-align: center;
+}
+
+.about .item {
+    padding: 80px 10px 90px 10px;
+    margin-bottom: 40px;
+}
+
+.about .item img {
+    float: none;
+    padding-right: 0;
+}
+
+.about .item img.portrait {
+    border-radius: 50%;
+}
+
+.about h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ab8560;
+}
+
+.about h4.personal {
+    margin-bottom: 24px;
+}
+
+.about .Introduction {
+    line-height: 36px;
+    font-size: 16px;
+    margin: 10px 0 56px 0;
+    color: #d9dbda;
+}
+
+.about .layui-progress {
+    width: 34%;
+    margin-left: 35%;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.about .layui-progress span {
+    color: #fff;
+    top: 2px;
+}
+
+.about .layui-progress em {
+    position: absolute;
+    left: -60px;
+    color: #fff;
+    font-style: normal;
+    top: 2px;
+}
+
+.about h4.contact {
+    margin: 50px 0 28px 0;
+}
+
+.about .item img.code {
+    margin-bottom: 14px;
+}
+
+.about p.qq-number {
+    line-height: 22px;
+    color: #FFF;
+}
+
+
+/*留言*/
+.message .item {
+    padding: 0;
+    background: #141412;
+    background: rgba(255, 255, 255, 0.2);
+    filter: Alpha(opacity=200);
+}
+
+.message .item .layui-card {
+    background: transparent;
+}
+
+.message .item .layui-card .layui-card-header {
+    border-bottom-color: #666465;
+    padding: 40px 50px 27px 50px;
+    height: auto;
+}
+
+.message .item .layui-card .layui-card-header .layui-form-item, .message .item .layui-card .layui-card-header .layui-input-block {
+    margin: 0;
+}
+
+.message .item .layui-card .layui-card-header .layui-textarea {
+    padding: 19px 24px;
+    margin-bottom: 28px;
+    color: #545454;
+}
+
+.message .item .layui-card .layui-card-header button {
+    height: 40px;
+    line-height: 40px;
+    width: 100px;
+    text-align: center;
+    background-color: #d0aa55;
+}
+
+.message .item .layui-card .layui-card-header .btn-box {
+    text-align: right;
+}
+
+.message .item .layui-card .layui-card-body {
+    padding: 40px 50px 27px 50px;
+    color: #d8d8d8;
+}
+
+.message .item .layui-card .layui-card-body .title span {
+    margin-right: 28px;
+}
+
+.message .item .layui-card .layui-card-body .title em {
+    color: #b3924d;
+    font-style: normal;
+}
+
+.message .item .layui-card .layui-card-body .list-item {
+    margin-bottom: 10px;
+}
+
+.message .item .layui-card .layui-card-body .list-item .list-txt {
+    padding-left: 75px;
+}
+
+.message .item .layui-card .layui-card-body .list-item li {
+    padding: 32px 0 30px 10px;
+    border-bottom: 1px dashed #5e5d5d;
+    table-layout: fixed;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.message .item .layui-card .layui-card-body .list-item img {
+    border-radius: 50%;
+    padding-right: 0;
+    margin-right: 24px;
+    cursor: pointer;
+}
+
+.message .item .layui-card .layui-card-body .list-item .max-title {
+    margin-bottom: 16px;
+}
+
+.message .item .layui-card .layui-card-body .list-item .max-title .name {
+    color: #b29547;
+}
+
+.message .item .layui-card .layui-card-body .list-item .max-title .time {
+    float: right;
+}
+
+
+/* 微语 */
+.mood {
+    width: 42%;
+    margin-left: 29%;
+}
+
+.mood .item1 {
+    padding: 16px 50px;
+    background: #fff;
+    background: #141412;
+    background: rgba(255, 255, 255, 0.2);
+    filter: Alpha(opacity=200);
+    margin-bottom: 40px;
+}
+
+.mood .item1 img {
+    margin-bottom: 30px;
+}
+
+.mood .item .item-content img {
+    padding: 0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.mood .item-content p.time i {
+    margin-right: 5px;
+}
+
+.mood .item-content p.time span {
+    margin-right: 20px;
+}
+
+.mood.mood-details .top_title {
+    color: #9f9f9d;
+    height: 58px;
+    line-height: 58px;
+    border-bottom: 1px solid #666666;
+    background: #141412;
+    background: rgba(255, 255, 255, 0.2);
+    filter: Alpha(opacity=200);
+    padding-left: 50px;
+}
+
+.mood .item1 img {
+    width: 100%;
+}
+
+
+.article1 {
+    width: 62.5%;
+    margin-left: 21%;
+}
+
+.main.article1 .top_title {
+    padding-left: 40px;
+}
+
+.article1 .item1 {
+    padding: 16px 40px;
+}
+
+.article1 .item .layui-card .layui-card-header, .article1 .item .layui-card .layui-card-body {
+    padding: 40px 40px 27px 40px;
+}
+
+.article1 h3 {
+    font-size: 18px;
+}
+
+.article1 .Subtitle {
+    margin-right: 50px;
+    color: #fff;
+}
+
+.article1 .label {
+    color: #a58e58;
+    margin-bottom: 20px;
+}
+
+.article1 .tb {
+    margin-right: 50px;
+}
+
+.article1 .txt {
+    line-height: 28px;
+    text-indent: 28px;
+    color: #b2b0b1;
+}
+
+.article1 .item1 img {
+    width: auto;
+    margin: 0 auto;
+}
+
+.article1 .item1 .img-box {
+    text-align: center;
+    margin: 28px 0 40px 0;
+}
+
+.article1 .item1 .btn-box {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.article1 .item1 .btn-box .layui-btn {
+    background: #fff;
+    color: #000;
+}
+
+
+@media screen and (max-width: 1800px) {
+    .main .item img {
+        margin-bottom: 10px;
+    }
+
+    .seach {
+        right: 5%;
+    }
+
+    .main {
+        margin-left: 30%;
+        width: 65%;
+    }
+
+    .article {
+        width: 40%;
+    }
+
+    .article-right-content {
+        width: 20.5%;
+        right: 5%;
+    }
+
+    .mood .item1 img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .article .item img {
+        float: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .article .item {
+        padding: 30px;
+    }
+
+    .article .item h3 {
+        font-size: 16px;
+    }
+
+    .article .item .date-box {
+        display: none;
+    }
+
+    .seach {
+        top: 70px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sidebar-content .layui-nav {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .sidebar-content .layui-nav a {
+        padding: 0 10px;
+    }
+
+    .sidebar-content .layui-nav .layui-nav-item {
+        display: inline;
+    }
+
+    .sidebar-content .layui-card {
+        margin: 0 auto;
+    }
+
+    .sidebar-content {
+        position: relative;
+        left: 0px;
+    }
+
+    .main {
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 0px;
+    }
+
+    .seach {
+        display: none;
+    }
+
+    .article-right-content {
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        right: 0;
+        top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .article-right-content ul {
+        overflow: hidden
+    }
+
+    .article-right-content .layui-btn {
+        height: 24px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .article .layui-tab .layui-tab-title li, .works .layui-tab .layui-tab-title li {
+        min-width: 50px;
+        padding: 0 7px;
+        font-size: 12px;
+    }
+
+    .main .item {
+        padding: 16px 20px;
+    }
+
+    .main .item img {
+        width: 100%;
+    }
+
+    .about .item img {
+        width: auto;
+    }
+
+    .about .Introduction {
+        font-size: 14px;
+    }
+
+    .main .item-content p.praise span {
+        margin-right: 20px;
+    }
+
+    .message .item .layui-card .layui-card-header, .message .item .layui-card .layui-card-body {
+        padding: 30px;
+    }
+
+    .message .item .layui-card .layui-card-body .list-item img {
+        width: auto;
+    }
+
+    .message .item .layui-card .layui-card-body .list-item .max-title .time {
+        display: block;
+        float: none;
+    }
+
+    .message .item .layui-card .layui-card-body .list-item .list-txt {
+        padding: 0;
+    }
+
+    .message .item .layui-card .layui-card-header button {
+        line-height: 30px;
+        height: 30px;
+        width: 80px;
+        margin: 0;
+    }
+
+    .message .item .layui-card .layui-card-header {
+        padding-bottom: 10px;
+    }
+
+    .message .item .layui-card .layui-card-header .layui-textarea {
+        margin-bottom: 10px;
+    }
+
+    .message .item {
+        padding: 0;
+    }
+
+    .mood.mood-details .top_title {
+        padding: 0 20px;
+    }
+
+    .mood .item1 {
+        padding: 16px 20px;
+    }
+
+    .article1 .item .layui-card .layui-card-header, .article1 .item .layui-card .layui-card-body {
+        padding: 20px;
+    }
+
+    .about .layui-progress em {
+        font-size: 12px;
+    }
+}
+

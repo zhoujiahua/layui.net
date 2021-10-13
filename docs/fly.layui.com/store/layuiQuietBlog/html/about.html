@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>博客</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body>
+<!-- 侧边内容 -->
+<div class="sidebar-content">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <img src="../res/static/img/portrait.jpg" alt=""><br/>
+            <span>小明</span>
+        </div>
+        <div class="layui-card-body">
+            <ul>
+                <li class="txt">
+                    <span>1000</span><br/>
+                    <span>文章</span>
+                </li>
+                <li class="item">
+                    <span>50</span><br/>
+                    <span>项目</span>
+                </li>
+                <li class="visitors">
+                    <span>5008</span><br/>
+                    <span>访问人数</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="layui-nav">
+        <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+        <li class="layui-nav-item"><a href="article.html">文章<br/>ARTICLE</a></li>
+        <li class="layui-nav-item"><a href="mood.html">微语<br/>MOOD</a></li>
+        <li class="layui-nav-item"><a href="works.html">作品<br/>WORKS</a></li>
+        <li class="layui-nav-item"><a href="message.html">留言<br/>MESSAGE</a></li>
+        <li class="layui-nav-item last  layui-this"><a href="about.html">关于<br/>ABOUT</a></li>
+    </ul>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="main about">
+    <div class="item">
+        <h4 class="personal">个人简介</h4>
+        <img class="portrait" src="../res/static/img/portrait.jpg" alt="">
+        <p class="Introduction">小明<br/>90后, 天蝎座, 爱生活, 爱艺术, 爱书画, 爱音乐, 爱设计, 爱编辑<br/>勤奋是学习的枝叶,当然很苦,智慧是学习的花朵,当然香郁</p>
+        <h4 class="personal">我的技能</h4>
+        <div class="layui-progress layui-progress-big" lay-showpercent="true">
+            <em>HTML</em>
+            <div class="layui-progress-bar layui-bg-red" lay-percent="80%"></div>
+        </div>
+        <div class="layui-progress layui-progress-big" lay-showpercent="true">
+            <em>C++</em>
+            <div class="layui-progress-bar layui-bg-orange" lay-percent="60%"></div>
+        </div>
+        <div class="layui-progress layui-progress-big" lay-showpercent="true">
+            <em>JAVA</em>
+            <div class="layui-progress-bar layui-bg-blue" lay-percent="80%"></div>
+        </div>
+        <div class="layui-progress layui-progress-big" lay-showpercent="true">
+            <em>PHP</em>
+            <div class="layui-progress-bar" lay-percent="50%"></div>
+        </div>
+        <h4 class="contact">与我联系</h4>
+        <img class="code" src="../res/static/img/code.jpg" alt="">
+        <p class="qq-number">扫码加微信<br/>QQ: 123456789</p>
+    </div>
+</div>
+
+
+<!-- 搜索框 -->
+<div class="seach">
+    <form class="layui-form seach-box" action="">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn"><i class="layui-icon layui-icon-search"></i></button>
+                <input type="text" name="username" lay-verify="required" placeholder="搜索相关" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../res/static/js/'
+    }).use('layBlog');
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>博客</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body>
+<!-- 侧边内容 -->
+<div class="sidebar-content">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <img src="../res/static/img/portrait.jpg" alt=""><br/>
+            <span>小明</span>
+        </div>
+        <div class="layui-card-body">
+            <ul>
+                <li class="txt">
+                    <span>1000</span><br/>
+                    <span>文章</span>
+                </li>
+                <li class="item">
+                    <span>50</span><br/>
+                    <span>项目</span>
+                </li>
+                <li class="visitors">
+                    <span>5008</span><br/>
+                    <span>访问人数</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="layui-nav">
+        <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+        <li class="layui-nav-item"><a href="article.html">文章<br/>ARTICLE</a></li>
+        <li class="layui-nav-item layui-this"><a href="mood.html">微语<br/>MOOD</a></li>
+        <li class="layui-nav-item"><a href="works.html">作品<br/>WORKS</a></li>
+        <li class="layui-nav-item"><a href="message.html">留言<br/>MESSAGE</a></li>
+        <li class="layui-nav-item last"><a href="about.html">关于<br/>ABOUT</a></li>
+    </ul>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="main mood message  mood-details">
+    <div class="top_title">微语 &#62 微语详情</div>
+    <div class="item1">
+        <div class="item-content">
+            <p class="time"><span><i class="layui-icon layui-icon-date"></i>12:25</span><strong>2018/06/08</strong></p>
+            <p class="brief">八一建军节到了,祝所有的军人节快乐！！八一建军节到了,祝所有的军人节日快乐！！八一建军节到了,祝所有的军人节日快乐</p>
+            <img src="../res/static/img/img5.jpg" alt="">
+            <p class="praise"><span><i class="layui-icon layui-icon-praise"></i>1200</span><span><i class="layui-icon layui-icon-dialogue"></i>1200</span></p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <form class="layui-form" action="">
+                    <div class="layui-form-item layui-form-text">
+                        <div class="layui-input-block">
+                            <textarea placeholder="既然来了,就说几句吧" class="layui-textarea" id="LAY-msg-content" style="resize: none;"></textarea>
+                            <div class="btn-box">
+                                <button class="layui-btn" type="button" id="item-btn">确实</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-card-body">
+                <div class="title">
+                    <p><span>全部留言</span><em id="count">1</em></p>
+                </div>
+                <ul class="list-item" id="LAY-msg-box">
+                    <li>
+                        <img src="../res/static/img/avatar.jpg" alt="">
+                        <div class="list-txt">
+                            <p class="max-title"><span class="name">小汪汪</span><span class="time">2018/06/06</span></p>
+                            <p class="list-content">适合具备一定的Javascript基础知识的读者阅读,也适合从事程序设计工作并想要深入探索Javascript语言的读者阅读。 您不需要具备任何的Javascript基础知识及项目经验，通过学习这本书。
+                                将会在面试有关Javascript程序设计的职位是游刃有余</p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="demo1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 搜索框 -->
+<div class="seach">
+    <form class="layui-form seach-box" action="">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn"><i class="layui-icon layui-icon-search"></i></button>
+                <input type="text" name="username" lay-verify="required" placeholder="搜索相关" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../res/static/js/'
+    }).use('layBlog');
+</script>
+<script id="LAY-msg-tpl" type="text/html">
+    <li>
+        <img src="{{ d.avatar }}" alt="">
+        <div class="list-txt">
+            <p class="max-title"><span class="name">{{ d.name }}</span><span class="time">{{ d.time }}</span></p>
+            <p class="list-content">{{ d.content }}</p>
+        </div>
+    </li>
+</script>
+</body>
+</html>

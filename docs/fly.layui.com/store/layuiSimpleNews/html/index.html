@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻—首页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../res/layui/css/layui.css">
+	<link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body>
+
+<div class="news-header">
+  <div class="layui-container">
+    <a id="logo" href="index.html"><img src="../res/static/img/logo.png"></a>
+    <ul class="layui-nav header-nav close">
+      <li class="layui-nav-item layui-this">
+        <a href="/">首页</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">热点</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">财经</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">科技</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">游戏</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">娱乐</a>
+      </li>
+      <li class="layui-nav-item more">
+        <a href="javaScript:;">更多</a>
+        <dl class="layui-nav-child">
+          <dd><a class="hida" href="list">生活</a> <a class="hida" href="list">国际</a></dd>
+          <dd><a class="hida" href="list">军事</a> <a class="hida" href="list">育儿</a></dd>
+          <dd><a class="hida" href="list">体育</a> <a class="hida" href="list">美食</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <button id="switch">
+      <span></span><span class="second"></span><span class="third"></span>
+    </button>
+    <div class="layui-form header-search">
+      <input type="text" placeholder="诺基亚" class="layui-input">
+    </div>
+    <div class="layui-form header-login">
+      <a href="login">登入</a>
+      <a href=""><i class="layui-icon layui-icon-news-qq"></i></a>
+      <a href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    </div>
+    <ul class="layui-nav header-login">
+      <li class="layui-nav-item">
+        <a href="javascript:;"><img src="../res/static/img/header1.png" class="layui-nav-img"></a>
+        <dl class="layui-nav-child">
+          <dd><a href="user">个人中心</a></dd>
+          <dd><a href="javascript:;">退出登录</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="layui-container news-index">
+	<div class="layui-row layui-col-space20 contentTop">
+    <div class="layui-col-sm8">
+      <div class="layui-carousel" id="newsIndex">
+        <div carousel-item >
+            <div>
+                <img src="../res/static/img/home_img1.jpg">
+                <p class="txt"><span>拼多多</span></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-xs6 layui-col-sm4">
+        <div class="banner-img">
+            <img src="../res/static/img/home_img2.jpg">
+            <div><p><span>娱乐</span>明星给自己颜值打分，王源7分，杨颖满分，千玺的回答圈粉无数</p></div>
+        </div>
+    </div>
+    <div class="layui-col-xs6 layui-col-sm4">
+        <div class="banner-img">
+            <img src="../res/static/img/home_img3.jpg">
+            <div><p><span>科技</span>华为手机这 3 个功能实用又有趣，不知道就可惜了！</p></div>
+        </div>
+    </div>
+
+	 </div>
+	<div class="layui-row layui-col-space20 contentBot">
+    <div class="layui-col-md8 index-list">
+    	<h2>推荐新闻</h2>
+        <ul class="newsList">
+            <li>
+                <a class="img" href="javascript:;"><img src="../res/static/img/paging_img1.jpg"></a><div class="txt">
+                <a href="detail.html">几亿人都在买的拼多多，终于被刘强东质疑，网友的回复更直接</a>
+                <div class="label">
+                    <span>财经</span>小明同学
+                    <b>2018-06-07 08:30</b>
+                    <i class="layui-icon layui-icon-news-review1">500</i>
+                </div>
+                <p class="cont">文章摘自奇闻趣事每日说</p>
+            </div>
+            </li>
+        </ul>
+
+    </div>
+    <div class="layui-col-md4 index-side">
+    	<div class="newsSide">
+	     	<h2>24小时热文</h2>
+            <ul>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img10.jpg"></span><p class="txt">今日魔都烟雾缭绕，美似仙境！</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img11.jpg"></span><p class="txt">美计划调高对华商品征税税率 国外交谈 部：施压与讹诈不会起作用</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img12.jpg"></span><p class="txt">烟草纳税万亿！一包20元的烟利润 是多少钱？烟民：为了纳税而抽烟</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img13.jpg"></span><p class="txt">移动端游戏占领大部分市场</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img14.jpg"></span><p class="txt">八一建军节天安门升旗仪式</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img10.jpg"></span><p class="txt">今日魔都烟雾缭绕，美似仙境！</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img11.jpg"></span><p class="txt">美计划调高对华商品征税税率 国外交谈部：施压与讹诈不会起作用</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img12.jpg"></span><p class="txt">烟草纳税万亿！一包20元的烟利润 是多少钱？烟民：为了纳税而抽烟</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img13.jpg"></span><p class="txt">移动端游戏占领大部分市场</p></a></li>
+                <li><a href="javascript:;"><span><img src="../res/static/img/home_img14.jpg"></span><p class="txt">八一建军节天安门升旗仪式</p></a></li>
+            </ul>
+	    </div>
+    </div>
+	</div>
+  <div id="silde"><a id="refresh"><i class="layui-icon layui-icon-refresh"></i></a><a id="scroll"><i class="layui-icon layui-icon-up"></i></a></div>
+</div>
+
+<div class="news-footer">
+  <div class="layui-container">
+    <span class="layui-breadcrumb" lay-separator=" ">
+      <a>关于我们</a>
+      <a>合作伙伴</a>
+      <a>广告服务</a>
+      <a>常见问题</a>
+    </span>
+    <p class="copyright">Copyright &copy; 新闻网 赣ICP备12345678号</p>
+    <a id="wechat" href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    <a id="weibo" href=""><i class="layui-icon layui-icon-news-weibo"></i></a>
+    <img id="code" src="../res/static/img/code.png">
+  </div>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../res/static/js/'
+    }).use('news');
+</script>
+
+</body>
+</html>

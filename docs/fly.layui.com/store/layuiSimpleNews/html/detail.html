@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻-详情页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../res/layui/css/layui.css">
+	<link rel="stylesheet" href="../res/static/css/index.css">
+</head>
+<body>
+
+<div class="news-header">
+  <div class="layui-container">
+    <a id="logo" href="index.html"><img src="../res/static/img/logo.png"></a>
+    <ul class="layui-nav header-nav close">
+      <li class="layui-nav-item">
+        <a href="/">首页</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">热点</a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="list">财经</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">科技</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">游戏</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="list">娱乐</a>
+      </li>
+      <li class="layui-nav-item more">
+        <a href="javaScript:;">更多</a>
+        <dl class="layui-nav-child">
+          <dd><a class="hida" href="list">生活</a> <a class="hida" href="list">国际</a></dd>
+          <dd><a class="hida" href="list">军事</a> <a class="hida" href="list">育儿</a></dd>
+          <dd><a class="hida" href="list">体育</a> <a class="hida" href="list">美食</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <button id="switch">
+      <span></span><span class="second"></span><span class="third"></span>
+    </button>
+    <div class="layui-form header-search">
+      <input type="text" placeholder="诺基亚" class="layui-input">
+    </div>
+    <div class="layui-form header-login">
+      <a href="login">登入</a>
+      <a href=""><i class="layui-icon layui-icon-news-qq"></i></a>
+      <a href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    </div>
+    <ul class="layui-nav header-login">
+      <li class="layui-nav-item">
+        <a href="javascript:;"><img src="../res/static/img/header1.png" class="layui-nav-img"></a>
+        <dl class="layui-nav-child">
+          <dd><a href="user">个人中心</a></dd>
+          <dd><a href="javascript:;">退出登录</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="layui-container news-detail">
+	<div class="layui-row layui-col-space40">
+		<div class="layui-col-sm8">
+		 	<div class="detail-main">
+		 		<ul id="detail-handel">
+		 			<li class="weibo"><a href="javascript:;"><i class="layui-icon layui-icon-news-weibo"></i></a></li>
+		 			<li class="wechat"><a href="javascript:;"><i class="layui-icon layui-icon-news-wechat"></i></a></li>
+		 			<li class="space"><a href="javascript:;"><i class="layui-icon layui-icon-news-space"></i></a></li>
+		 			<li class="review num"><a href="javascript:;"><i class="layui-icon layui-icon-news-review2"></i><span>1280</span></a></li>
+		 			<li class="collect num"><a href="javascript:;"><i class="layui-icon layui-icon-news-collect"></i><span>1008</span></a></li>
+		 		</ul>
+		 		<div class="detail-cont">
+		 			<h1>几亿人都在买的拼多多，终于被刘强东质疑，网友的回复更直接</h1>
+		 			<div class="newsClass"><span>财经</span>小明同学 <b>2018-06-07 08:30</b> <i>收藏1289</i> <i>评论500</i></div>
+		 			<p class="title">文章摘自奇闻趣事每日说</p>
+	 				<p>说起刘强东，想必很多人都知道他是谁吧，京东集团CEO，作为京东集团CEO也是避免不了，很多媒体的采访，就在7月17日的时候，刘强东就遭到霉国采访，并且话题就是竞争对手拼多多，而刘强东也是说出了自己的看法，那么就和小编一起了解了解一下吧~</p>
+	 				<img src="../res/static/img/paging_img1.jpg">
+	 				<p>采访的人：有一个年轻的公司名叫，拼多多，你觉得他们是你的对手吗？刘强东也是做出了回应，并且表示到：知道，现在的消费者，他们在乎的就是质量、价钱、效劳，并不在意同行，我只在乎就是客服感受，如果买过他们的中国人都知道，他们会给你答案。</p>
+	 				<img src="../res/static/img/home_img1.jpg">
+	 				<p>想必大家都知道，拼多多也是一个消费的平台，由于消费者购买后，也是纷纷表示到，拼多多的质量相当的不好，甚至虚假宣传、等等一些耳闻，而这个耳闻也是导致了很多消费者放弃购买。</p>
+	 				<p>甚至刘强东曾经还批拼多多，并且还表示到，做社交电商一定要信任，尤其是质量，而且商品价钱廉价到一定水平时，抵消费者没有益处，是糜费了钱而不是省钱。并且有的网友还表示到：拼多多买了一次，果断卸了，谁要是给我发帮助砍价的东西，我就拉黑他。</p>
+		 		</div>
+		 		<div class="detail-label">
+		 			<i class="layui-icon layui-icon-news-label"></i>
+		 			<span class="layui-breadcrumb">
+					  <a href="javascript:;">华为手机</a>/
+			 			<a href="javascript:;">华为荣耀</a>/
+			 			<a href="javascript:;">CPU</a>/
+			 			<a href="javascript:;">GPU</a>/
+			 			<a href="javascript:;">三星</a>
+					</span>
+		 		</div>
+		 		<div class="detail-comment">
+		 			<p>全部评论 <span>102</span></p>
+		 			<div class="addComment layui-form">
+		 				<div class="img"><span><img src="../res/static/img/header2.png"></span></div><div class="content">
+		 					<textarea placeholder="写下您想说的评论吧..." class="layui-textarea"></textarea>
+		 					<div class="btn"><button class="layui-btn">添加评论</button></div>
+		 				</div>
+		 			</div>
+	 				<ul id="replyCont">
+
+
+	 				</ul>
+	 				<div id="detailPage"></div>
+		 		</div>
+		 	</div>
+		</div>
+		<div class="layui-col-sm4">
+			<div class="detail-side">
+				<div class="person">
+					<a class="img"><img src="../res/static/img/header.jpg"></a>
+					<span class="name">小明同学</span>
+					<span class="num">102篇文章</span>
+					<a href="javascript:;" class="layui-btn layui-btn-sm focusOn">关注</a>
+				</div>
+				<div class="list">
+					<p>热门推荐</p>
+					<ul class="hot">
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="silde"><a id="refresh"><i class="layui-icon layui-icon-refresh"></i></a><a id="scroll"><i class="layui-icon layui-icon-up"></i></a></div>
+</div>
+
+<div class="news-footer">
+  <div class="layui-container">
+    <span class="layui-breadcrumb" lay-separator=" ">
+      <a>关于我们</a>
+      <a>合作伙伴</a>
+      <a>广告服务</a>
+      <a>常见问题</a>
+    </span>
+    <p class="copyright">Copyright &copy; 新闻网 赣ICP备12345678号</p>
+    <a id="wechat" href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+    <a id="weibo" href=""><i class="layui-icon layui-icon-news-weibo"></i></a>
+    <img id="code" src="../res/static/img/code.png">
+  </div>
+</div>
+
+<script src="../res/layui/layui.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  layui.config({
+    base: '../res/static/js/' 
+  }).use('news');
+
+
+  layui.use('flow', function(){
+	  var $ = layui.jquery; //不用额外加载jQuery，flow模块本身是有依赖jQuery的，直接用即可。
+	  var flow = layui.flow;
+
+	  flow.load({
+		  elem: '#replyCont' //指定列表容器
+		  ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+			  var lis = [];
+			  //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+			  $.get('/api/list?page='+page, function(res){
+				  //假设你的列表返回在data集合中
+				  layui.each(res.content, function(index, item){
+					  lis.push('<li>'+
+							  '<div class="img">'+
+							  '<a href="">'+
+							  '<img src="../res/static/img/header3.png">'+
+							  '</a>'+
+							  '</div>'+
+							  '<div class="readCom">'+
+							  '<p class="name">'+
+							  '<a href="">'+
+							  '王小笑'+
+							  '</a>'+
+							  '<span>'+
+							  '1小时前'+
+							  '</span>'+
+							  '<span class="goods">'+
+							  '100'+
+							  '<i class="layui-icon layui-icon-news-good">'+
+							  '</i>'+
+							  '</span>'+
+							  '</p>'+
+							  '<p class="txt">'+
+							  '这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！'+
+							  '</p>'+
+							  '<a class="reply" href="javascript:;">'+
+							  '回复'+
+							  '</a>'+
+							  '</div>'+
+							  '</li>');
+				  });
+
+				  //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+				  //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+				  next(lis.join(''), page < res.totalPages);
+			  });
+		  }
+	  });
+
+	  flow.load({
+		  elem: '.hot' //指定列表容器
+		  ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+			  var lis = [];
+			  //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+			  $.get('/api/list?page='+page, function(res){
+				  //假设你的列表返回在data集合中
+				  layui.each(res.content, function(index, item){
+					  lis.push('<li>'+
+							  '<a href="javascript:;">'+
+							  '<img src="../res/static/img/paging_img2.jpg">'+
+							  '<span>'+
+							  '王者荣耀貂蝉皮肤逐梦之音全服正式上线'+
+							  '</span>'+
+							  '</a>'+
+							  '</li>');
+				  });
+
+				  //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+				  //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+				  next(lis.join(''), page < res.totalPages);
+			  });
+		  }
+	  });
+
+
+  });
+
+
+
+</script>
+
+</body>
+</html>

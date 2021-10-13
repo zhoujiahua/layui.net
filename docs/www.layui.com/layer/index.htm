@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>镜像站@layer 弹出层组件 - jQuery 弹出层插件</title>
+
+  <meta name="keywords" content="弹出层,jQuery弹出层插件,layer">
+  <meta name="description" content=" layer 是一款口碑极佳的 Web 弹层组件，她具备全方位的解决方案，致力于服务各个水平段的开发人员，您的页面会轻松地拥有丰富而友好的操作体验。">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?v=351-1" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?v=351-1" media="all">
+  <link rel="stylesheet" href="demo.css" tppabs="http://www.layui.com/layer/demo.css?v=351-1" media="all">
+
+  <script src="../../other/jquery/1.12.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+  <script src="../../res.layui.com/layui/release/layer/dist/layer.js-v=351-1.js" tppabs="http://res.layui.com/layui/release/layer/dist/layer.js?v=351-1"></script>
+  <script>
+    ;!function(){self!==parent&&(location.href="http://www.baidu.com/")}();
+  </script>
+</head>
+<body>
+
+<div class="header">
+  <div class="layui-main">
+    <a class="logo" href="../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <ul class="layui-nav">
+      <li class="layui-nav-item">
+        <a href="../index.htm" tppabs="http://www.layui.com/" target="_blank">layui</a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="../alone.html" tppabs="http://www.layui.com/alone.html">layer</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alone-banner layui-bg-black">
+  <div class="layui-main">
+    <h1>layer 弹出层组件</h1>
+    <p class="layui-hide-xs">用于实现网页中的各种弹出层交互，如 Alert/Confirm/Message/Tips/Page/Iframe/Loading/Prompt/Tab/photo 应有尽有</p>
+  </div>
+</div>
+
+<div class="layer_nav">
+  <div class="box">
+    <a href="../doc/modules/layer.html" tppabs="http://www.layui.com/doc/modules/layer.html" title="api" target="_blank">文档手册</a>
+    <a href="javascript:;" id="demore">
+      功能示例
+      <!--
+      <cite class="filter_nums">hot</cite>
+      <cite class="area_zero"></cite>
+      -->
+    </a>
+    <a href="hello.html" tppabs="http://www.layui.com/layer/hello.html" target="_blank">快速上手</a>
+    <a href="mobile/index.htm" tppabs="http://www.layui.com/layer/mobile/" target="_blank">
+      layer 移动版
+    </a>
+  </div>
+</div>
+
+<div class="runtest">
+  <textarea class="site-demo-text" id="testmain">
+//在这里面输入任何合法的js语句
+layer.open({
+  type: 1 //Page层类型
+  ,area: ['500px', '300px']
+  ,title: 'Hello layer'
+  ,shade: 0.6 //遮罩透明度
+  ,maxmin: true //允许全屏最小化
+  ,anim: 1 //0-6的动画形式，-1不开启
+  ,content: '<div style="padding:50px;">这是一个非常普通的页面层，传入了自定义的 html</div>'
+});    
+  </textarea>
+  <a href="javascript:;" class="layui-btn layui-btn-normal" onclick="try{new Function(testmain.value)();}catch(e){alert('语句异常：'+e.message)}" class="btns">立即运行</a>
+</div>
+
+<div class="clear box layer-main">
+
+  <!--
+  <a href="http://www.layui.com/layuiadmin/" target="_blank" title="layuiAdmin">
+    <img src="//cdn.layui.com/upload/2021_4/168_1617768452885_15407.png" alt="layuiAdmin" style="width: 1000px; margin-bottom: 5px;">
+  </a>
+  -->
+
+
+  <ul class="layer_notice">
+    <li><a href="http://fly.layui.com/jie/5366/" target="_blank">1. layer 系列常见问题的处理和相关实用干货集锦</a></li>
+    <li><a href="https://gitee.com/sentsin/layer/releases/" target="_blank">2. layer 所有版本完整更新日志</a></li>
+    <li><a href="http://fly.layui.com/jie/2461.html" target="_blank">3. 关注 layui 微信公众号，随时随地获取最新动态</a></li>
+  </ul>
+
+  <div class="layer_download">
+    <ul>
+      <li class="layui-btn-container" style="margin-top: 10px;">
+        <a href="https://github.com/sentsin/layer" class="layui-btn layui-btn-sm layui-btn-primary" target="_blank" rel="nofollow" style="background: none; color: #24292E; ">Github</a>
+        <a href="https://gitee.com/sentsin/layer" class="layui-btn layui-btn-sm layui-btn-primary" target="_blank" rel="nofollow" style="background: none; color: #C71D23;  ">Gitee</a>
+        <a href="https://www.npmjs.com/package/layer-src" class="layui-btn layui-btn-sm layui-btn-primary" target="_blank" rel="nofollow" style="background: none; color: #CE2A1F;  ">NPM</a>
+      </li>
+      <li style="margin-top: 2px;">
+        <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=sentsin&repo=layer&type=watch&count=true" width="100" height="20"></iframe>
+        <iframe style="border: none" src="http://ghbtns.com/github-btn.html?user=sentsin&repo=layer&type=fork&count=true" width="100" height="20"></iframe>
+      </li>
+    </ul>
+    <span class="layer_yuan layer_ico ie6PNG"></span>
+    <a class="layui-btn layui-btn-lg layer_down" href="../../res.layui.com/static/download/layer/layer-v3.5.1.zip?v=1" target="_blank">下载 layer 组件</a>
+    <span class="layer_downs">当前版本：<script>document.write(layer.v);</script>，下载数：<em id="downs">loading…</em></span>
+  </div>
+
+  <div class="layer-text" style="z-index:100;">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-right: 220px;">
+      <legend>弹层之术</legend>
+    </fieldset>
+
+    <span class="layer-tool">
+      <a href="javascript:;" class="layui-btn" id="L_layerDebug">在线调试</a>
+      <a href="skin.html" tppabs="http://www.layui.com/layer/skin.html" class="layui-btn layui-btn-normal" target="_blank">扩展皮肤</a>
+    </span>
+
+    <p>
+      <i>layer</i> 是一款历年来备受青睐的 Web 弹出层组件，具备全方位的解决方案，面向各个水平段的开发人员，您的页面会轻松地拥有丰富友好的操作体验。
+    </p>
+    <p>
+      在与同类组件的比较中，<i>layer</i> 会更能被开发者所选择。这不仅是凭「脸」取胜，而是它尽可能地在以更少的代码展现更强健的功能，且格外注重性能的提升、易用和实用性，<i>layer</i> 甚至还兼容了包括 IE6 在内的所有主流浏览器。其数量可观的基础属性和方法，使得您可以自定义太多您需要的风格，每一种弹层模式各具特色，广受欢迎。当然，这种「王婆卖瓜」的陈述听起来总是有点难受，因此你需要进一步了解她是否真的如你所愿。 <i>layer</i> 被浏览次数：<em id="sees">loading…</em>
+    </p>
+    <p>
+      <i>layer</i> 采用 MIT 开源许可证，<em>是一个永久无偿的公益性项目</em>。因着数年的坚持维护，已被运用在不计其数 Web 平台，已然成为网页弹出层的首先交互方案，几乎所处可见，其中还不乏众多知名大型网站。layer 已被国内乃至全世界至少数十万的开发者所使用过，并且它仍在与 Layui 开源项目一并稳步发展。<!--<a href="http://fly.layui.com/" target="_blank"><em>Fly</em></a>-->
+    </p>
+  </div>
+
+
+  <div class="clearfix layer-text">
+    <fieldset class="layui-elem-field layui-field-title">
+      <legend>先睹为快</legend>
+    </fieldset>
+
+    <div class="clearfix layer-area" id="chutiyan">
+      <a class="layui-btn layui-btn-primary" href="javascript:;">初体验</a>
+      <a class="layui-btn layui-btn-primary layui-hide" href="javascript:;">第三方扩展皮肤</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">询问层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">提示层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">墨绿深蓝风</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;" style="_display:none;">捕获页</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">页面层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">自定页</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">tips层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">iframe层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">iframe层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">加载层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">loading层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">小tips</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">prompt层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">tab层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">相册层</a>
+      <a class="layui-btn layui-btn-primary" href="javascript:;">自动关闭</a>
+
+      <a class="layui-btn layui-btn-primary" href="../layuiadmin/index.htm" tppabs="https://www.layui.com/layuiadmin/" target="_blank">管理模板</a>
+    </div>
+
+
+  </div>
+
+  <pre id="demo1" class="layui-code" lay-height="380px" lay-title="上述示例对应代码">
+特别说明：
+事件需自己绑定，以下只展现调用代码。
+
+<p>//初体验</p>
+layer.alert('内容')
+
+<p>//扩展皮肤</p>
+layer.alert('内容', {
+  icon: 1,
+  skin: 'layer-ext-demo' //见：<a target="_balnk" style="color:#00B2E2;" href="http://layer.layui.com/skin.html#publish">扩展说明</a>
+})
+
+<p>//询问框</p>
+layer.confirm('您是如何看待前端开发？', {
+  btn: ['重要','奇葩'] //按钮
+}, function(){
+  layer.msg('的确很重要', {icon: 1});
+}, function(){
+  layer.msg('也可以这样', {
+    time: 20000, //20s后自动关闭
+    btn: ['明白了', '知道了']
+  });
+});
+
+<p>//提示层</p>
+layer.msg('一段提示信息');
+
+<p>//墨绿深蓝风</p>
+layer.alert('墨绿风格，点击确认看深蓝', {
+  skin: 'layui-layer-molv' //样式类名
+  ,closeBtn: 0
+}, function(){
+  layer.alert('偶吧深蓝style', {
+    skin: 'layui-layer-lan'
+    ,closeBtn: 0
+    ,anim: 4 //动画类型
+  });
+});
+
+<p>//捕获页</p>
+layer.open({
+  type: 1,
+  shade: false,
+  title: false, //不显示标题
+  content: $('.layer_notice'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+  cancel: function(){
+    layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
+  }
+});
+
+<p>//页面层</p>
+layer.open({
+  type: 1,
+  skin: 'layui-layer-rim', //加上边框
+  area: ['420px', '240px'], //宽高
+  content: 'html内容'
+});
+
+<p>//自定页</p>
+layer.open({
+  type: 1,
+  skin: 'layui-layer-demo', //样式类名
+  closeBtn: 0, //不显示关闭按钮
+  anim: 2,
+  shadeClose: true, //开启遮罩关闭
+  content: '内容'
+});
+
+<p>//tips层</p>
+layer.tips('Hi，我是tips', '吸附元素选择器，如#id');
+
+<p>//iframe 层</p>
+layer.open({
+  type: 2,
+  title: 'layer mobile页',
+  shadeClose: true,
+  shade: 0.8,
+  area: ['380px', '90%'],
+  content: 'mobile/' //iframe的url
+});
+
+<p>//iframe 层</p>
+layer.open({
+  type: 2,
+  title: '很多时候，我们想最大化看，比如像这个页面。',
+  shadeClose: true,
+  shade: false,
+  maxmin: true, //开启最大化最小化按钮
+  area: ['893px', '600px'],
+  content: 'https://www.baidu.com/'
+});
+
+<p>//加载层</p>
+var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+
+<p>//loading层</p>
+var index = layer.load(1, {
+  shade: [0.1,'#fff'] //0.1透明度的白色背景
+});
+
+<p>//小tips</p>
+layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '吸附元素选择器', {
+  tips: [1, '#3595CC'],
+  time: 4000
+});
+
+<p>//prompt层</p>
+layer.prompt({title: '输入任何口令，并确认', formType: 1}, function(pass, index){
+  layer.close(index);
+  layer.prompt({title: '随便写点啥，并确认', formType: 2}, function(text, index){
+    layer.close(index);
+    layer.msg('演示完毕！您的口令：'+ pass +'&lt;br&gt;您最后写下了：'+text);
+  });
+});
+
+<p>//tab层</p>
+layer.tab({
+  area: ['600px', '300px'],
+  tab: [{
+    title: 'TAB1',
+    content: '内容1'
+  }, {
+    title: 'TAB2',
+    content: '内容2'
+  }, {
+    title: 'TAB3',
+    content: '内容3'
+  }]
+});
+
+<p>//相册层</p>
+$.getJSON('test/photos.json?v='+new Date, function(json){
+  layer.photos({
+    photos: json //格式见API文档手册页
+    ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机
+  });
+});
+
+<p>//显示自动关闭倒计秒数</p>
+layer.alert('在标题栏显示自动关闭倒计秒数', {
+  time: 5*1000
+  ,success: function(layero, index){
+    var timeNum = this.time/1000, setText = function(start){
+      layer.title((start ? timeNum : --timeNum) + ' 秒后关闭', index);
+    };
+    setText(!0);
+    this.timer = setInterval(setText, 1000);
+    if(timeNum <= 0) clearInterval(this.timer);
+  }
+  ,end: function(){
+    clearInterval(this.timer);
+  }
+});
+
+
+<p></p><p></p>
+  </pre>
+
+
+  <div class="layer-text" style="padding:20px 0 10px;" id="yiwang">
+    <fieldset class="layui-elem-field layui-field-title">
+      <legend>再试牛刀</legend>
+    </fieldset>
+  </div>
+
+  <ul class="clearfix demolist">
+    <li class="layer-area">
+      <div>信息框</div>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">例1</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">例2</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">例3</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">例4</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">例5</a>
+    </li>
+
+    <li class="layer-area">
+      <div>页面层/iframe层</div>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">页面层-自定义</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">页面层-图片</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;" id="parentIframe">iframe-子父操作</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">iframe-多媒体</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">iframe-禁滚动条</a>
+    </li>
+
+    <li>
+    </li>
+
+    <li class="layer-area">
+      <div>加载层</div>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">默认</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">风格2</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">风格3</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">风格4</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">打酱油</a>
+    </li>
+
+    <li class="layer-area">
+      <div>tips层</div>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">上</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">右</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">下</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">左</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">允许多个</a>
+    </li>
+
+    <li class="layer-area">
+      <div>其它演示</div>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">默认prompt</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">屏蔽浏览器滚动条</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">弹出即全屏</a>
+      <a class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">正上方</a>
+      <a class="layui-btn layer-demolist" href="test/more.html" tppabs="http://www.layui.com/layer/test/more.html" target="_blank">更多例子</a>
+    </li>
+  </ul>
+
+  <pre id="demo2" class="layui-code" lay-height="360px" lay-title="对应配置">
+<p>//信息框-例1</p>
+layer.alert('见到你真的很高兴', {icon: 6});
+ 
+<p>//信息框-例2</p>
+layer.msg('你确定你很帅么？', {
+  time: 0 //不自动关闭
+  ,btn: ['必须啊', '丑到爆']
+  ,yes: function(index){
+    layer.close(index);
+    layer.msg('雅蠛蝶 O.o', {
+      icon: 6
+      ,btn: ['嗷','嗷','嗷']
+    });
+  }
+});
+
+<p>//信息框-例3</p>
+layer.msg('这是最常用的吧');
+
+<p>//信息框-例4</p>
+layer.msg('不开心。。', {icon: 5});
+
+<p>//信息框-例5</p>
+layer.msg('玩命卖萌中', function(){
+//关闭后的操作
+});
+
+<p>//页面层-自定义</p>
+layer.open({
+  type: 1,
+  title: false,
+  closeBtn: 0,
+  shadeClose: true,
+  skin: 'yourclass',
+  content: '自定义HTML内容'
+});
+
+<p>//页面层-图片</p>
+layer.open({
+  type: 1,
+  title: false,
+  closeBtn: 0,
+  area: ['auto'],
+  skin: 'layui-layer-nobg', //没有背景色
+  shadeClose: true,
+  content: $('#tong')
+});
+
+<p>//iframe层-父子操作</p>
+layer.open({
+  type: 2,
+  area: ['700px', '450px'],
+  fixed: false, //不固定
+  maxmin: true,
+  content: 'test/iframe.html'
+});
+
+<p>//iframe层-多媒体</p>
+layer.open({
+  type: 2,
+  title: false,
+  area: ['630px', '360px'],
+  shade: 0.8,
+  closeBtn: 0,
+  shadeClose: true,
+  content: '//player.youku.com/embed/XMzI1NjQyMzkwNA=='
+});
+layer.msg('点击任意处关闭');
+
+<p>//iframe层-禁滚动条</p>
+layer.open({
+  type: 2,
+  area: ['360px', '500px'],
+  skin: 'layui-layer-rim', //加上边框
+  content: ['mobile/', 'no']
+});
+
+<p>//加载层-默认风格</p>
+layer.load();
+//此处演示关闭
+setTimeout(function(){
+  layer.closeAll('loading');
+}, 2000);
+
+<p>//加载层-风格2</p>
+layer.load(1);
+//此处演示关闭
+setTimeout(function(){
+  layer.closeAll('loading');
+}, 2000);
+
+<p>//加载层-风格3</p>
+layer.load(2);
+//此处演示关闭
+setTimeout(function(){
+  layer.closeAll('loading');
+}, 2000);
+
+<p>//加载层-风格4</p>
+layer.msg('加载中', {
+  icon: 16
+  ,shade: 0.01
+});
+
+<p>//打酱油</p>
+layer.msg('尼玛，打个酱油', {icon: 4});
+
+<p>//tips层-上</p>
+layer.tips('上', '#id或者.class', {
+  tips: [1, '#0FA6D8'] //还可配置颜色
+});
+
+<p>//tips层-右</p>
+layer.tips('默认就是向右的', '#id或者.class');
+
+<p>//tips层-下</p>
+layer.tips('下', '#id或者.class', {
+  tips: 3
+});
+
+<p>//tips层-左</p>
+layer.tips('左边么么哒', '#id或者.class', {
+  tips: [4, '#78BA32']
+});
+
+<p>//tips层-不销毁之前的</p>
+layer.tips('不销毁之前的', '#id或者.class', {
+  tipsMore: true
+});
+
+<p>//默认prompt</p>
+layer.prompt(function(val, index){
+  layer.msg('得到了'+val);
+  layer.close(index);
+});
+
+<p>//屏蔽浏览器滚动条</p>
+layer.open({
+  content: '浏览器滚动条已锁',
+  scrollbar: false
+});
+
+<p>//弹出即全屏</p>
+var index = layer.open({
+  type: 2,
+  content: 'https://fly.layui.com/jump/alyhot/',
+  area: ['320px', '195px'],
+  maxmin: true
+});
+layer.full(index);
+
+<p>//正上方</p>
+layer.msg('灵活运用offset', {
+  offset: 't',
+  anim: 6
+});
+
+//更多例子 
+layer.msg('Hi');
+  </pre>
+
+  <div style="margin-top: 20px; text-align: center;">
+    <p style=" font-weight: 300;">倘若 layer 于你有益，欢迎：</p>
+    <a href="http://fly.layui.com/sponsors?from=layer" target="_blank" class="layui-btn layui-btn-warm" style="margin-top: 10px;">小额赞赏</a>
+  </div>
+
+
+  <div class="layer-text" id="yiwang" style="padding:20px 0 10px;">
+    <fieldset class="layui-elem-field layui-field-title">
+      <legend>美妙之旅</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+      事实上 layer 提供的丰富的基础属性，已经足够让你的弹出框/层变得千变万化，请恕我们无法为您逐一演示。如果您仍觉得文档和代码有不当之处，迫切地希望您能反馈，你可以通各种方式进入 layer 的圈子，许多和你一样的小伙伴将会和你一起，经历这段美妙的开发旅程。
+    </blockquote>
+  </div>
+
+  <!--
+  <a href="https://layim.layui.com?from=layer" target="_blank" title="layim">
+    <img src="//cdn.layui.com/upload/2018_8/168_1534454846756_6275.png" alt="layim" style="max-width: 100%; margin-bottom: 5px;">
+  </a>
+  -->
+
+</div>
+
+<div class="hide" ><img src="images/tong.jpg" tppabs="http://www.layui.com/layer/images/tong.jpg"></div>
+
+
+
+
+<div class="layui-footer footer footer-index">
+  <div class="layui-main">
+    <p>&copy; <a href="../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT license</p>
+  </div>
+</div>
+
+
+<script src="../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?v=351-1"></script>
+<script src="demo.js" tppabs="http://www.layui.com/layer/demo.js?v=351-1"></script>
+
+
+
+
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="../../res.layui.com/static/lay/lib/png.js" tppabs="http://res.layui.com/static/lay/lib/png.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('.ie6PNG');</script>
+<![endif]-->
+</body>
+</html>
+
+

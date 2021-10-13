@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>镜像站@快速上手 layer，新人必看</title>
+
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/independents.css" tppabs="http://res.layui.com/static/css/independents.css" media="all">
+
+  <script src="../../other/jquery/1.12.3/jquery.min.js" tppabs="http://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+  <script src="../../res.layui.com/layui/release/layer/dist/layer.js-v=351-1.js" tppabs="http://res.layui.com/layui/release/layer/dist/layer.js?v=330"></script>
+
+</head>
+<body>
+
+<div class="header">
+  <div class="layui-main">
+    <a class="logo" href="../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <ul class="layui-nav">
+      <li class="layui-nav-item">
+        <a href="../index.htm" tppabs="http://www.layui.com/" target="_blank">layui</a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="http://layer.layui.com/">layer</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alone-banner layui-bg-black">
+  <div class="layui-main">
+    <h1 style="padding-top: 40px;">layer 快速上手</h1>
+    <p>如果，你初识 layer，你对它不知所措，你甚至不知如何绑定事件… 那或许你应该用秒做单位，快速认识它</p>
+    <p><button class="layui-btn layui-btn-normal" onclick="$('html,body').animate({scrollTop: 250}, 500);">开始了解</button></p>
+  </div>
+</div>
+
+<div class="layui-main alone-nav">
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li>
+        <a href="../index.htm" tppabs="http://www.layui.com/">layer首页</a>
+      </li>
+      <li class="layui-this">
+        快速上手
+      </li>
+    </ul>
+  </div>
+  
+  <p style="margin: 20px 0; text-align: center;">
+  </p>
+  
+  <blockquote class="layui-elem-quote layui-quote-nm layui-text">
+    获得 layer 文件包后，解压并将 <em>layer 整个文件夹</em>（不要拆分结构） 存放到你项目的任意目录，使用时，<em>只需引入 layer.js 即可。</em> 下面是一个入门示例：
+  </blockquote>
+
+  <pre class="layui-code">
+<code><</code>!DOCTYPE html>
+<code><</code>html>
+<code><</code>head>
+  &lt;meta charset="utf-8"&gt;
+  <code><</code>title>开始使用layer<code><</code>/title>
+<code><</code>/head>
+<code><</code>body>
+
+  
+  
+  <code><</code>script src="jQuery的路径"><code><</code>/script> &lt;!-- 你必须先引入jQuery1.8或以上版本 --&gt;
+  <code><</code>script src="layer.js的路径"><code><</code>/script>
+  
+  <code><</code>script>
+  <span id="hello1">
+  //弹出一个提示层
+  $('#test1').on('click', function(){
+    layer.msg('hello');
+  });
+  </span><button id="test1" class="layui-btn">运行上述例子</button>
+  <span id="hello2">
+  //弹出一个页面层
+  $('#test2').on('click', function(){
+    layer.open({
+      type: 1,
+      area: ['600px', '360px'],
+      shadeClose: true, //点击遮罩关闭
+      content: '\<\div style="padding:20px;">自定义内容\<\/div>'
+    });
+  });
+  </span><button id="test2" class="layui-btn">运行上述例子</button>
+  <span id="hello3">
+  //弹出一个iframe层
+  $('#parentIframe').on('click', function(){
+    layer.open({
+      type: 2,
+      title: 'iframe父子操作',
+      maxmin: true,
+      shadeClose: true, //点击遮罩关闭层
+      area : ['800px' , '520px'],
+      content: 'test/iframe.html'
+    });
+  });
+  </span><button  id="parentIframe" class="layui-btn">运行上述例子</button>
+  <span id="hello4">
+  //弹出一个loading层
+  $('#test4').on('click', function(){
+    var ii = layer.load();
+    //此处用setTimeout演示ajax的回调
+    setTimeout(function(){
+      layer.close(ii);
+    }, 1000);
+  });
+  </span><button id="test4" class="layui-btn">运行上述例子</button>
+  <span id="hello5">
+  //弹出一个tips层
+  $('#test5').on('click', function(){
+    layer.tips('Hello tips!', '#test5');
+  });
+  </span><button id="test5" class="layui-btn">运行上述例子</button>
+  <code><</code>/script>
+
+  当你对此建立了一定的初始，你应该去详看API手册了。
+
+<code><</code>/body>
+<code><</code>/html>
+  </pre>
+ 
+</div>
+
+
+<div class="layui-footer footer footer-index">
+  <div class="layui-main">
+    <p>&copy; 2017 <a href="../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT license</p>
+    <p>
+      <a href="http://fly.layui.com/jie/3147.html" target="_blank">捐赠</a>
+      <a href="mailto:xianxin@layui.com">联系</a>  
+      <a href="http://fly.layui.com/jie/2461.html" target="_blank">微信公众号</a>
+    </p>
+  </div>
+</div>  
+
+
+<script>
+!function(){
+
+for(var i = 1; i <= 5; i++){
+	new Function($('#hello'+ i).text())();
+}
+}();
+</script>
+
+
+
+
+
+
+</body>
+</html>

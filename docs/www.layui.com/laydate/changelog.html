@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>镜像站@layDate 更新日志</title>
+
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="stylesheet" href="../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?v=531-1" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?v=531-1" media="all">
+  <link rel="stylesheet" href="../../res.layui.com/static/css/independents.css" tppabs="http://res.layui.com/static/css/independents.css?v=531-1" media="all">
+
+</head>
+<body>
+
+
+<div class="header">
+  <div class="layui-main">
+    <a class="logo" href="../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <ul class="layui-nav">
+      <li class="layui-nav-item">
+        <a href="../index.htm" tppabs="http://www.layui.com/" target="_blank">layui</a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="../alone.html" tppabs="http://www.layui.com/alone.html">layDate</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alone-banner">
+  <div class="layui-main">
+    <h1 style="padding-top: 80px;">layDate 更新日志</h1>
+    <p></p>
+  </div>
+</div>
+
+<div class="layui-main alone-nav">
+  <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li>
+        <a href="index.htm" tppabs="http://www.layui.com/laydate/">主页</a>
+      </li>
+      <li class="layui-this">
+        <a href="changelog.html" tppabs="http://www.layui.com/laydate/changelog.html">更新日志</a>
+      </li>
+      <li>
+        <a href="../doc/modules/laydate.html" tppabs="http://www.layui.com/doc/modules/laydate.html" target="_blank">文档</a>
+      </li>
+      <li>
+        <a href="https://github.com/sentsin/laydate/" target="_blank" rel="nofollow">Github</a>
+      </li>
+      <li>
+        <a href="https://gitee.com/sentsin/laydate/" target="_blank" rel="nofollow">Gitee</a>
+      </li>
+      <li>
+        <a href="https://www.npmjs.com/package/layui-laydate/" target="_blank" rel="nofollow">NPM</a>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="layui-timeline alone-timeline">
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.3.1 <span class="layui-badge-rim">2021-05-08</span></h2>
+        </div>
+        <ul>
+          <li>[修复] 范围选择的若干问题</li>
+          <li>[优化] 代码构建，包含 layui 核心基础、lay 模块基础</li>
+        </ul>
+        
+        <div style="margin-top: 15px;">
+
+        </div>
+        
+      </div>
+    </li>
+  
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.3.0 <span class="layui-badge-rim">2021-05-08</span></h2>
+        </div>
+        <ul>
+          <li>[新增] isPreview 参数，用于控制是否显示当前选择值的预览（默认 true）</li>
+          <li>[优化] 日期范围选择，因左右日期面板独立，固取消范围区间标注，增加开始-结束文本预览</li>
+          <li>[优化] range 参数，可支持传入数组，用于分别指定开始日期和结束日期的选择器</li>
+          <li>[优化] 时间范围选择，初始结束时间为 23:59:59</li>
+          <li>[优化] 当前日期不在设定的最小（min）和最大（max）日期内，则自动校正面板可选的初始日期</li>
+          <li>[优化] 选中完毕的赋值逻辑，对非 input 元素，如果存在子元素，则不进行默认赋值操作，由回调去处理</li>
+          <li>[优化] 之前版本一直存在的初始处全局事件重复绑定的问题</li>
+          <li>[修复] 当开启范围选择，未触发 change 回调的问题</li>
+          <li>[修复] 在 ie11 因 laydate-day-mark 的 height：100% 导致的异常</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.2.1 <span class="layui-badge-rim">2021-04-22</span></h2>
+        </div>
+        <ul>
+          <li>[优化] 日期范围内的区间样式</li>
+          <li>[优化] link 核心方法</li>
+        </ul>        
+      </div>
+    </li>
+  
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.2.0 <span class="layui-badge-rim">2021-03-31</span></h2>
+        </div>
+        <ul>
+          <li>[优化] type 设置不规范时的问题，将自动纠正为默认 type</li>
+          <li>[优化] 弹出面板的坐标吸附算法，更加灵活合理</li>
+          <li>[修复] 弹出日期选择面板时，按回车键无效的问题</li>
+          <li>[修复] layDate 组件当 lang 设置为 'en' 时，部分提示内容未显示英文的问题</li>
+          <li>[剔除] 多余无效的 js 代码</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.1.0 <span class="layui-badge-rim">2021-03-21</span></h2>
+        </div>
+        <blockquote class="layui-elem-quote layui-text">
+          久违的一次更新
+        </blockquote>
+        <ul>
+          <li>[优化] 范围选择，不再是之前一样左右联动的操作方式，而是左右保持完全独立的选择（重点）</li>
+          <li>[优化] 大量核心代码</li>
+          <li>[优化] 样式多处细节</li>
+          <li>[修复] 当设为年/月选择器时，点击选择年/月数值时，面板未自动关闭的问题</li>
+          <li>[修复] 因之前版本的范围联动方式造成的若干问题
+        </ul>
+      </div>
+    </li>
+  
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.9</h2>
+        </div>
+        <span class="layui-badge-rim">2017-12-05</span>
+        <ul>
+          <li>优化自动获取路径代码，以解决部分浏览器下的某些场景无法自动加载样式问题</li>
+          <li>修复 set 方法报错问题</li>
+          <li>修复选择 datetime 选择器的月份列表报错的问题（尽管之前的报错不影响正常使用）</li>
+        </ul>
+      </div>
+    </li>
+  
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.85</h2>
+        </div>
+        <span class="layui-badge-rim">2017-11-16</span>
+        <ul>
+          <li>优化 layDate 组件范围选择样式</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.8</h2>
+        </div>
+        <span class="layui-badge-rim">2017-11-02</span>
+        <ul>
+          <li>修复当前面板为 1 月时，上个月（12月）的最后一天显示为 30 的 bug</li>
+          <li>修复在 input 中输入一个非法值再点击其它同类控件，未校验上一个控件日期是否非法的问题</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.7</h2>
+        </div>
+        <span class="layui-badge-rim">2017-09-15</span>
+        <ul>
+          <li>修复 在 requirejs 下使用的报错问题</li>
+          <li>如果 在 requirejs 下使用，需要通过 laydate.path = "" 来设定 laydate.js 所在目录 <a href="../doc/modules/laydate.html#path" tppabs="http://www.layui.com/doc/modules/laydate.html#path" target="_blank">#见文档</a></li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.6</h2>
+        </div>
+        <span class="layui-badge-rim">2017-09-13</span>
+        <ul>
+          <li>优化时间选择器（time）的范围选择体验，不再校验“结束时间超出开始时间”，以支持跨越凌晨的情况</li>
+          <li>优化控件关闭，以避免 focus 事件下可能出现的未关闭上一个控件的问题</li>
+          <li>修复自定义无符号分割的日期格式（如 yyyyMM、yyyyMMdd），二次选择后控件存在的异常问题</li>
+          <li>修复日期时间选择器（datetime）开启范围选择时，选择当天未校验“结束时间超出开始时间”的问题</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.5</h2>
+        </div>
+        <span class="layui-badge-rim">2017-09-03</span>
+        <ul>
+          <li>修复 value 传入日期对象时，初始的input值异常问题</li>
+          <li>修复设置了min/max，年月列表的确定不可点击问题</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.4</h2>
+        </div>
+        <span class="layui-badge-rim">2017-09-01</span>
+        <ul>
+          <li>对 mark 参数增加 0-0-date 支持，以标记每月的某天</li>
+          <li>如果设置了 value，则默认给被绑定的元素（如 input）赋值</li>
+          <li>修复年列表的 disabled 小问题</li>
+          <li>修复 requirejs 下无法使用的问题</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.3</h2>
+        </div>
+        <span class="layui-badge-rim">2017-08-30</span>
+        <ul>
+          <li>修复点击时间选择器的标题区域，出现报错的问题</li>
+          <li>修复限制可选日期时，年列表和月列表存在的小问题</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.2</h2>
+        </div>
+        <span class="layui-badge-rim">2017-08-24</span>
+        <ul>
+          <li>增加开始日期超出结束日期时点击确定出现的提示</li>
+          <li>修复回车事件影响其它元素（如textarea）正常回车的失误性bug</li>
+          <li>修复：选择日期范围确定后，再重新打开并选择开始日期（却未点结束日期），再点击空白区域关闭，又重新打开，并选择更小一点的日期所出现的异常问题<span class="layui-word-aux">（卧槽，这个 bug 描述起来好累！你们读懂了吗？至少我都被自己说晕了。发现这个 bug 的同学心细如夸克）</span></li>
+          <li>修复时间选择器在“360极(keng)速(die)浏览器”下因显示隐藏滚动条导致的样式异常问题</li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.1</h2>
+        </div>
+        <span class="layui-badge-rim">2017-08-22</span>
+        <ul>
+          <li>日期时间选择器改为只能点确定关闭（以便选择时间）</li>
+          <li>修复选择了当月的最后一天（比如29/31），再切换年月出现日期值超出的bug</li>
+          <li>修复ready回调返回的月份值没有加1的问题</li>
+          <li>修复字体图标未加载的问题（独立版）</li>
+          <li>修复时间选择器的样式错乱问题（独立版）</li>
+        </ul>
+      </div>
+    </li>
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">
+          <h2>5.0.0</h2>
+        </div>
+        <span class="layui-badge-rim">2017-08-21</span>
+        <ul>
+          <li>全新重写</li>
+          <li>支持单独显示年选择器、年月选择器、日期选择器、时间选择器、日期时间选择器</li>
+          <li>支持双控件，用于选择年/年月/日期/时间/日期时间五种类型选择器的范围（可顺时、逆时）</li>
+          <li>支持日期格式的自定义</li>
+          <li>支持日期是否合法的自动校验</li>
+          <li>支持有效日期范围的设定</li>
+          <li>支持内置事件（可自定义）、外部事件、直接显示等多种调用方式</li>
+          <li>支持中文版和国际版的语言设定</li>
+          <li>支持开启公历节日和标记重要日期</li>
+          <li>支持直接嵌套在页面的某个容器中</li>
+          <li>支持底部按钮的任意顺序排版</li>
+          <li>支持智能显示在最佳可视坐标</li>
+          <li>支持回车快捷键选择</li>
+          <li>支持多种内置主题的设定，支持自定义主题色，且可单独定制主题</li>
+        </ul>
+      </div>
+    </li>
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">1.x ( Nothing )</div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+
+<div class="layui-footer footer footer-index">
+  <div class="layui-main">
+    <p>&copy; 2017 <a href="../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT license</p>
+    <p>
+      <a href="http://fly.layui.com/jie/3147/" target="_blank">付费计划</a>
+      <a href="mailto:xianxin@layui.com">联系</a>  
+      <a href="http://fly.layui.com/jie/2461/" target="_blank">微信公众号</a>
+    </p>
+  </div>
+</div>  
+
+<script src="../../res.layui.com/layui/release/laydate/dist/laydate.js-v=531-1.js" tppabs="http://res.layui.com/layui/release/laydate/dist/laydate.js?v=531-1"></script>
+<script src="../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?v=531-1"></script>
+<script src="demo.js" tppabs="http://www.layui.com/laydate/demo.js?v=531-1"></script>
+
+
+
+</body>
+</html>
+
+

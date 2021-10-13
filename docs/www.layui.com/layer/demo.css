@@ -1,0 +1,198 @@
+/*! layer官方演示页面样式 */
+
+/* 页面公共 */
+html,body{padding:0;}
+html,body{_overflow-y:auto; font-family:'\5FAE\8F6F\96C5\9ED1';  font-size:14px;}
+body{-webkit-font-feature-settings: 'kern' 1; -moz-font-feature-settings: 'kern' 1; -o-font-feature-settings: 'kern' 1; text-rendering: geometricPrecision;}
+body{ background:#fff;}
+a:hover{ text-decoration:none;}
+i{ font-family:Bookman Old Style;}
+.clear:after, .layer_first:after{clear:both; content:'.'; display:block; height:0; font-size:0; visibility:hidden;}
+.clear, .layer_first{zoom:1; clear:both;}
+.hide{display:none;}
+.area_zero, .demotab li i{position:absolute; width:0; height:0; border-style:dashed; border-color:transparent; overflow:hidden;}
+.box{ width:1000px; position:relative; margin:0 auto;}
+pre code{font-family:'\5FAE\8F6F\96C5\9ED1';}
+.inline, .extimgs img{display:inline-block; *display:inline; *zoom:1; vertical-align:top;}
+.btns{display:inline-block; vertical-align:top; margin:0 5px 10px 0; height:36px; line-height:36px; border-radius:3px; padding:0 30px; background-color:#FF4351; color:#fff; border:none;}
+.btns:hover{background-color:#FEAE1B; color:#fff;}
+
+.iconfont{font-weight:400;}
+
+
+.clearfix{ clear:both; zoom:1;}
+.clearfix:after{content:'\20'; clear:both; zoom:1; display:block; height:0;}
+
+.layui-main{width: 1000px;}
+
+/* 页头 */
+.layer_banner{height:190px; background:#393D49; }
+.layer_banner span.ie6PNG{ position:absolute; width:912px; height:79px; background:url(images/banner.png)/*tpa=http://www.layui.com/layer/images/banner.png*/ no-repeat; top:30px;}.layer_banner h1{display:none;}
+.layer_banner em{ position:absolute; bottom:30px; right:0; color:#fff;}.layer_banner em a{color:#fff;}
+
+/* 导航 */
+.layer_nav{ height: 51px; line-height: 51px; background-color: #23A1FF;} 
+.layer_nav .box{padding-left:0;}
+.layer_nav a{position:relative; display: inline-block; *display:inline; *zoom:1; vertical-align:top; margin: 0 40px; color:#fff; font-size: 16px; padding: 0 15px;}
+.layer_nav a:hover{color:#F5F5F5;}
+.layer_nav a:hover{opacity: 0.8; transition: all .5s; -webkit-transition: all .5s}
+.layer_nav .layer-nav-now{color:#E2EBF3}
+.layer-nav-right{position:absolute; right:0; top:0;}
+.filter_nums{position:absolute; z-index:9; left:50%; margin-left: -20px; top:-10px; height:16px; line-height:16px; padding:0 5px; background-color:#FF4400; color:#fff; font-size:12px; border-radius:3px; _float:left;}
+.layer_nav a .area_zero{z-index: 8; top:-3px; left:50%; margin-left:-17px; border-width: 8px; border-right-style: solid; border-right-color:#FF6600;}
+.layer_nav a .area_zero, .layer_nav a .filter_nums{_display:none;}
+.fixnav{position:fixed; bottom:0; width:100%; z-index:999; background-color:#206F96;}
+
+/* 首屏 */
+.layer-main{padding-top:20px;}
+.layer_notice{float:left; height:75px; width:330px;  overflow:hidden;  background:#5FB878; padding:10px;}
+.layer_notice a{color:#fff;}
+.layer_notice li{ line-height:25px;}
+.layer_ico{ background:url(images/layer_ico.png)/*tpa=http://www.layui.com/layer/images/layer_ico.png*/ no-repeat;}
+.layer_download{ height: 75px; width: 625px; float:right; margin-left: 0; _display:inline; background:#ECF0F1; padding:10px; position:relative;}
+.layer_download li{ line-height:25px; color:#333;}
+.layer_download .layer_yuan{position:absolute; width:53px; height:72px; right:240px; top:10px; background-position:-1px -4px; }
+.layer_download .layer_down{ position:absolute; width:197px; height: 51px; line-height: 51px; /*background:url(images/download.png?v=1);*/ background-color: #5FB878; right:18px; top:15px; font-size: 18px; color: rgba(255,255,255,.8);}
+.layer_download .layer_downs{ position:absolute; right:18px; bottom: 5px; width:197px; height:20px; line-height:20px; overflow:hidden; color:#373737; font-size:12px;} .layer_downs em{ font-family:Verdana;}
+.layer_down:hover{opacity:0.9;}
+.layer_download .padding{margin-top: 5px; padding-left:70px; line-height:20px;}
+.layer_download .github{ padding-left:57px;}
+.github a{color:#005B8C; font-family: Courier New;}
+.github a:hover{text-decoration:underline;}
+.layer-text{position:relative; padding: 15px 0 0; clear: both; color:#373737; clear:both;}
+.layer-text h2{ height:35px; line-height:30px;}
+.layer-text p,.write p{margin-bottom: 10px; text-indent: 2em; line-height:23px;}
+.layer-text p em{font-weight:900}
+.layer-text code, .layer-api-content code{margin:0 5px; padding:2px 5px; border: 1px solid #ccc; background-color:#f5f5f5; color:#FF4400; border-radius:3px; font-family:'\5FAE\8F6F\96C5\9ED1';}
+.layer-area{ margin-top:10px;}
+body .layer-area a{margin: 0 6px 10px 0;}
+.layer-area .layer-demolist{display: block; margin: 5px 0;}
+.layer-area .layui-btn+.layui-btn{margin-left: 0;}
+.downmore{line-height:30px; text-align:center;}
+.downmore a{padding:0 5px;}
+.downmore a cite{text-decoration:underline}
+.downmore a:hover{color:#666;}
+.layer-area .seecodes{height:32px; line-height:32px; border:none; background-color:#5FB878; color:#fff;}
+
+/* 功能演示 */
+.demolist{position:relative; margin-top:0; font-size:0;  text-align:center;}
+.demolist li{_width:110px; margin:0 0 0 20px; display:inline-block; *display:inline; *zoom:1; vertical-align:top; font-size:14px;}
+.demolist li:first-child{margin-left:0px;}
+.demolist li div{*padding:0 10px; height: 35px; line-height: 35px; border-radius: 2px; background-color: #1AA094; color:#fff;}
+.demolist li a{margin:11px 0; padding:0 25px; float:none;}
+body .yourclass{width:420px; height:240px; background-color:#81BA25; box-shadow: none; color:#fff;}
+body .yourclass .layui-layer-content{ padding:20px;}
+
+.demolist336_280 li{height: 280px;}
+.demolist336_280 li a{margin: 17px 0;}
+
+/* 帮助手册页 */
+.layer-api-nav{height:60px; background-color:#393D49; text-align:center;}
+.layer-api-nav a{line-height:60px; color:#eee}
+.layer-api{position:absolute; top: 66px; left:0; width:170px; line-height:24px; padding:15px; background-color:#ECF0F1; color:#333; font-size:14px;}
+.layer-api-fix{position:fixed; top:0; bottom:0; left:-10px; width:180px; overflow-y:auto;}
+.layer-api h2{position:relative; padding-bottom: 6px; font-size:16px;  color:#333; cursor:pointer;}
+.layer-api h2 .iconfont{color:#666;}
+.layer-api h2 .icon-caidan{font-size:20px;}
+.layer-api h2 span{position:absolute; right:0; top:0;}
+.layer-api ul{margin-bottom:20px;}
+.layer-api li{position:relative;}
+.layer-api li a{display:block; padding-left: 25px;}
+.layer-api li.layer-api-slecked a,.layer-api li a:hover{background-color:#fff; border-radius:3px;;}
+.layer-api li a cite{color:#999}
+.layer-api-run{position:fixed; _position:absolute; z-index: 100; right:0; top:60px; width:336px; background-color:#fff;}
+.layer-api-run .runtest{position:relative; left:0; top:0; border:1px solid #101010; border-right:none; border-left-width:20px;}
+.layer-api-run .runtest a{right:10px; bottom:10px;}
+.layer-api-run .runtest textarea{width:296px; height:200px; color:#CEDF7D;}
+.layer-api-content{padding:0 356px 0 220px; line-height:24px;}
+.layer-api-content a{color:#00B2E2;}
+.layer-api-content .layer-btn, .layer-api-content .layer-btn:hover{color:#fff;}
+.layer-api-content a:hover{color:#FF4400;}
+.layer-api-tips{background-color:#ECF0F1}
+.layer-api-content h2{ font-weight:400;}
+.layer-api-content h2{padding:10px 0; margin-bottom:5px; border-bottom:1px solid #eee; font-size:22px;}
+.layer-api-content dt{color:#999;}
+.layer-api-content dt a{padding:5px 0; font-size:18px;}
+.layer-api-content span{color:#000;}
+.layer-api-content  dd{padding-bottom:10px;}
+.layer-photos-demo{margin:10px 0;}
+.layer-photos-demo img{width: 160px; height: 100px;}
+
+/* 皮肤库页 */
+
+.layer-skin-tip{background-color:#fff; padding:20px;}
+.layer-skin-list{font-size:0; text-align:center}
+.layer-skin-list dt{margin-bottom:20px; font-size:18px;}
+.layer-skin-list dt span{display:block; color:#999; padding-left:10px; font-size:12px;}
+.layer-skin-list dd{position:relative; width:425px; min-height:300px; padding:30px 20px; margin:0 16px 25px; background-color:#B2B2B2; color:#eee; display:inline-block; *display:inline; *zoom:1; vertical-align:top; font-size:14px; }
+.layer-skin-list div{position:absolute; bottom:0; left:0; width:100%; padding:10px 0; line-height:26px; text-align:left; background-color:#393D49;}
+.layer-skin-list div p{padding:0 20px;}
+.layer-skin-list a{position:absolute; right:20px; bottom:20px; padding:0 25px; height:32px; line-height:32px; background-color:#FF8800; color:#fff;}
+.layer-skin-list a:hover{background-color:#78BA32;}
+#skinFabu pre{padding-left:15px;}
+
+
+/* 辅助 */
+pre, .demo1{display:none;}
+.layer_gotop{ background-position:  0 -141px; width: 57px; height: 57px; overflow: hidden; position: fixed; right:0; bottom:35px; display:none;}
+.layer_gotop:hover{ background-position:  -70px -141px;}
+.googlead{border:1px solid #ccc; padding:1px; width:300px; height:250px; position:fixed; _position:absolute; right:-320px; bottom:1px; z-index:999999;}
+.layer_title{ height:100px; line-height:100px; border-top:8px solid #282C35; border-bottom:8px solid #282C35; text-align:center; background-color:#393D49; color:#fff; font-size:20px;}
+.navlist .thisnavlist a{display:block; color:#fff;}
+.navlist .thisnavlist a:hover{cursor:default; color:#fff;}
+.navlist li a:hover{color:#666;}
+.layer-online{display:block; width:160px; height:36px; line-height:36px; text-align:center; background-color:#1EB4E6; color:#fff;}
+.layer-online:hover{color:#fff; opacity:0.9;}
+
+/* 众筹 */
+.layer-chou{padding:20px; text-align:center;}
+.layer-chou em{padding:0 5px; color:#FF4400;}
+.layer-chou ul{width:470px; margin:0 auto; text-align:left;}
+.layer-chou input{width:150px; height:30px; margin:0 auto; line-height:30px; padding: 0 5px; border: 1px solid #ccc; box-shadow: 1px 1px 5px rgba(0,0,0,.1) inset; color:#333;}
+.layer-chou textarea{width:300px; height:100px; line-height:20px;}
+.layer-chou ul *{display:inline-block; *display:inline; *zoom:1; vertical-align:top;}
+.layer-chou ul li{margin-top:10px;}
+.layer-chou ul label{width:100px; text-align:right; line-height: 32px;}
+.layer-chou ul span{color:#999; font-size:12px; padding-left:5px;}
+.layer-chou dl{border-top:1px solid #ccc; margin:15px 20px; padding:10px;}
+.layer-chou dt{font-weight:700; color:#FF4400; font-size:16px; margin-bottom:5px;}
+.layer-chou .btns{border-radius:3px; height:32px; line-height:32px; padding:0 20px; box-shadow: 1px 1px 1px #ccc;   text-shadow: 1px 1px 0 #393D49;}
+
+/* 工具按钮区域 */
+.layer-tool{position:absolute; right:0; top: 18px;}
+.runtest{position: relative; display:none;}
+.runtest textarea{display:block; width: 625px; height: 260px; border: 10px solid #F8F8F8; border-top-width: 0; padding: 10px; line-height:20px; overflow:auto; background-color: #3F3F3F; color: #eee; font-size:12px; font-family:Courier New;}
+.runtest a{position: absolute; right: 20px; bottom: 20px;}
+
+/* 定制化 */
+html .layui-layer-demo{background-color:#eee;}
+.layui-layer-demo .layui-layer-title{border:none; background-color:#333; color:#fff;}
+
+/* 底部 */
+.layer-footer{margin-top:50px; padding:30px 0; line-height:24px; border-top:1px solid #ccc; color:#333}
+.layer-link{display:block; height:40px; line-height:40px;}
+.layer-footer p{text-align:center;}
+.layer-footer p span{padding:0 5px;}
+.layer-footer a{color:#0099CC;}
+
+/* 广告 */
+.ads{text-align:center;}
+.popupad{position:fixed; left:0; top:0; width:100%; height:100%; z-index:999999999999999999999999; background-color:rgba(0,0,0,.6);}
+.popupad .popupcontent{position:absolute; left:50%; top:50%; margin:-140px 0 0 -168px;}
+
+
+@media screen and (max-width:640px){
+.layer-api,.layer-api-run,.layer-online,.layer-api-nav a{display:none;}
+.layer-api-content{padding:0 10px;}
+body::before{height:0;}
+.layer-api-nav a:first-child{display:block;   padding: 0;}
+}
+
+
+
+
+
+
+
+
+

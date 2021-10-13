@@ -1,0 +1,866 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>镜像站@导航相关 - 页面元素 - Layui</title>
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <script>
+  ;!function(){self!==parent&&(location.href="http://www.baidu.com/")}();
+  </script>
+  <link rel="stylesheet" href="../../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?t=1632428048355"  media="all">
+  <link rel="stylesheet" href="../../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?t=1632428048355-19" media="all">
+</head>
+<body>
+
+
+<div class="layui-header header header-doc" autumn>
+  <div class="layui-container">
+    <a class="logo" href="../../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <div class="layui-form layui-hide-xs component" lay-filter="LAY-site-header-component"></div>
+    <div class="layui-hide-xs site-notice"></div>
+    
+    <ul class="layui-nav" id="LAY_NAV_TOP">
+      <li class="layui-nav-item layui-this">
+        <a href="../index.htm" tppabs="http://www.layui.com/doc/">文档</a> 
+      </li>
+      <li class="layui-nav-item ">
+        <a href="../../demo/index.htm" tppabs="http://www.layui.com/demo/">示例</a>
+      </li>
+      
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <!--<span class="layui-badge-dot" style="left:0; right: auto; margin: -4px 0 0 5px;"></span>--> 
+          周边
+        </a>
+        <dl class="layui-nav-child layui-nav-child-c">  
+          <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+            <a href="https://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">问题反馈</a>
+            <hr>
+          </dd>
+          
+          <dd lay-unselect><a href="../../alone.html" tppabs="http://www.layui.com/alone.html" target="_blank" lay-unselect>独立组件</a></dd>
+          <dd lay-unselect><a href="../../../fly.layui.com/extend/index.htm" target="_blank">扩展组件</a></dd>
+        </dl>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="http://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">反馈</a>
+      </li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="../../../other/html5shiv/r29/html5.min.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="../../../other/respond.js/1.4.2/respond.min.js" tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+<ul class="site-dir">
+  <li><a href="#nav"><cite>水平导航</cite></a></li>
+  <li><a href="#nav-theme"><cite>导航主题</cite></a></li>
+  <li><a href="#navtree"><cite>垂直与侧边导航</cite></a></li>
+  <li><a href="#attr"><cite>导航基础属性</cite> <span class="layui-badge-dot"></span></a></li>
+  <li><a href="#breadcrumb"><cite>面包屑</cite></a></li>
+  <li><a href="../modules/element.html" tppabs="http://www.layui.com/doc/modules/element.html"><cite>相关动态操作</cite></a></li>
+</ul>
+<div class="layui-container layui-row">
+  
+<div class="layui-col-md3">
+  <div class="layui-panel site-menu">
+    <ul class="layui-menu layui-menu-lg">
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          基础说明
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../index.htm" tppabs="http://www.layui.com/doc/">
+                <span>开始使用 </span> 
+                <span class="layui-font-12 layui-font-gray">Getting Started</span>
+              </a>
+              
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/infrastructure.html" tppabs="http://www.layui.com/doc/base/infrastructure.html">
+                <span>底层方法 </span>
+                <span class="layui-font-12 layui-font-gray">基础支撑</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/element.html" tppabs="http://www.layui.com/doc/base/element.html">
+                <span>页面元素 </span>
+                <span class="layui-font-12 layui-font-gray">规范 公共类 属性</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/modules.html" tppabs="http://www.layui.com/doc/base/modules.html">
+                <span>模块规范 </span>
+                <span class="layui-font-12 layui-font-gray">使用 扩展</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/faq.html" tppabs="http://www.layui.com/doc/base/faq.html">
+                <span>常见问题 </span>
+                <span class="layui-font-12 layui-font-gray">FAQ</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/changelog.html" tppabs="http://www.layui.com/doc/base/changelog.html">
+                <span>更新日志 </span>
+                <span class="layui-font-12 layui-font-gray">changelog</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          页面元素
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="layout.html" tppabs="http://www.layui.com/doc/element/layout.html">
+                <span>布局 </span>
+                <span class="layui-font-12 layui-font-gray">栅格 后台管理布局</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="color.html" tppabs="http://www.layui.com/doc/element/color.html">
+                <span>颜色 </span>
+                <span class="layui-font-12 layui-font-gray">主色调 颜色搭配</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="icon.html" tppabs="http://www.layui.com/doc/element/icon.html">
+                <span>图标 </span>
+                <span class="layui-font-12 layui-font-gray">iconfont 字体图标</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="anim.html" tppabs="http://www.layui.com/doc/element/anim.html">
+                <span>动画 </span>
+                <span class="layui-font-12 layui-font-gray">内置 CSS3 动画</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="button.html" tppabs="http://www.layui.com/doc/element/button.html">
+                <span>按钮 </span>
+                <span class="layui-font-12 layui-font-gray">button</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="form.html" tppabs="http://www.layui.com/doc/element/form.html">
+                <span>表单 </span>
+                <span class="layui-font-12 layui-font-gray">form 元素集合</span>
+              </a>
+            </div>
+          </li>
+          <li class="layui-menu-item-checked2">
+            <div class="layui-menu-body-title">
+              <a href="nav.html" tppabs="http://www.layui.com/doc/element/nav.html">
+                <span>导航 </span>
+                <span class="layui-font-12 layui-font-gray">nav 面包屑</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="menu.html" tppabs="http://www.layui.com/doc/element/menu.html">
+                <span>菜单 </span>
+                <span class="layui-font-12 layui-font-gray">menu 基础菜单</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="tab.html" tppabs="http://www.layui.com/doc/element/tab.html">
+                <span>选项卡 </span>
+                <span class="layui-font-12 layui-font-gray">Tabs 切换</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="progress.html" tppabs="http://www.layui.com/doc/element/progress.html">
+                <span>进度条 </span>
+                <span class="layui-font-12 layui-font-gray">progress</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="panel.html" tppabs="http://www.layui.com/doc/element/panel.html">
+                <span>面板 </span>
+                <span class="layui-font-12 layui-font-gray">panel 卡片 折叠</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="table.html" tppabs="http://www.layui.com/doc/element/table.html">
+                <span>表格 </span>
+                <span class="layui-font-12 layui-font-gray">静态 table</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="badge.html" tppabs="http://www.layui.com/doc/element/badge.html">
+                <span>徽章 </span>
+                <span class="layui-font-12 layui-font-gray">小圆点  小边框</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="timeline.html" tppabs="http://www.layui.com/doc/element/timeline.html">
+                <span>时间线 </span>
+                <span class="layui-font-12 layui-font-gray">timeline</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="auxiliar.html" tppabs="http://www.layui.com/doc/element/auxiliar.html">
+                <span>辅助 </span>
+                <span class="layui-font-12 layui-font-gray">引用 字段集 横线等</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          内置模块
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/layer.html" tppabs="http://www.layui.com/doc/modules/layer.html">
+                <span>弹出层 </span>
+                <span class="layui-font-12 layui-font-gray">layer</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/laydate.html" tppabs="http://www.layui.com/doc/modules/laydate.html">
+                <span>日期与时间选择 </span>
+                <span class="layui-font-12 layui-font-gray">laydate</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/laypage.html" tppabs="http://www.layui.com/doc/modules/laypage.html">
+                <span>分页 </span>
+                <span class="layui-font-12 layui-font-gray">laypage</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/laytpl.html" tppabs="http://www.layui.com/doc/modules/laytpl.html">
+                <span>模板引擎 </span>
+                <span class="layui-font-12 layui-font-gray">laytpl</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/table.html" tppabs="http://www.layui.com/doc/modules/table.html">
+                <span>数据表格 </span>
+                <span class="layui-font-12 layui-font-gray">table</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/form.html" tppabs="http://www.layui.com/doc/modules/form.html">
+                <span>表单 </span>
+                <span class="layui-font-12 layui-font-gray">form</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/upload.html" tppabs="http://www.layui.com/doc/modules/upload.html">
+                <span>文件上传 </span>
+                <span class="layui-font-12 layui-font-gray">upload</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/dropdown.html" tppabs="http://www.layui.com/doc/modules/dropdown.html">
+                <span>下拉菜单 </span>
+                <span class="layui-font-12 layui-font-gray">dropdown</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/transfer.html" tppabs="http://www.layui.com/doc/modules/transfer.html">
+                <span>穿梭框 </span>
+                <span class="layui-font-12 layui-font-gray">transfer</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/tree.html" tppabs="http://www.layui.com/doc/modules/tree.html">
+                <span>树形组件 </span>
+                <span class="layui-font-12 layui-font-gray">tree</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/colorpicker.html" tppabs="http://www.layui.com/doc/modules/colorpicker.html">
+                <span>颜色选择器 </span>
+                <span class="layui-font-12 layui-font-gray">colorpicker</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/element.html" tppabs="http://www.layui.com/doc/modules/element.html">
+                <span>常用元素操作 </span>
+                <span class="layui-font-12 layui-font-gray">element</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/slider.html" tppabs="http://www.layui.com/doc/modules/slider.html">
+                <span>滑块 </span>
+                <span class="layui-font-12 layui-font-gray">slider</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/rate.html" tppabs="http://www.layui.com/doc/modules/rate.html">
+                <span>评分 </span>
+                <span class="layui-font-12 layui-font-gray">rate</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/carousel.html" tppabs="http://www.layui.com/doc/modules/carousel.html">
+                <span>轮播 </span>
+                <span class="layui-font-12 layui-font-gray">carousel</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/flow.html" tppabs="http://www.layui.com/doc/modules/flow.html">
+                <span>流加载 </span>
+                <span class="layui-font-12 layui-font-gray">flow</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/util.html" tppabs="http://www.layui.com/doc/modules/util.html">
+                <span>工具组件 </span>
+                <span class="layui-font-12 layui-font-gray">util</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../modules/code.html" tppabs="http://www.layui.com/doc/modules/code.html">
+                <span>代码高亮显示 </span>
+                <span class="layui-font-12 layui-font-gray">code</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="layui-hide-v"> - </div>
+</div>
+
+  
+  <div class="layui-col-md9 site-content">
+    <h1 class="site-h1">导航相关 - 页面元素</h1>
+    <blockquote class="layui-elem-quote">
+      导航一般指页面引导性频道集合，多以菜单的形式呈现，可应用于头部和侧边，是整个网页画龙点晴般的存在。面包屑结构简单，支持自定义分隔符。千万不要忘了加载 <em>element</em>模块。虽然大部分行为都是在加载完该模块后自动完成的，但一些交互操作，如呼出二级菜单等，需借助element模块才能使用。你可以移步文档左侧【内置模块 - 常用元素操作 element】了解详情
+    </blockquote>
+    <blockquote class="site-text layui-elem-quote">
+      依赖加载模块：<a href="../modules/element.html" tppabs="http://www.layui.com/doc/modules/element.html">element</a>
+    </blockquote>
+    
+    
+    
+    <div class="site-title">
+      <fieldset><legend><a name="nav">水平导航</a></legend></fieldset>
+    </div>    
+    <div class="site-text">
+      <ul class="layui-nav">
+        <li class="layui-nav-item"><a href="">最新活动</a></li>
+        <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+        <li class="layui-nav-item"><a href="">大数据</a></li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">解决方案</a>
+          <dl class="layui-nav-child">
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">社区</a></li>
+      </ul>
+      <br>
+      <pre class="layui-code" lay-title="HTML结构">
+&lt;ul class="layui-nav" lay-filter="">
+  &lt;li class="layui-nav-item">&lt;a href="">最新活动&lt;/a>&lt;/li>
+  &lt;li class="layui-nav-item layui-this">&lt;a href="">产品&lt;/a>&lt;/li>
+  &lt;li class="layui-nav-item">&lt;a href="">大数据&lt;/a>&lt;/li>
+  &lt;li class="layui-nav-item">
+    &lt;a href="javascript:;">解决方案&lt;/a>
+    &lt;dl class="layui-nav-child"> &lt;!-- 二级菜单 --&gt;
+      &lt;dd>&lt;a href="">移动模块&lt;/a>&lt;/dd>
+      &lt;dd>&lt;a href="">后台模版&lt;/a>&lt;/dd>
+      &lt;dd>&lt;a href="">电商平台&lt;/a>&lt;/dd>
+    &lt;/dl>
+  &lt;/li>
+  &lt;li class="layui-nav-item">&lt;a href="">社区&lt;/a>&lt;/li>
+&lt;/ul>
+ 
+&lt;script&gt;
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+&lt;/script&gt;
+      </pre>
+      <p>设定<em>layui-this</em>来指向当前页面分类。</p>
+      
+      <br>
+      <p>导航中的其它元素</p>
+      <hr>
+      <p>除了一般的文字导航，我们还内置了图片和徽章的支持，如：</p>
+      <ul class="layui-nav">
+        <li class="layui-nav-item">
+          <a href="">控制台<span class="layui-badge">9</span></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">个人中心<span class="layui-badge-dot"></span></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href=""><img src="../../../other/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" tppabs="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">修改信息</a></dd>
+            <dd><a href="javascript:;">安全管理</a></dd>
+            <dd><a href="javascript:;">退了</a></dd>
+          </dl>
+        </li>
+      </ul>
+      <pre class="layui-code" lay-title="HTML结构">
+&lt;ul class=&quot;layui-nav&quot;&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;控制台&lt;span class=&quot;layui-badge&quot;&gt;9&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;个人中心&lt;span class=&quot;layui-badge-dot&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;
+    &lt;a href=&quot;&quot;&gt;&lt;img src=&quot;//t.cn/RCzsdCq&quot; class=&quot;layui-nav-img&quot;&gt;我&lt;/a&gt;
+    &lt;dl class=&quot;layui-nav-child&quot;&gt;
+      &lt;dd&gt;&lt;a href=&quot;javascript:;&quot;&gt;修改信息&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;javascript:;&quot;&gt;安全管理&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;javascript:;&quot;&gt;退了&lt;/a&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <p>是否瞬间上了个档次呢？</p>
+    </div>
+    
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="nav-theme">导航主题</a></legend>
+    </fieldset>
+    <ul class="layui-nav layui-bg-cyan">
+      <li class="layui-nav-item"><a href="">藏青导航</a></li>
+      <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+      <li class="layui-nav-item"><a href="">大数据</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">移动模块</a></dd>
+          <dd><a href="">后台模版</a></dd>
+          <dd><a href="">电商平台</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">社区</a></li>
+    </ul>
+    <br>
+    <ul class="layui-nav layui-bg-green">
+      <li class="layui-nav-item"><a href="">墨绿导航</a></li>
+      <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+      <li class="layui-nav-item"><a href="">大数据</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">移动模块</a></dd>
+          <dd><a href="">后台模版</a></dd>
+          <dd><a href="">电商平台</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">社区</a></li>
+    </ul>
+    <br>
+    <ul class="layui-nav layui-bg-blue">
+      <li class="layui-nav-item"><a href="">艳蓝导航</a></li>
+      <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+      <li class="layui-nav-item"><a href="">大数据</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">移动模块</a></dd>
+          <dd><a href="">后台模版</a></dd>
+          <dd><a href="">电商平台</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">社区</a></li>
+    </ul>
+    <br>
+    <div class="site-text">
+      <p>通过对导航追加CSS背景类，让导航呈现不同的主题色</p>
+      <pre class="layui-code">
+//如定义一个墨绿背景色的导航
+&lt;ul class="layui-nav layui-bg-green" lay-filter="">
+  …
+&lt;/ul>      
+      </pre>
+      <p>
+        水平导航支持的其它背景主题有：<em>layui-bg-cyan</em>（藏青）、<em>layui-bg-molv</em>（墨绿）、<em>layui-bg-blue</em>（艳蓝）
+        <br>垂直导航支持的其它背景主题有：<em>layui-bg-cyan</em>（藏青）
+      </p>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="navtree">垂直/侧边导航</a></legend>
+    </fieldset> 
+    <div class="site-text">
+      <ul class="layui-nav layui-nav-tree" id="L_demoNav" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">默认展开</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+            <dd><a href="">跳转项</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">解决方案</a>
+          <dl class="layui-nav-child">
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">产品</a>
+        </li>
+        <li class="layui-nav-item"><a href="">大数据</a></li>
+        <li class="layui-nav-item layui-hide" id="L_demoNavReset"><a href="javascript:;" onclick="L_demoNav.className='layui-nav layui-nav-tree';L_demoNavReset.className='layui-nav-item layui-hide';">还原该导航演示</a></li>
+      </ul>
+      <p style="margin-top: 20px;">
+        <button class="layui-btn layui-btn-normal" onclick="L_demoNav.className='layui-nav layui-nav-tree layui-nav-side'; L_demoNavReset.className='layui-nav-item layui-this';">显示侧边导航示例</button>
+      </p>
+      <pre class="layui-code" lay-title="垂直导航HTML结构">
+&lt;ul class="layui-nav layui-nav-tree" lay-filter="test">
+&lt;!-- 侧边导航: &lt;ul class=&quot;layui-nav layui-nav-tree layui-nav-side&quot;&gt; --&gt;
+  &lt;li class=&quot;layui-nav-item layui-nav-itemed&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot;&gt;默认展开&lt;/a&gt;
+    &lt;dl class=&quot;layui-nav-child&quot;&gt;
+      &lt;dd&gt;&lt;a href=&quot;javascript:;&quot;&gt;选项1&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;javascript:;&quot;&gt;选项2&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;&quot;&gt;跳转&lt;/a&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot;&gt;解决方案&lt;/a&gt;
+    &lt;dl class=&quot;layui-nav-child&quot;&gt;
+      &lt;dd&gt;&lt;a href=&quot;&quot;&gt;移动模块&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;&quot;&gt;后台模版&lt;/a&gt;&lt;/dd&gt;
+      &lt;dd&gt;&lt;a href=&quot;&quot;&gt;电商平台&lt;/a&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;&lt;a href=&quot;&quot;&gt;产品&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;&lt;a href=&quot;&quot;&gt;大数据&lt;/a&gt;&lt;/li&gt;
+&lt;/ul>
+      </pre>
+      <p>水平、垂直、侧边三个导航的HTML结构是完全一样的，不同的是：</p>
+      <p class="site-tips">
+        垂直导航需要追加class：<em>layui-nav-tree</em>
+        <br>侧边导航需要追加class：<em>layui-nav-tree layui-nav-side</em>
+      </p>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="attr">导航可选属性/类</a></legend>
+    </fieldset> 
+    <div class="site-text">
+      <p>对导航元素结构设定可选属性和 CSS 类名，可让导航菜单项达到不同效果。目前支持的属性如下：</p>
+      <table class="layui-table">
+        <colgroup>
+          <col width="150">
+          <col width="200">
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>属性名</th>
+            <th>可选值</th>
+            <th>说明</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>lay-shrink</td>
+            <td class="layui-text">
+              <ul>
+                <li><em>空值</em>（默认）<br>不收缩兄弟菜单子菜单</li>
+                <li><em>all</em><br>收缩全部兄弟菜单子菜单</li>
+              </ul>
+            </td>
+            <td>
+              展开子菜单时，是否收缩兄弟节点已展开的子菜单
+              （<span style="color: #FF5722;">注：layui 2.2.6 开始新增</span>）
+              <br>如：<em>&lt;ul class=&quot;layui-nav layui-nav-tree&quot; lay-shrink=&quot;all&quot;&gt; … &lt;/ul&gt;</em> 
+            </td>
+          </tr>
+          <tr>
+            <td>lay-unselect</td>
+            <td>无需填值</td>
+            <td>
+              点击指定导航菜单时，不会出现选中效果（<span style="color: #FF5722;">注：layui 2.2.0 开始新增</span>）
+              <br>如：<em>&lt;li class=&quot;layui-nav-item&quot; lay-unselect&gt;刷新&lt;/li&gt;</em> 
+            </td>
+          </tr>
+          <tr>
+            <td>lay-bar</td>
+            <td class="layui-text">
+              <ul>
+                <li><em>disabled</em><br>禁用滑块跟随功能</li>
+              </ul>
+            </td>
+            <td>
+              在导航菜单主容器中配置，如：<br>
+              &lt;div class=&quot;layui-nav&quot; lay-bar=&quot;disabled&quot;&gt; &lt;/div&gt; 
+            </td>
+          </tr>
+          <tr>
+            <td>CSS 类</td>
+            <td class="layui-text">
+              <ul>
+                <li>layui-nav-child-c <br>子菜单居中对齐</li>
+                <li>layui-nav-child-r <br>子菜单向右对齐</li>
+              </ul>
+            </td>
+            <td>
+              直接在子菜单标签配置即可，如：
+              <pre class="layui-code">
+&lt;dl class=&quot;layui-nav-child layui-nav-child-c&quot;&gt;
+  …
+&lt;/dl&gt;             
+              </pre>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <blockquote class="layui-text layui-font-red">
+                上述两项为 layui 2.6.6 开始新增
+              </blockquote>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="breadcrumb">面包屑</a></legend></fieldset>
+    </div>    
+    <div class="site-text">
+      <p>
+        <span class="layui-breadcrumb">
+          <a href="">首页</a>
+          <a href="">国际新闻</a>
+          <a href="">亚太地区</a>
+          <a><cite>正文</cite></a>
+        </span>
+      </p>
+      <pre class="layui-code" lay-title="HTML结构">
+&lt;span class=&quot;layui-breadcrumb&quot;&gt;
+  &lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;国际新闻&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;亚太地区&lt;/a&gt;
+  &lt;a&gt;&lt;cite&gt;正文&lt;/cite&gt;&lt;/a&gt;
+&lt;/span&gt;
+      </pre>
+      <p>
+        你还可以通过设置属性 <em>lay-separator="-"</em> 来自定义分隔符。如：
+        <span class="layui-breadcrumb" lay-separator="-" style="padding-left: 20px;">
+          <a href="">首页</a>
+          <a href="">国际新闻</a>
+          <a href="">亚太地区</a>
+          <a><cite>正文</cite></a>
+        </span>
+      </p>
+      <pre class="layui-code" lay-title="HTML结构">
+&lt;span class=&quot;layui-breadcrumb&quot lay-separator="-"&gt;
+  &lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;国际新闻&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;亚太地区&lt;/a&gt;
+  &lt;a&gt;&lt;cite&gt;正文&lt;/cite&gt;&lt;/a&gt;
+&lt;/span&gt;
+      </pre>
+      <p class="site-tips">当然，你还可以作为小导航来用，如：</p>
+      <p>
+        <span class="layui-breadcrumb" lay-separator="|">
+          <a href="">娱乐</a>
+          <a href="">八卦</a>
+          <a href="">体育</a>
+          <a href="">搞笑</a>
+          <a href="">视频</a>
+          <a href="">游戏</a>
+          <a href="">综艺</a>
+        </span>
+      </p>
+      <pre class="layui-code" lay-title="HTML结构">
+&lt;span class=&quot;layui-breadcrumb&quot; lay-separator=&quot;|&quot;&gt;
+  &lt;a href=&quot;&quot;&gt;娱乐&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;八卦&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;体育&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;搞笑&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;视频&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;游戏&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;综艺&lt;/a&gt;
+&lt;/span&gt;
+      </pre>
+    </div>
+    
+    
+    <div class="layui-elem-quote">
+  <p>layui - 在每一个细节中，用心与你沟通</p>
+</div>
+    
+  </div>
+</div>
+  
+
+<div class="layui-footer footer footer-doc">
+    <p>
+      Copyright &copy; 2021 <a href="../../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT Licensed</p>
+    <p>
+      <a href="../../about/disclaimer.html" tppabs="http://www.layui.com/about/disclaimer.html" target="_blank">免责声明</a> 
+      <a href="../../about/relatedlinks.html" tppabs="http://www.layui.com/about/relatedlinks.html" target="_blank">友链</a>
+      <a href="javascript:;"  site-event="weixinmp">公众号</a>
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36010902000274"  rel="nofollow">
+        <img src="../../../res.layui.com/upload/2021_8/168_1628847893037_87773.png" tppabs="http://cdn.layui.com/upload/2021_8/168_1628847893037_87773.png">
+        公网安备 00000000000000号
+      </a>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">ICP备00000000号</a>
+    </p>
+    <div class="site-union">
+      <p class="site-union-desc">
+        <span>
+          感谢以下平台提供云加速支持
+        </span>
+      </p>
+
+    </div>
+</div>
+<script>
+window.global = {
+  pageType: 'doc'
+  ,preview: function(){
+    var preview = document.getElementById('LAY_preview');
+    return preview ? preview.innerHTML : '';
+  }()
+};
+</script>
+
+<div class="site-tree-mobile layui-hide">
+  <i class="layui-icon layui-icon-spread-left"></i>
+</div>
+<div class="site-mobile-shade"></div>
+ 
+<script src="../../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?t=1632428048355" charset="utf-8"></script>
+<script>
+layui.config({
+  base: '../../../res.layui.com/static/lay/modules/layui/'
+  ,version: '1632428048355'
+}).use('global');
+</script>
+ 
+
+
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+  
+  element.on('tab(docDemoTabBrief)', function(data){
+    layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,864 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>镜像站@element模块元素操作文档 - Layui</title>
+<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <script>
+  ;!function(){self!==parent&&(location.href="http://www.baidu.com/")}();
+  </script>
+  <link rel="stylesheet" href="../../../res.layui.com/layui/dist/css/layui.css" tppabs="http://res.layui.com/layui/dist/css/layui.css?t=1632428048260"  media="all">
+  <link rel="stylesheet" href="../../../res.layui.com/static/css/global.css" tppabs="http://res.layui.com/static/css/global.css?t=1632428048260-19" media="all">
+</head>
+<body>
+
+
+<div class="layui-header header header-doc" autumn>
+  <div class="layui-container">
+    <a class="logo" href="../../index.htm" tppabs="http://www.layui.com/">
+      <img src="../../../res.layui.com/static/images/layui/logo.png" tppabs="http://res.layui.com/static/images/layui/logo.png" alt="layui">
+    </a>
+    <div class="layui-form layui-hide-xs component" lay-filter="LAY-site-header-component"></div>
+    <div class="layui-hide-xs site-notice"></div>
+    
+    <ul class="layui-nav" id="LAY_NAV_TOP">
+      <li class="layui-nav-item layui-this">
+        <a href="../index.htm" tppabs="http://www.layui.com/doc/">文档</a> 
+      </li>
+      <li class="layui-nav-item ">
+        <a href="../../demo/index.htm" tppabs="http://www.layui.com/demo/">示例</a>
+      </li>
+      
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <!--<span class="layui-badge-dot" style="left:0; right: auto; margin: -4px 0 0 5px;"></span>--> 
+          周边
+        </a>
+        <dl class="layui-nav-child layui-nav-child-c">  
+          <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+            <a href="https://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">问题反馈</a>
+            <hr>
+          </dd>
+          
+          <dd lay-unselect><a href="../../alone.html" tppabs="http://www.layui.com/alone.html" target="_blank" lay-unselect>独立组件</a></dd>
+          <dd lay-unselect><a href="../../../fly.layui.com/extend/index.htm" target="_blank">扩展组件</a></dd>
+        </dl>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="http://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">反馈</a>
+      </li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="../../../other/html5shiv/r29/html5.min.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="../../../other/respond.js/1.4.2/respond.min.js" tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+<ul class="site-dir">
+  <li><a href="#use"><cite>使用</cite></a></li>
+  <li><a href="#attr"><cite>预设元素属性</cite></a></li>
+  <li><a href="#base"><cite>基础方法</cite> <span class="layui-badge-dot" style=""></span></a></li>
+  <li><a href="#render"><cite>初始动态元素</cite> <span class="layui-badge-dot" style=""></span></a></a></li>
+  <li><a href="#on"><cite>事件触发</cite></a></li>
+  <ul style="margin-left: 15px;">
+    <li><a href="#ontab"><cite>触发Tab切换</cite></a></li>
+    <li><a href="#ontabDelete"><cite>触发Tab删除</cite></a></li>
+    <li><a href="#onnav"><cite>触发导航点击</cite></a></li>
+    <li><a href="#collapse"><cite>触发折叠面板</cite></a></li>
+  </ul>
+  <li><a href="#progress"><cite>操作进度条</cite></a></li>
+  
+</ul>
+<div class="layui-container layui-row">
+  
+<div class="layui-col-md3">
+  <div class="layui-panel site-menu">
+    <ul class="layui-menu layui-menu-lg">
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          基础说明
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../index.htm" tppabs="http://www.layui.com/doc/">
+                <span>开始使用 </span> 
+                <span class="layui-font-12 layui-font-gray">Getting Started</span>
+              </a>
+              
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/infrastructure.html" tppabs="http://www.layui.com/doc/base/infrastructure.html">
+                <span>底层方法 </span>
+                <span class="layui-font-12 layui-font-gray">基础支撑</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/element.html" tppabs="http://www.layui.com/doc/base/element.html">
+                <span>页面元素 </span>
+                <span class="layui-font-12 layui-font-gray">规范 公共类 属性</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/modules.html" tppabs="http://www.layui.com/doc/base/modules.html">
+                <span>模块规范 </span>
+                <span class="layui-font-12 layui-font-gray">使用 扩展</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/faq.html" tppabs="http://www.layui.com/doc/base/faq.html">
+                <span>常见问题 </span>
+                <span class="layui-font-12 layui-font-gray">FAQ</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../base/changelog.html" tppabs="http://www.layui.com/doc/base/changelog.html">
+                <span>更新日志 </span>
+                <span class="layui-font-12 layui-font-gray">changelog</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          页面元素
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/layout.html" tppabs="http://www.layui.com/doc/element/layout.html">
+                <span>布局 </span>
+                <span class="layui-font-12 layui-font-gray">栅格 后台管理布局</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/color.html" tppabs="http://www.layui.com/doc/element/color.html">
+                <span>颜色 </span>
+                <span class="layui-font-12 layui-font-gray">主色调 颜色搭配</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/icon.html" tppabs="http://www.layui.com/doc/element/icon.html">
+                <span>图标 </span>
+                <span class="layui-font-12 layui-font-gray">iconfont 字体图标</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/anim.html" tppabs="http://www.layui.com/doc/element/anim.html">
+                <span>动画 </span>
+                <span class="layui-font-12 layui-font-gray">内置 CSS3 动画</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/button.html" tppabs="http://www.layui.com/doc/element/button.html">
+                <span>按钮 </span>
+                <span class="layui-font-12 layui-font-gray">button</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/form.html" tppabs="http://www.layui.com/doc/element/form.html">
+                <span>表单 </span>
+                <span class="layui-font-12 layui-font-gray">form 元素集合</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/nav.html" tppabs="http://www.layui.com/doc/element/nav.html">
+                <span>导航 </span>
+                <span class="layui-font-12 layui-font-gray">nav 面包屑</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/menu.html" tppabs="http://www.layui.com/doc/element/menu.html">
+                <span>菜单 </span>
+                <span class="layui-font-12 layui-font-gray">menu 基础菜单</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/tab.html" tppabs="http://www.layui.com/doc/element/tab.html">
+                <span>选项卡 </span>
+                <span class="layui-font-12 layui-font-gray">Tabs 切换</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/progress.html" tppabs="http://www.layui.com/doc/element/progress.html">
+                <span>进度条 </span>
+                <span class="layui-font-12 layui-font-gray">progress</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/panel.html" tppabs="http://www.layui.com/doc/element/panel.html">
+                <span>面板 </span>
+                <span class="layui-font-12 layui-font-gray">panel 卡片 折叠</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/table.html" tppabs="http://www.layui.com/doc/element/table.html">
+                <span>表格 </span>
+                <span class="layui-font-12 layui-font-gray">静态 table</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/badge.html" tppabs="http://www.layui.com/doc/element/badge.html">
+                <span>徽章 </span>
+                <span class="layui-font-12 layui-font-gray">小圆点  小边框</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/timeline.html" tppabs="http://www.layui.com/doc/element/timeline.html">
+                <span>时间线 </span>
+                <span class="layui-font-12 layui-font-gray">timeline</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="../element/auxiliar.html" tppabs="http://www.layui.com/doc/element/auxiliar.html">
+                <span>辅助 </span>
+                <span class="layui-font-12 layui-font-gray">引用 字段集 横线等</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: true}">
+        <div class="layui-menu-body-title">
+          内置模块
+        </div>
+        <hr>
+        <ul>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="layer.html" tppabs="http://www.layui.com/doc/modules/layer.html">
+                <span>弹出层 </span>
+                <span class="layui-font-12 layui-font-gray">layer</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="laydate.html" tppabs="http://www.layui.com/doc/modules/laydate.html">
+                <span>日期与时间选择 </span>
+                <span class="layui-font-12 layui-font-gray">laydate</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="laypage.html" tppabs="http://www.layui.com/doc/modules/laypage.html">
+                <span>分页 </span>
+                <span class="layui-font-12 layui-font-gray">laypage</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="laytpl.html" tppabs="http://www.layui.com/doc/modules/laytpl.html">
+                <span>模板引擎 </span>
+                <span class="layui-font-12 layui-font-gray">laytpl</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="table.html" tppabs="http://www.layui.com/doc/modules/table.html">
+                <span>数据表格 </span>
+                <span class="layui-font-12 layui-font-gray">table</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="form.html" tppabs="http://www.layui.com/doc/modules/form.html">
+                <span>表单 </span>
+                <span class="layui-font-12 layui-font-gray">form</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="upload.html" tppabs="http://www.layui.com/doc/modules/upload.html">
+                <span>文件上传 </span>
+                <span class="layui-font-12 layui-font-gray">upload</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="dropdown.html" tppabs="http://www.layui.com/doc/modules/dropdown.html">
+                <span>下拉菜单 </span>
+                <span class="layui-font-12 layui-font-gray">dropdown</span>
+                
+                  <span class="layui-badge-dot"></span>
+                
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="transfer.html" tppabs="http://www.layui.com/doc/modules/transfer.html">
+                <span>穿梭框 </span>
+                <span class="layui-font-12 layui-font-gray">transfer</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="tree.html" tppabs="http://www.layui.com/doc/modules/tree.html">
+                <span>树形组件 </span>
+                <span class="layui-font-12 layui-font-gray">tree</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="colorpicker.html" tppabs="http://www.layui.com/doc/modules/colorpicker.html">
+                <span>颜色选择器 </span>
+                <span class="layui-font-12 layui-font-gray">colorpicker</span>
+              </a>
+            </div>
+          </li>
+          <li class="layui-menu-item-checked2">
+            <div class="layui-menu-body-title">
+              <a href="element.html" tppabs="http://www.layui.com/doc/modules/element.html">
+                <span>常用元素操作 </span>
+                <span class="layui-font-12 layui-font-gray">element</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="slider.html" tppabs="http://www.layui.com/doc/modules/slider.html">
+                <span>滑块 </span>
+                <span class="layui-font-12 layui-font-gray">slider</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="rate.html" tppabs="http://www.layui.com/doc/modules/rate.html">
+                <span>评分 </span>
+                <span class="layui-font-12 layui-font-gray">rate</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="carousel.html" tppabs="http://www.layui.com/doc/modules/carousel.html">
+                <span>轮播 </span>
+                <span class="layui-font-12 layui-font-gray">carousel</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="flow.html" tppabs="http://www.layui.com/doc/modules/flow.html">
+                <span>流加载 </span>
+                <span class="layui-font-12 layui-font-gray">flow</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="util.html" tppabs="http://www.layui.com/doc/modules/util.html">
+                <span>工具组件 </span>
+                <span class="layui-font-12 layui-font-gray">util</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="layui-menu-body-title">
+              <a href="code.html" tppabs="http://www.layui.com/doc/modules/code.html">
+                <span>代码高亮显示 </span>
+                <span class="layui-font-12 layui-font-gray">code</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="layui-hide-v"> - </div>
+</div>
+
+  
+  <div class="layui-col-md9 site-content">
+    <h1 class="site-h1"><i class="layui-icon">&#xe62a;</i> 常用元素操作 - layui.element</h1>
+    <blockquote class="site-text layui-elem-quote">页面中有许多元素需要自动去完成一些处理，譬如导航菜单的小滑块、Tab 的切换等操作，他们往往不需要去单独调用一个方法来开启一项功能，而页面上恰恰有太多这样的小交互，所以我们统一归类为 element 组件。
+    </blockquote>
+    <blockquote class="site-text layui-elem-quote">
+      模块加载名称：<em>element</em>
+    </blockquote>
+    
+    
+    
+    <div class="site-title">
+      <fieldset><legend><a name="use">使用</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>元素功能的开启只需要加载element模块即会自动完成，所以不用跟其它模块一样为某一个功能而调用一个方法。她只需要找到她支持的元素，如你的页面存在一个 Tab元素块，那么element模块会自动赋予她该有的功能。</p>
+      <pre class="layui-code" lay-title="HTML">
+&lt;div class=&quot;layui-tab&quot; lay-filter="demo"&gt;
+  &lt;ul class=&quot;layui-tab-title&quot;&gt;
+    &lt;li class=&quot;layui-this&quot;&gt;网站设置&lt;/li&gt;
+    &lt;li&gt;商品管理&lt;/li&gt;
+    &lt;li&gt;订单管理&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;layui-tab-content&quot;&gt;
+    &lt;div class=&quot;layui-tab-item layui-show&quot;&gt;内容1&lt;/div&gt;
+    &lt;div class=&quot;layui-tab-item&quot;&gt;内容2&lt;/div&gt;
+    &lt;div class=&quot;layui-tab-item&quot;&gt;内容3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+      <p>前提是你要加载element模块</p>
+      <pre class="layui-code" lay-title="JavaScript">
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //一些事件触发
+  element.on('tab(demo)', function(data){
+    console.log(data);
+  });
+});
+      </pre>
+    </div> 
+    
+    <div class="site-title">
+      <fieldset><legend><a name="attr">预设元素属性</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>我们通过自定义元素属性来作为元素的功能参数，他们一般配置在容器外层，如：</p>
+      <pre class="layui-code">
+&lt;div class="layui-tab" lay-allowClose="true" lay-filter="demo">…&lt;/div>      
+&lt;span class="layui-breadcrumb" lay-separator="|">&lt;/span>
+ 
+ And So On
+      </pre>
+      <p>element 模块支持的元素如下表：</p>
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th style="width: 100px;">属性名</th>
+            <th style="width: 150px;">可选值</th>
+            <th>说明</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>lay-filter</td>
+            <td>任意字符</td>
+            <td>
+              事件过滤器（公用属性），主要用于事件的精确匹配，跟选择器是比较类似的。
+            </td>
+          </tr>
+          <tr>
+            <td>lay-allowClose</td>
+            <td>
+              true
+            </td>
+            <td>
+              针对于Tab容器，是否允许选项卡关闭。默认不允许，即不用设置该属性
+            </td>
+          </tr>
+          <tr>
+            <td>lay-separator</td>
+            <td>任意分隔符</td>
+            <td>针对于面包屑容器</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="base">基础方法</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>基础方法允许你在外部主动对元素发起一起操作，目前element模块提供的方法如下：</p>
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th>方法名</th>
+            <th>描述</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>var element = layui.element;</td>
+            <td>
+              element模块的实例
+              <br>返回的<em>element</em>变量为该实例的对象，携带一些用于元素操作的基础方法
+            </td>
+          </tr>
+          <tr>
+            <td>element.on(filter, callback);</td>
+            <td>
+              用于元素的一些事件触发
+            </td>
+          </tr>
+          <tr>
+            <td>element.tabAdd(filter, options);</td>
+            <td>
+              用于新增一个Tab选项
+              <br>参数<em>filter</em>：tab元素的 lay-filter="value" 过滤器的值（value）
+              <br>参数<em>options</em>：设定可选值的对象，目前支持的选项如下述示例：
+              <pre class="layui-code">
+element.tabAdd('demo', {
+  title: '选项卡的标题'
+  ,content: '选项卡的内容' //支持传入html
+  ,id: '选项卡标题的lay-id属性值'
+});             
+              </pre>
+            </td>
+          </tr>
+          <tr>
+            <td>element.tabDelete(filter, layid);</td>
+            <td>
+              用于删除指定的Tab选项
+              <br>参数<em>filter</em>：tab元素的 lay-filter="value" 过滤器的值（value）
+              <br>参数<em>layid</em>：选项卡标题列表的 属性 lay-id 的值
+              <pre class="layui-code" lay-title="示例">
+element.tabDelete('demo', 'xxx'); //删除 lay-id="xxx" 的这一项  
+              </pre>
+            </td>
+          </tr>
+          <tr>
+            <td>element.tabChange(filter, layid);</td>
+            <td>
+              用于外部切换到指定的Tab项上，参数同上，如：
+              <br>element.tabChange('demo', 'layid'); //切换到 lay-id="yyy" 的这一项  
+            </td>
+          </tr>
+          <tr>
+            <td>element.tab(options);</td>
+            <td>
+              用于绑定自定义 Tab 元素（即非 layui 自带的 tab 结构）。<em>该方法为 layui 2.1.6 新增</em>  
+              <br>参数<em>options</em>：设定可选值的对象，目前支持的选项如下述示例：
+              <pre class="layui-code">
+//HTML
+&lt;ul id=&quot;tabHeader&quot;&gt;
+  &lt;li&gt;标题1&lt;/li&gt;
+  &lt;li&gt;标题2&lt;/li&gt;
+  &lt;li&gt;标题3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&quot;tabBody&quot;&gt;
+  &lt;div class=&quot;xxx&quot;&gt;内容1&lt;/div&gt;
+  &lt;div class=&quot;xxx&quot;&gt;内容2&lt;/div&gt;
+  &lt;div class=&quot;xxx&quot;&gt;内容4&lt;/div&gt;
+&lt;/div&gt;
+              
+//JavaScript              
+element.tab({
+  headerElem: '#tabHeader>li' //指定tab头元素项
+  ,bodyElem: '#tabBody>.xxx' //指定tab主体元素项
+});             
+              </pre>
+            </td>
+          </tr>
+          <tr>
+            <td>element.progress(filter, percent);</td>
+            <td>
+              用于动态改变进度条百分比：
+              <br>element.progress('demo', '30%');
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <a name="init">更新渲染</a>
+    <div class="site-title">
+      <fieldset><legend><a name="render">更新渲染</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>跟表单元素一样，很多时候你的页面元素可能是动态生成的，这时element的相关功能将不会对其有效，你必须手工执行 <em>element.init(type, filter)</em> 方法即可。注意：2.1.6 开始，可以用 <em>element.render(type, filter);</em> 方法替代</p>
+      <p>第一个参数：type，为表单的type类型，可选。默认对全部类型的表单进行一次更新。可局部刷新的type如下表：</p>
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th>参数（type）值</th>
+            <th>描述</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>tab</td>
+            <td>重新对tab选项卡进行初始化渲染</td>
+          </tr>
+          <tr>
+            <td>nav</td>
+            <td>重新对导航进行渲染</td>
+          </tr>
+          <tr>
+            <td>breadcrumb</td>
+            <td>重新对面包屑进行渲染</td>
+          </tr>
+          <tr>
+            <td>progress</td>
+            <td>重新对进度条进行渲染</td>
+          </tr>
+          <tr>
+            <td>collapse</td>
+            <td>重新对折叠面板进行渲染</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <pre class="layui-code" lay-title="例子">
+element.init(); //更新全部  2.1.6 可用 element.render() 方法替代
+element.render('nav'); //重新对导航进行渲染。注：layui 2.1.6 版本新增
+//……
+      </pre>
+      
+      <p>第二个参数：filter，为元素的 lay-filter="" 的值。你可以借助该参数，完成指定元素的局部更新。</p>
+      <pre class="layui-code">
+【HTML】
+&lt;div class=&quot;layui-nav&quot; lay-filter=&quot;test1&quot;&gt;
+  …
+&lt;/div&gt;
+ 
+&lt;div class=&quot;layui-nav&quot; lay-filter=&quot;test2&quot;&gt;
+  …
+&lt;/div&gt;
+      
+【JavaScript】
+//比如当你对导航动态插入了二级菜单，这时你需要重新去对它进行渲染
+element.render('nav', 'test1'); //对 lay-filter="test1" 所在导航重新渲染。注：layui 2.1.6 版本新增
+//……      
+      </pre>
+      
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="on">事件触发</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>语法：<em>element.on('event(过滤器值)', callback);</em></p>
+      <p>element 模块在 layui 事件机制中注册了element 模块事件，所以当你使用 layui.onevent() 自定义模块事件时，请勿占用 element 名。目前 element 模块所支持的事件如下表：</p>
+      <table class="site-table">
+        <thead>
+          <tr>
+            <th>event</th>
+            <th>描述</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>tab</td>
+            <td>触发 Tab 选项卡切换事件</td>
+          </tr>
+          <tr>
+            <td>tabDelete</td>
+            <td>触发 Tab 选项卡删除事件</td>
+          </tr>
+          <tr>
+            <td>nav</td>
+            <td>触发导航菜单的点击事件</td>
+          </tr>
+          <tr>
+            <td>collapse</td>
+            <td>触发折叠面板展开或收缩事件</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>默认情况下，事件所触发的是全部的元素，但如果你只想触发某一个元素，使用事件过滤器即可。<br>如：<em>&lt;div class="layui-tab" lay-filter="test">&lt;/div></em></p>
+      <pre class="layui-code">
+element.on('tab(test)', function(data){
+  console.log(data);
+});
+      </pre>
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="ontab">触发选项卡切换</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>Tab选项卡点击切换时触发，回调函数返回一个object参数，携带两个成员：</p>
+      <pre class="layui-code">
+element.on('tab(filter)', function(data){
+  console.log(this); //当前Tab标题所在的原始DOM元素
+  console.log(data.index); //得到当前Tab的所在下标
+  console.log(data.elem); //得到当前的Tab大容器
+});
+      </pre>
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="ontabDelete">触发选项卡删除</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>Tab选项卡被删除时触发，回调函数返回一个object参数，携带两个成员：</p>
+      <pre class="layui-code">
+element.on('tabDelete(filter)', function(data){
+  console.log(this); //当前Tab标题所在的原始DOM元素
+  console.log(data.index); //得到当前Tab的所在下标
+  console.log(data.elem); //得到当前的Tab大容器
+});
+      </pre>
+      <p><em>注：该事件为 layui 2.1.6 新增</em></p>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="onnav">触发导航菜单的点击</a></legend>
+    </fieldset>
+    <div class="site-text">
+      <p>当点击导航父级菜单和二级菜单时触发，回调函数返回所点击的菜单DOM对象：</p>
+      <pre class="layui-code">
+element.on('nav(filter)', function(elem){
+  console.log(elem); //得到当前点击的DOM对象
+});
+      </pre>
+    </div>
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+      <legend><a name="collapse">触发折叠面板</a></legend>
+    </fieldset>
+    <div class="site-text">
+      <p>当折叠面板点击展开或收缩时触发，回调函数返回一个object参数，携带三个成员：</p>
+      <pre class="layui-code">
+element.on('collapse(filter)', function(data){
+  console.log(data.show); //得到当前面板的展开状态，true或者false
+  console.log(data.title); //得到当前点击面板的标题区域DOM对象
+  console.log(data.content); //得到当前点击面板的内容区域DOM对象
+});
+      </pre>
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="progress">动态操作进度条</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>你肯定不仅仅是满足于进度条的初始化显示，通常情况下你需要动态改变它的进度值，element模块提供了这样的基础方法：<em>element.progress(filter, percent);</em>。</p>
+      <pre class="layui-code" lay-title="例子">
+&lt;div class=&quot;layui-progress layui-progress-big&quot; lay-filter=&quot;demo&quot; lay-showPercent=&quot;true&quot;&gt;
+  &lt;div class=&quot;layui-progress-bar&quot; lay-percent=&quot;0%&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+ 
+上述是一个已经设置了过滤器（lay-filter=&quot;demo&quot;）的进度条
+现在你只需要在某个事件或者语句中执行方法：element.progress(&#x27;demo&#x27;, &#x27;50%&#x27;);
+即可改变进度
+      </pre>
+      <p>如果你需要进度条更直观的例子，建议浏览：<a href="../../demo/progress.html" tppabs="http://www.layui.com/demo/progress.html">进度条演示页面</a></p>
+    </div>
+    
+    <div class="site-title">
+      <fieldset><legend><a name="other">结语</a></legend></fieldset>
+    </div>
+    <div class="site-text">
+      <p>事实上元素模块的大部分操作都是内部自动完成的，所以目前你发现他的接口很少呢。当然，我们也会不断增加element模块所支持的页面元素。</p>
+    </div>
+    
+    <div class="layui-elem-quote">
+  <p>layui - 在每一个细节中，用心与你沟通</p>
+</div>
+    
+  </div>
+</div>
+  
+
+<div class="layui-footer footer footer-doc">
+    <p>
+      Copyright &copy; 2021 <a href="../../index.htm" tppabs="http://www.layui.com/">layui.com</a> MIT Licensed</p>
+    <p>
+      <a href="../../about/disclaimer.html" tppabs="http://www.layui.com/about/disclaimer.html" target="_blank">免责声明</a> 
+      <a href="../../about/relatedlinks.html" tppabs="http://www.layui.com/about/relatedlinks.html" target="_blank">友链</a>
+      <a href="javascript:;"  site-event="weixinmp">公众号</a>
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36010902000274"  rel="nofollow">
+        <img src="../../../res.layui.com/upload/2021_8/168_1628847893037_87773.png" tppabs="http://cdn.layui.com/upload/2021_8/168_1628847893037_87773.png">
+        公网安备 00000000000000号
+      </a>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">ICP备00000000号</a>
+    </p>
+    <div class="site-union">
+      <p class="site-union-desc">
+        <span>
+          感谢以下平台提供云加速支持
+        </span>
+      </p>
+
+    </div>
+</div>
+<script>
+window.global = {
+  pageType: 'doc'
+  ,preview: function(){
+    var preview = document.getElementById('LAY_preview');
+    return preview ? preview.innerHTML : '';
+  }()
+};
+</script>
+
+<div class="site-tree-mobile layui-hide">
+  <i class="layui-icon layui-icon-spread-left"></i>
+</div>
+<div class="site-mobile-shade"></div>
+ 
+<script src="../../../res.layui.com/layui/dist/layui.js" tppabs="http://res.layui.com/layui/dist/layui.js?t=1632428048260" charset="utf-8"></script>
+<script>
+layui.config({
+  base: '../../../res.layui.com/static/lay/modules/layui/'
+  ,version: '1632428048260'
+}).use('global');
+</script>
+ 
+
+
+</body>
+</html>
