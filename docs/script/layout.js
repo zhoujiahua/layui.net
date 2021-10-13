@@ -1,5 +1,5 @@
 var baseUrl = window.location.protocol + '//' + window.location.host;
-var baseDoc = baseUrl + '/docs';
+var baseDoc = baseUrl;
 var docList = [
     {
         id: 1,
