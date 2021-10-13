@@ -77,9 +77,9 @@
             var html = '';
             layui.each(docList, function (k, v) {
                 console.log(k, v)
-                var buPath = baseUrl + v.path;
-                html += '<a href="' + buPath + '" target="_blank"><li><span>' + v.name +
-                    '</span><span>' + buPath + '</span></a></li>';
+                var docPath = v.path.indexOf('://') == -1 ? baseDoc + v.path : v.path;
+                html += '<a href="' + docPath + '" target="_blank"><li><span>' + v.name +
+                    '</span><span>' + docPath + '</span></a></li>';
             })
 
             $('#docHtml').html(html);
