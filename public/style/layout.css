@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.doc-list li {
+    border-bottom: 1px dashed #FFB800;
+}
+
+.doc-list li a:hover {
+    color: #FF5722;
+    font-weight: 600px;
+}
+
+.doc-list li a span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    color: inherit;
+}
