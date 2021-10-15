@@ -1,5 +1,5 @@
 // var baseUrl = window.location.protocol + '//' + window.location.host;
-var baseUrl = 'https://layui.blooo.net';
+var baseUrl = 'https://layui.blooo.cn';
 var baseDoc = baseUrl + '/mirror';
 var docList = [
     {
