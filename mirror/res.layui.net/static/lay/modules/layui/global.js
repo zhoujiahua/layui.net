@@ -367,7 +367,7 @@ layui.define(['code', 'element', 'table', 'util', 'carousel', 'laytpl'], functio
   var events = {
     //联系方式
     contactInfo: function(){
-      layer.alert('<div class="layui-text">如有合作意向，可联系：<br>邮箱：xianxin@layui-inc.com</div>', {
+      layer.alert('<div class="layui-text">如有合作意向，可联系：<br>邮箱：lance@88.com</div>', {
         title:'联系'
         ,btn: false
         ,shadeClose: true
@@ -378,9 +378,9 @@ layui.define(['code', 'element', 'table', 'util', 'carousel', 'laytpl'], functio
       layer.photos({
         photos: {
           data: [{
-            alt: 'layui 公众号'
-            ,"src": "https://cdn.layui.net/upload/2017_8/168_1501890714998_68095.jpg" //原图地址
-            ,"thumb": "https://cdn.layui.net/upload/2017_8/168_1501890714998_68095.jpg" //缩略图地址
+            alt: 'Layui 微信号'
+            ,"src": "/mirror/res.layui.net/static/images/me.png" //原图地址
+            ,"thumb": "/mirror/res.layui.net/static/images/me.png" //缩略图地址
           }]
         }
       })
