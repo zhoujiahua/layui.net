@@ -78,7 +78,7 @@
             layui.each(docList, function (k, v) {
                 console.log(k, v)
                 var docPath = v.path.indexOf('://') == -1 ? baseDoc + v.path : v.path;
-                html += '<a href="' + docPath + '" target="_blank"><li><span>' + v.name +
+                html += '<li><a href="' + docPath + '" target="_blank"><span>' + v.name +
                     '</span><span>' + docPath + '</span></a></li>';
             })
 
