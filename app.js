@@ -12,5 +12,5 @@ app.get("/", (req, res) => {
     return res.redirect('/mirror/www.layui.net/index.htm')
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7000;
 app.listen(port, () => console.log(`http://localhost:${port}`));
