@@ -378,9 +378,9 @@ layui.define(['code', 'element', 'table', 'util', 'carousel', 'laytpl'], functio
       layer.photos({
         photos: {
           data: [{
-            alt: 'Layui 微信号'
-            ,"src": "/mirror/res.layui.net/static/images/me.png" //原图地址
-            ,"thumb": "/mirror/res.layui.net/static/images/me.png" //缩略图地址
+            alt: 'Layui 交流群'
+            ,"src": "/mirror/res.layui.net/images/qun.jpg" //原图地址
+            ,"thumb": "/mirror/res.layui.net/images/qun.jpg" //缩略图地址
           }]
         }
       })

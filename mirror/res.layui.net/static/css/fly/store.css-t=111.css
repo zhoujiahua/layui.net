@@ -8,11 +8,11 @@
 
 /** 图标字体 **/
 @font-face {font-family: 'layui-icon';
-  src: url('font/iconfont.eot-v=1')/*tpa=https://res.layui.com/static/css/fly/font/iconfont.eot?v=1*/;
-  src: url('font/iconfont.eot-v=1#iefix')/*tpa=https://res.layui.com/static/css/fly/font/iconfont.eot?v=1#iefix*/ format('embedded-opentype'),
-  url('font/iconfont.svg-v=1#iconfont')/*tpa=https://res.layui.com/static/css/fly/font/iconfont.svg?v=1#iconfont*/ format('svg'),
-  url('font/iconfont.woff-v=1')/*tpa=https://res.layui.com/static/css/fly/font/iconfont.woff?v=1*/ format('woff'),
-  url('font/iconfont.ttf-v=1')/*tpa=https://res.layui.com/static/css/fly/font/iconfont.ttf?v=1*/ format('truetype');
+  src: url('font/iconfont.eot-v=1')/*tpa=https://res.layui.net/static/css/fly/font/iconfont.eot?v=1*/;
+  src: url('font/iconfont.eot-v=1#iefix')/*tpa=https://res.layui.net/static/css/fly/font/iconfont.eot?v=1#iefix*/ format('embedded-opentype'),
+  url('font/iconfont.svg-v=1#iconfont')/*tpa=https://res.layui.net/static/css/fly/font/iconfont.svg?v=1#iconfont*/ format('svg'),
+  url('font/iconfont.woff-v=1')/*tpa=https://res.layui.net/static/css/fly/font/iconfont.woff?v=1*/ format('woff'),
+  url('font/iconfont.ttf-v=1')/*tpa=https://res.layui.net/static/css/fly/font/iconfont.ttf?v=1*/ format('truetype');
 }
 
 /* font-class */

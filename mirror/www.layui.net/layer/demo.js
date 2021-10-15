@@ -464,7 +464,7 @@ $('.layer-demolist').on('click', function(){
       //弹出即全屏
       var index = layer.open({
         type: 2,
-        content: 'https://fly.layui.com/jump/alyhot/',
+        content: 'https://fly.layui.net/jump/alyhot/',
         area: ['320px', '195px'],
         maxmin: true
       });
