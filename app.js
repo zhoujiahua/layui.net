@@ -9,7 +9,7 @@ app.use('/docs', express.static(path.join(__dirname, "docs")));
 
 // Home page
 app.get("/", (req, res) => {
-    return res.redirect('/mirror/www.layui.com/index.htm')
+    return res.redirect('/mirror/www.layui.net/index.htm')
 });
 
 const port = process.env.PORT || 5000;
