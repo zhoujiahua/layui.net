@@ -312,55 +312,55 @@ layui.define(['code', 'element', 'table', 'util', 'carousel', 'laytpl'], functio
     })([{"classname":"toptg","key":"toptg-notice","title":"layui 官网下线公告","url":"../www.layui.net/about/notice.html","CONFIG_TIME":"9/26/2021, 6:25:48 PM","tips":"","tipsCss":"background-image: linear-gradient(to right,#359FD4,#36B5C8,#25D8AB","hot":"1"}]);
   }();
 
-  //弹出公告
-  ;!function(){
-    (function(data){
-      data = data || [];
-      data = data[0] || {};
+  // //弹出公告
+  // ;!function(){
+  //   (function(data){
+  //     data = data || [];
+  //     data = data[0] || {};
       
-      var content = data.content;
-      if(!content) return;
+  //     var content = data.content;
+  //     if(!content) return;
 
-      var hasClickNotice = local.popup_notice && new Date().getTime() - local.popup_notice < (data.tipsInterval || 1000*60*60*24*3);
+  //     var hasClickNotice = local.popup_notice && new Date().getTime() - local.popup_notice < (data.tipsInterval || 1000*60*60*24*3);
 
-      if(hasClickNotice) return;
+  //     if(hasClickNotice) return;
 
-      setTimeout(function(){
-        layer.open({
-          type: 1
-          ,title: data.title || '公告'
-          ,area: device.mobile ? ['90%', '90%'] : ['800px', '520px']
-          ,shade: false
-          //,offset: 'b'
-          ,id: 'LAY_Notice' //设定一个id，防止重复弹出
-          ,skin: 'site-popup-notice'
-          ,resize: false
-          ,content: content
-          ,success: function(layero, index){
-            layero.find('a').on('click', function(){
-              layer.close(index);
-            });
-          }
-          ,end: function(){
-            layui.data('layui', {
-              key: 'popup_notice'
-              ,value: new Date().getTime()
-            });
-          }
-        });
-      }, 500);
+  //     setTimeout(function(){
+  //       layer.open({
+  //         type: 1
+  //         ,title: data.title || '公告'
+  //         ,area: device.mobile ? ['90%', '90%'] : ['800px', '520px']
+  //         ,shade: false
+  //         //,offset: 'b'
+  //         ,id: 'LAY_Notice' //设定一个id，防止重复弹出
+  //         ,skin: 'site-popup-notice'
+  //         ,resize: false
+  //         ,content: content
+  //         ,success: function(layero, index){
+  //           layero.find('a').on('click', function(){
+  //             layer.close(index);
+  //           });
+  //         }
+  //         ,end: function(){
+  //           layui.data('layui', {
+  //             key: 'popup_notice'
+  //             ,value: new Date().getTime()
+  //           });
+  //         }
+  //       });
+  //     }, 500);
 
-    })([{
-      "classname": "popup",
-      "key": "popup-notice",
-      "title": "layui 重要公告",
-      "url": "",
-      "CONFIG_TIME": "9/26/2021, 6:26:53 PM",
-      "content": "<style>\n.site-popup-notice{background-image: linear-gradient(to right,#359FD4,#36B5C8,#25D8AB); }\n.site-popup-notice .layui-layer-title{border-bottom-color: rgba(255,255,255,.1);}\n.site-popup-notice .site-content{color: #fff;}\n</style>\n\n<div class=\"site-content layui-text\" style=\"width: auto !important; min-height: auto; padding: 20px;\">\n<p>\n        所有对 layui 为之热爱、鞭策、奉献，和支持过的开发者：\n<br>请接受我用意念和字节传达的深深歉意。这是一个无力、无奈，甚至无助的决定：\n      </p>\n    \n      <blockquote class=\"layui-elem-quote layui-quote-nm\" style=\"border-color: rgba(255,255,255,.3);\">\n        <em style=\"font-style: normal; color: #fff !important;\">layui 官网将于 <strong>2021年10月13日</strong> 进行下线。</em>\n      </blockquote>\n      \n      <p>届时，包括新版下载、文档和示例在内的所有框架日常维护工作，将全部迁移到 Github 和 Gitee。\n      <br>此后，layui 仍会在代码托管平台所活跃，且 2.7 正式版也将在其间首发。而 layui 官网将不复存在。<br>这不是终结，只是重归到开源的纯粹中来。\n      </p>\n      \n      <p>再者，对于 layuiAdmin 和 layim 专区，将会迁移到新站进行保留，以便老用户还能下载使用，且此二者不再面向新用户。</p>\n      \n      <p>过去五年，layui 有幸被应用在不计其数的 Web 平台，在前端工程化迅速席来的浪潮中，我们仍然感受到一丝来自于 jQuery 的余晖，这是一种带有热量的冰冷（反之亦可）。使命已达，便纵有万般遗憾，更与何人说？！</p>\n      \n      <p>最后，请大家怀揣对 Web 前端技术的热忱，去拥抱 Vue.js、拥抱 Element UI、拥抱更好的新时代，\n      <br>以及，所有那些值得去追求的美好事物。</p>\n      \n      <p>—— 贤心</p>\n\n<div class=\"layui-btn-container\" style=\"margin-top: 15px; text-align: right;\">\n      <a href=\"https://gitee.com/sentsin/layui/issues\" target=\"_blank\" rel=\"nofollow\" class=\"layui-btn\" style=\"background: rgba(255,255,255,.3);\" >我有话说</a> \n    </div>\n</div>",
-      "tipsCss": "background-image: linear-gradient(to right,#359FD4,#36B5C8,#25D8AB"
-    }]);
+  //   })([{
+  //     "classname": "popup",
+  //     "key": "popup-notice",
+  //     "title": "layui 重要公告",
+  //     "url": "",
+  //     "CONFIG_TIME": "9/26/2021, 6:26:53 PM",
+  //     "content": "<style>\n.site-popup-notice{background-image: linear-gradient(to right,#359FD4,#36B5C8,#25D8AB); }\n.site-popup-notice .layui-layer-title{border-bottom-color: rgba(255,255,255,.1);}\n.site-popup-notice .site-content{color: #fff;}\n</style>\n\n<div class=\"site-content layui-text\" style=\"width: auto !important; min-height: auto; padding: 20px;\">\n<p>\n        所有对 layui 为之热爱、鞭策、奉献，和支持过的开发者：\n<br>请接受我用意念和字节传达的深深歉意。这是一个无力、无奈，甚至无助的决定：\n      </p>\n    \n      <blockquote class=\"layui-elem-quote layui-quote-nm\" style=\"border-color: rgba(255,255,255,.3);\">\n        <em style=\"font-style: normal; color: #fff !important;\">layui 官网将于 <strong>2021年10月13日</strong> 进行下线。</em>\n      </blockquote>\n      \n      <p>届时，包括新版下载、文档和示例在内的所有框架日常维护工作，将全部迁移到 Github 和 Gitee。\n      <br>此后，layui 仍会在代码托管平台所活跃，且 2.7 正式版也将在其间首发。而 layui 官网将不复存在。<br>这不是终结，只是重归到开源的纯粹中来。\n      </p>\n      \n      <p>再者，对于 layuiAdmin 和 layim 专区，将会迁移到新站进行保留，以便老用户还能下载使用，且此二者不再面向新用户。</p>\n      \n      <p>过去五年，layui 有幸被应用在不计其数的 Web 平台，在前端工程化迅速席来的浪潮中，我们仍然感受到一丝来自于 jQuery 的余晖，这是一种带有热量的冰冷（反之亦可）。使命已达，便纵有万般遗憾，更与何人说？！</p>\n      \n      <p>最后，请大家怀揣对 Web 前端技术的热忱，去拥抱 Vue.js、拥抱 Element UI、拥抱更好的新时代，\n      <br>以及，所有那些值得去追求的美好事物。</p>\n      \n      <p>—— 贤心</p>\n\n<div class=\"layui-btn-container\" style=\"margin-top: 15px; text-align: right;\">\n      <a href=\"https://gitee.com/sentsin/layui/issues\" target=\"_blank\" rel=\"nofollow\" class=\"layui-btn\" style=\"background: rgba(255,255,255,.3);\" >我有话说</a> \n    </div>\n</div>",
+  //     "tipsCss": "background-image: linear-gradient(to right,#359FD4,#36B5C8,#25D8AB"
+  //   }]);
 
-  }();
+  // }();
 
 
   //点击事件
