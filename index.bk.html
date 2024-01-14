@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>Layui - 经典开源模块化前端 UI 组件库</title>
+    <meta name="keywords" content="layui,ui,前端框架">
+    <meta name="description" content="一套开源的 Web UI 组件库。采用自身极简的模块化规范，并遵循原生 HTML/CSS/JS 的开发模式，极易上手，开箱即用。非常适合网页界面的快速构建。">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./dist/css/layui.css" rel="stylesheet">
+    <link href="./style/global.css" rel="stylesheet">
+
+    <!-- 让 IE8/9 兼容响应式栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="site-home" id="LAY_home" style="background-color: #eee;">
+    <!-- Header -->
+    <div class="layui-header header header-index">
+        <div class="layui-container">
+            <a class="logo" href="/">
+                <img src="static/images/layui/logo.png" alt="layui">
+            </a>
+            <div class="layui-form layui-hide-xs component" lay-filter="LAY-site-header-component"></div>
+            <div class="layui-hide-xs site-notice"></div>
+
+            <ul class="layui-nav" id="LAY_NAV_TOP">
+                <li class="layui-nav-item" data-dir="docs">
+                    <a href="https://layuion.com/docs/" target="_blank">文档</a>
+                </li>
+                <li class="layui-nav-item" data-dir="demo">
+                    <a href="https://layuion.com/demo/" target="_blank">示例</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <span class="layui-badge-dot" style="left:0; right: auto; margin: -4px 0 0 5px;"></span>
+                        <span>生态</span>
+                    </a>
+                    <dl class="layui-nav-child layui-nav-child-c">
+                        <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+                            <a href="https://gitee.com/sentsin/layui/issues" target="_blank" rel="nofollow">问题反馈</a>
+                            <hr>
+                        </dd>
+
+                        <dd lay-unselect><a href="https://gitee.com/layui/layui-vue/" target="_blank"
+                                lay-unselect>layui-vue (他人实现)</a></dd>
+                        <dd lay-unselect><a href="//dev.layuion.com/extend/" target="_blank">layui 第三方扩展组件</a></dd>
+                        <dd lay-unselect><a href="//layuion.com/layer/" target="_blank">layer 组件单独版</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-hide-xs">
+                    <a href="//gitee.com/layui/layui/issues" target="_blank" rel="nofollow">社区</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="site-banner">
+        <div class="site-banner-bg">
+        </div>
+        <div class="site-banner-main">
+            <div class="site-zfj">
+                <i class="layui-icon" style="color: #fff; color: rgba(255,255,255,.6);">&#xe609;</i>
+            </div>
+            <div class="layui-anim site-desc">
+                <p class="web-font-desc">开源模块化前端 UI 组件库</p>
+                <cite>基于浏览器端原生态模式，面向全层次的前后端开发者，易上手且开源免费的 Web 界面组件库</cite>
+            </div>
+            <div class="site-download">
+                <a href="https://layuion.com/docs" class="layui-btn layui-btn-lg" target="_blank">
+                    开始使用
+                </a>
+                <a href="https://gitee.com/layui/layui/attach_files/1141311/download"
+                    class="layui-btn layui-btn-lg layui-btn-primary layui-border-green" target="_blank">
+                    直接下载
+                </a>
+            </div>
+            <div class="site-version">
+                <span>当前版本：v<cite class="site-showv">2.7.6</cite></span>
+                <span>
+                    <a href="https://layuion.com/docs/base/changelog.html" rel="nofollow" target="_blank">更新日志</a>
+                </span>
+            </div>
+            <div class="site-banner-other">
+                <a href="https://github.com/layui/layui/" target="_blank" rel="nofollow" class="site-star">
+                    <i class="layui-icon">&#xe658;</i>
+                    Star <cite id="getStars"></cite>
+                </a>
+                <a href="https://gitee.com/layui/layui" target="_blank" rel="nofollow" class="site-fork">
+                    Gitee
+                </a>
+                <a href="/about/disclaimer.html" target="_blank" class="site-fork">
+                    免责声明
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container -->
+    <div class="layui-container">
+        <ul class="layui-row layui-col-space30 site-idea">
+            <li class="layui-col-md4">
+                <div>
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>返璞归真</legend>
+                        <p>身处在前端社区的繁荣之下，我们都在有意或无意地追逐。而 layui 偏偏回望当初，奔赴在返璞归真的漫漫征途，自信并勇敢着，追寻于原生态的书写指令，试图以最简单的方式诠释高效。</p>
+                    </fieldset>
+                </div>
+            </li>
+            <li class="layui-col-md4">
+                <div>
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>双面体验</legend>
+                        <p>拥有双面的不仅是人生，还有 layui。一面极简，一面丰盈。极简是视觉所见的外在，是开发所念的简易。丰盈是倾情雕琢的内在，是信手拈来的承诺。一切本应如此，简而全，双重体验。</p>
+                    </fieldset>
+                </div>
+            </li>
+            <li class="layui-col-md4">
+                <div>
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>星辰大海</legend>
+                        <p>如果眼下还是一团零星之火，那运筹帷幄之后，迎面东风，就是一场烈焰燎原吧，那必定会是一番尽情的燃烧。待，秋风萧瑟时，散作满天星辰，你看那四季轮回<!--海天相接-->，正是 layui
+                            不熄的执念。</p>
+                    </fieldset>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="layui-footer footer footer-index">
+        <p>
+            <strong>Copyright © 2023</strong>
+            <a href="/">
+                <strong>Layui</strong>
+            </a>
+            <a href="https://github.com/layui/layui/blob/main/LICENSE" target="_blank">
+                <strong>MIT Licensed</strong>
+            </a>
+        </p>
+        <p id="LAY-footer-info">
+            <a href="https://github.com/layui/layui/blob/main/DISCLAIMER.md" rel="nofollow" target="_blank">免责声明</a>
+            <a href="https://github.com/layui/layui/blob/main/LICENSE" rel="nofollow" target="_blank">开源协议</a>
+            <a href="javascript:;" id="qqInfo" data-clipboard-text="849254735" title="点我复制群号">技术交流群:849254735</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">陕ICP备18021353号-4</a>
+        </p>
+        <p>本站仅为Layui框架文档镜像站点,与Layui官方没有任何关系，特此申明公告；如有不妥请联系站点管理员进行删除！</p>
+        <!-- <p>
+            <span>
+                <span>感谢</span>
+                <a href="https://www.upyun.com/?invite=SJ0wu6g2-" target="_blank" rel="nofollow" sponsor="upyun"
+                    class="layui-font-blue">
+                    <strong>又拍云</strong>
+                </a>
+                <span>提供云加速支持</span>
+            </span>
+        </p> -->
+    </div>
+
+    <!-- <script>
+        window.global = {
+            pageType: 'index'
+            , preview: function () {
+                var preview = document.getElementById('LAY_preview');
+                return preview ? preview.innerHTML : '';
+            }()
+        };
+    </script>
+    <div class="site-tree-mobile layui-hide">
+        <i class="layui-icon layui-icon-spread-left"></i>
+    </div>
+    <div class="site-mobile-shade"></div> -->
+
+    <!-- JS -->
+    <script src="./library/clipboard.min.js"></script>
+    <script src="./dist/layui.js"></script>
+    <script src="./script/layout.js"></script>
+</body>
+
+</html>
