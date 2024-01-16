@@ -1,0 +1,157 @@
+
+
+  <title>工具模块 - 组件</title>
+
+  <div class="layui-card layadmin-header">
+    <div class="layui-breadcrumb" lay-filter="breadcrumb">
+      <a lay-href="">主页</a>
+      <a><cite>组件</cite></a>
+      <a><cite>工具模块</cite></a>
+    </div>
+  </div>
+  
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">倒计时</div>
+          <div class="layui-card-body">
+            请选择要计算的日期：
+            <div class="layui-inline">
+              <input type="text" class="layui-input" id="test-util-countdown" value="2099-01-01 00:00:00">
+            </div>
+            <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+              <div id="test-util-countdown-ret"></div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">某个时间在当前时间的多久前</div>
+          <div class="layui-card-body">
+            请选择要计算的日期：
+            <div class="layui-inline">
+              <input type="text" class="layui-input" id="test-util-timeago">
+            </div>
+            <span class="layui-word-aux" id="test-util-timeago-ret"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">转换日期格式</div>
+          <div class="layui-card-body">
+            请编辑格式：
+            <div class="layui-inline">
+              <input type="text" value="yyyy-MM-dd HH:mm:ss" class="layui-input" id="test-util-toDateString">
+            </div>
+            <span class="layui-word-aux" id="test-util-toDateString-ret"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">转义 HTML</div>
+          <div class="layui-card-body">
+            <div class="layui-form">
+              <textarea class="layui-textarea" id="test-util-escape">
+<h3>HTML Title</h3>
+<script>
+  alert(0);
+</script>
+              </textarea>
+            </div>
+            <div class="layui-btn-container" style="margin-top: 10px;">
+              <button class="layui-btn" lay-on="escape">转义</button>
+              <button class="layui-btn" lay-on="unescape">还原</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <script>
+  layui.use(['admin', 'util', 'laydate', 'layer'], function(){
+    var util = layui.util;
+    var laydate = layui.laydate;
+    var layer = layui.layer;
+    var $ = layui.$;
+    
+    // 倒计时
+    var countdown = util.countdown({
+      date: '2099-12-31 00:00:00', // 目标时间值
+      now: new Date(), // 当前时间，一般为服务器时间，此处以本地时间为例
+      ready: function(){ // 初始操作
+        clearTimeout(util.countdown.timer); // 清除旧定时器，防止多次渲染时重复执行。实际使用时不常用
+      },
+      clock: function(obj, inst){  // 计时中
+        var str = [obj.d,'天',obj.h,'时',obj.m,'分',obj.s,'秒'].join(' ');
+        lay('#test-util-countdown-ret').html(str);
+        util.countdown.timer = inst.timer; // 记录当前定时器，以便在重复渲染时清除。实际使用时不常用
+      },
+      done: function(obj, inst){ // 计时完成
+        layer.msg('Time is up');
+      }
+    });
+    // 重置倒计时
+    laydate.render({
+      elem: '#test-util-countdown',
+      type: 'datetime',
+      done: function(value){
+        countdown.reload({
+          date: value
+        });
+      }
+    });
+    
+    
+    // 某个时间在当前时间的多久前
+    var setTimeAgo = function(y, M, d, H, m, s){
+      var str = util.timeAgo(new Date(y, M||0, d||1, H||0, m||0, s||0));
+      lay('#test-util-timeago-ret').html(str);
+    };
+    
+    laydate.render({
+      elem: '#test-util-timeago',
+      type: 'datetime',
+      done: function(value, date){
+        setTimeAgo(date.year, date.month - 1, date.date, date.hours, date.minutes, date.seconds);
+      }
+    });
+
+    // 转换日期格式
+    var toDateString = function(format){
+      var dateString = util.toDateString(new Date(), format); // 执行转换日期格式的方法
+      $('#test-util-toDateString-ret').html(dateString);
+    };
+    toDateString($('#test-util-toDateString').val());
+    // 输入框事件
+    $('#test-util-toDateString').on('input propertychange', function(){
+      console.log(this.value)
+      toDateString(this.value);
+    });
+    
+    // HTML 转义
+    util.event('lay-on', {
+      escape: function(){ // 转义
+        var textarea = $('#test-util-escape');
+        var value = textarea.val();
+        var str = util.escape(value); // 执行转义方法
+        textarea.val(str);
+      },
+      unescape: function(){
+        var textarea = $('#test-util-escape');
+        var value = textarea.val();
+        var str = util.unescape(value); // 执行转义方法
+        textarea.val(str);
+      }
+    });
+    
+  });
+  </script>

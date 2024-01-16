@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layuiAdmin 纯静态 UI 模板（单页面版）</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./res/layui/css/layui.css" rel="stylesheet">
+  <script>
+    if(!/^http(s*):\/\//.test(location.href)){
+      alert('请通过 localhost 访问');
+    }
+  </script>
+</head>
+<body>
+  <div id="LAY_app"></div>
+  <script src="./res/layui/layui.js"></script>
+  <script>
+  layui.config({
+    base: 'res/', // 静态资源所在路径
+    version: '2.3.2'
+  }).use('index', function(){
+    var layer = layui.layer;
+    var admin = layui.admin;
+    // 提示语
+    layer.ready(function(){
+      admin.popup({
+        content: '单页面版默认未开启“标签页”功能，实际使用时，你可以自定义是否开启'
+        ,area: '300px'
+        ,shade: false
+        ,offset: 't'
+      });
+    });
+  });
+  </script>
+</body>
+</html>
+
+
