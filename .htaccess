@@ -1,0 +1,31 @@
+RewriteEngine On
+RewriteBase /
+
+# 规则1
+RewriteCond %{HTTP_HOST} ^(www\.)kms\.net$ [NC]
+RewriteCond %{REQUEST_URI} !^/kms/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ kms/$1
+
+RewriteRule ^(/)$ kms/index.php [L]
+
+# 规则2
+RewriteCond %{HTTP_HOST} ^(www\.)thorui\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/thorui/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ thorui/$1
+
+RewriteRule ^(/)$ thorui/index.php [L]
+
+# 新增规则
+RewriteCond %{HTTP_HOST} ^(www\.)?layui\.net$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ layui/$1
+
+RewriteCond %{HTTP_HOST} ^ww\.layui\.net$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ layui/$1
